@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://flip-hub.myshopify.com/
+
+# Sitemaps
+Sitemap: https://flip-hub.myshopify.com/sitemap.xml

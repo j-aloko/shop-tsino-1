@@ -1,0 +1,244 @@
+{
+  "authentication": {
+    "login": {
+      "title": "Iniciar sesión"
+    },
+    "logout": {
+      "title": "Cerrar sesión"
+    },
+    "signup": {
+      "title": "Registrarse"
+    },
+    "checkEmail": {
+      "emailConfirmation": "Confirmación de correo electrónico",
+      "passwordReset": "Restablecimiento de contraseña"
+    },
+    "activateAccount": {
+      "title": "Activar cuenta",
+      "subtitle": "Crea tu contraseña para activar tu cuenta."
+    },
+    "forgotPassword": {
+      "title": "¿Olvidaste tu contraseña?",
+      "subtitle": "Ingresa tu dirección de correo electrónico a continuación y te enviaremos instrucciones sobre cómo crear de forma segura una nueva contraseña."
+    },
+    "createPassword": {
+      "title": "Crea tu nueva contraseña",
+      "subtitle": "Por favor, introduce tu nueva contraseña a continuación para recuperar el acceso a tu cuenta."
+    },
+    "supplementalLinks": {
+      "login": "Iniciar sesión",
+      "forgotPassword": "¿Olvidaste tu contraseña?",
+      "noAccount": "¿No tienes una cuenta? Regístrate",
+      "accountExist": "¿Ya tienes una cuenta? Iniciar sesión",
+      "passwordRembered": "¿Recordaste tu contraseña? Iniciar sesión",
+      "noEmail": "¿No recibiste ningún correo electrónico?"
+    }
+  },
+  "buttons": {
+    "shopNow": "Compra ahora",
+    "viewMore": "Ver más",
+    "addToCart": "Añadir al carrito",
+    "buyItNow": "Cómpralo ahora",
+    "expandCart": "Expandir carrito",
+    "checkout": "Revisa",
+    "shopMore": "Compra más",
+    "clearAll": "Borrar todo",
+    "goToHomepage": "Ir a la página de inicio",
+    "login": "Iniciar sesión",
+    "signup": "Regístrate",
+    "activateAccount": "Activar cuenta",
+    "requestResetLink": "Solicitar enlace de restablecimiento",
+    "resetPassword": "Restablecer contraseña",
+    "resendEmail": "Reenviar correo electrónico",
+    "subscribe": "Suscribirse",
+    "writeReview": "Escribir reseña",
+    "submitReview": "Enviar revisión",
+    "sendMessage": "Enviar mensaje"
+  },
+  "cart": {
+    "dataGridHeaders": {
+      "product": "Producto",
+      "price": "Precio",
+      "quantity": "Cantidad",
+      "discount": "Descuento",
+      "total": "Total"
+    },
+    "lineItems": {
+      "totalPerItemDiscount": "Descuento total por artículo",
+      "subtotal": "Total parcial",
+      "totalCartDiscount": "Descuento total del carrito",
+      "tax": "Impuesto",
+      "shipping": "Envío",
+      "total": "Total",
+      "calculatedAtCheckout": "Calculado al finalizar la compra"
+    }
+  },
+  "collections": {
+    "shopByCollections": "Compra por colecciones",
+    "filterBy": "Filtrar por",
+    "sortBy": "Ordenar por",
+    "priceRange": "Rango de precios",
+    "noCollection": "No hay colecciones en esta tienda",
+    "sortOptionsTitle": {
+      "latestDesc": "Últimas llegadas",
+      "trendingDesc": "Más vendido",
+      "titleAsc": "Alfabéticamente, A-Z",
+      "titleDesc": "Alfabéticamente, Z-A",
+      "priceAsc": "Precio, de menor a mayor",
+      "priceDesc": "Precio, de mayor a menor",
+      "dateAsc": "Fecha, de antiguo a nuevo",
+      "dateDesc": "Fecha, de nuevo a antiguo"
+    }
+  },
+  "contact": {
+    "title": "Déjanos un mensaje",
+    "subtitle": "Nos encantaría saber de ti, ¡pongámonos en contacto!"
+  },
+  "customerBenefits": {
+    "fastDelivery": {
+      "title": "Entrega rápida",
+      "subtitle": "¡Recibe tus artículos en poco tiempo!"
+    },
+    "bigSavings": {
+      "title": "Grandes ahorros",
+      "subtitle": "Ahorra más con cada compra"
+    },
+    "customerSupport": {
+      "title": "Soporte al cliente",
+      "subtitle": "Tu satisfacción, nuestra prioridad"
+    },
+    "giftVoucher": {
+      "title": "Vale de regalo",
+      "subtitle": "Tu lealtad recompensada con descuentos especiales"
+    }
+  },
+  "errorDetails": {
+    "404": {
+      "status": 404,
+      "title": "Página No Encontrada",
+      "subtitle": "La página que está buscando podría haber sido eliminada, haber cambiado de nombre o estar temporalmente no disponible."
+    },
+    "500": {
+      "status": 500,
+      "title": "Error del Servidor",
+      "subtitle": "Hay un problema con el servidor. Por favor, inténtelo de nuevo más tarde."
+    },
+    "clientError": {
+      "status": "Solicitud Incorrecta",
+      "title": "Error del Cliente",
+      "subtitle": "Hubo un error con su solicitud. Por favor, revise su entrada e inténtelo de nuevo."
+    }
+  },
+  "footer": {
+    "newsletter": "Boletín",
+    "location": "Ubicación",
+    "contactUs": "Contáctenos",
+    "email": "Correo electrónico",
+    "privacy": "Privacidad",
+    "shipping": "Envío",
+    "service": "Servicio",
+    "refund": "Reembolso",
+    "copyright": "© {{year}}, Todos los derechos reservados"
+  },
+  "forms": {
+    "labels": {
+      "email": "Correo electrónico",
+      "password": "Contraseña",
+      "confirmPassword": "Confirmar contraseña",
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "fullName": "Nombre completo",
+      "newsletter": "Regístreme para recibir ofertas exclusivas y actualizaciones de productos por correo electrónico",
+      "reviewTitle": "Título de la reseña",
+      "rateThisProduct": "Califica este producto",
+      "reviewMessage": "Mensaje de revisión",
+      "message": "Mensaje"
+    },
+    "placeholders": {
+      "email": "Escribe tu dirección de correo electrónico",
+      "passwordAuthenticate": "Ingresa tu contraseña",
+      "passwordCreate": "Crea una contraseña segura",
+      "confirmPassword": "Confirma tu contraseña",
+      "firstName": "¿Cuál es tu nombre?",
+      "lastName": "¿Y tu apellido?",
+      "fullName": "¿Puedo saber tu nombre completo?",
+      "reviewTitle": "Resuma su revisión en un título llamativo",
+      "rateThisProduct": "¿Cómo calificarías este producto?",
+      "reviewMessage": "Comparte tus pensamientos sobre este producto",
+      "message": "Escribe tu mensaje aquí"
+    }
+  },
+  "homePage": {
+    "sections": {
+      "latestProducts": {
+        "title": "Lo último",
+        "subtitle": "Productos"
+      },
+      "trendingProduct": {
+        "title": "Destacado",
+        "subtitle": "Tendencias ahora"
+      },
+      "recommendedProduct": {
+        "title": "Productos recomendados",
+        "subtitle": "También te puede gustar"
+      },
+      "customerBenefits": {
+        "title": "Nuestros compromisos",
+        "subtitle": "Compras superiores"
+      }
+    }
+  },
+  "menu": {
+    "home": "Inicio",
+    "collections": "Colecciones",
+    "orders": "Pedidos",
+    "aboutUs": "Sobre nosotros",
+    "contactUs": "Contáctenos"
+  },
+  "orders": {
+    "dataGrideHeaders": {
+      "order": "Orden",
+      "date": "Fecha",
+      "paymentStatus": "Estado de pago",
+      "fulfillmentStatus": "Estado de cumplimiento",
+      "total": "Total"
+    },
+    "lineItems": {
+      "subtotal": "Total parcial",
+      "tax": "Impuesto",
+      "shipping": "Envío",
+      "total": "Total"
+    },
+    "orderDetailSections": {
+      "products": "Productos",
+      "contactInformation": "Información de contacto",
+      "shippingAddress": "Dirección de envío",
+      "billingSummary": "Resumen de facturación"
+    },
+    "noOrdersAlert": "No se encontraron pedidos",
+    "OrderCancelledAlert": "Pedido {{name}} cancelado el {{date}}"
+  },
+  "productDetails": {
+    "quantity": "Cantidad",
+    "inStock": "En stock",
+    "outOfStock": "Agotado",
+    "stockAlert": "Solo quedan {{quantity}} unidades de esta variante en stock",
+    "outOfStockAlert": "Esta variante no está disponible en este momento",
+    "zoomHint": "Pase el cursor sobre la imagen para alejar",
+    "productDetailsHeaders": {
+      "reviews": "Reseñas",
+      "description": "Descripción"
+    },
+    "reviewTab": {
+      "title": "Revisa este producto",
+      "subtitle": "Comparte tus pensamientos con otros clientes",
+      "reviewRatingLabels": {
+        "useless": "Inútil",
+        "poor": "Pobre",
+        "ok": "Ok",
+        "good": "Bueno",
+        "excellent": "Excelente"
+      }
+    }
+  }
+}

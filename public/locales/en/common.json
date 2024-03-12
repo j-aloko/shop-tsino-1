@@ -1,0 +1,244 @@
+{
+  "authentication": {
+    "login": {
+      "title": "Sign in"
+    },
+    "logout": {
+      "title": "Logout"
+    },
+    "signup": {
+      "title": "Sign up"
+    },
+    "checkEmail": {
+      "emailConfirmation": "Email Confirmation",
+      "passwordReset": "Password Reset"
+    },
+    "activateAccount": {
+      "title": "Activate account",
+      "subtitle": "Create your password to activate your account."
+    },
+    "forgotPassword": {
+      "title": "Forgot Password?",
+      "subtitle": "Enter your email address below and we’ll send you instructions on how to securely create a new password."
+    },
+    "createPassword": {
+      "title": "Create Your New Password",
+      "subtitle": "Please enter your new password below to regain access to your account."
+    },
+    "supplementalLinks": {
+      "login": "Login",
+      "forgotPassword": "Forgot password?",
+      "noAccount": "Don't have an account? Sign Up",
+      "accountExist": "Already have an account? Sign in",
+      "passwordRembered": "Remembered your password? Sign in",
+      "noEmail": "Didn't receive any email?"
+    }
+  },
+  "buttons": {
+    "shopNow": "Shop now",
+    "viewMore": "View more",
+    "addToCart": "Add to cart",
+    "buyItNow": "Buy it now",
+    "expandCart": "Expand cart",
+    "checkout": "Checkout",
+    "shopMore": "Shop more",
+    "clearAll": "Clear all",
+    "goToHomepage": "Go to homepage",
+    "login": "Login",
+    "signup": "Sign up",
+    "activateAccount": "Activate account",
+    "requestResetLink": "Request reset link",
+    "resetPassword": "Reset password",
+    "resendEmail": "Resend email",
+    "subscribe": "Subscribe",
+    "writeReview": "Write review",
+    "submitReview": "Submit review",
+    "sendMessage": "Send message"
+  },
+  "cart": {
+    "dataGridHeaders": {
+      "product": "Product",
+      "price": "Price",
+      "quantity": "Quantity",
+      "discount": "Discount",
+      "total": "Total"
+    },
+    "lineItems": {
+      "totalPerItemDiscount": "Total per-item discount",
+      "subtotal": "Subtotal",
+      "totalCartDiscount": "Total cart discount",
+      "tax": "Tax",
+      "shipping": "Shipping",
+      "total": "Total",
+      "calculatedAtCheckout": "Calculated at checkout"
+    }
+  },
+  "collections": {
+    "shopByCollections": "Shop by collections",
+    "filterBy": "Filter by",
+    "sortBy": "Sort by",
+    "priceRange": "Price range",
+    "noCollection": "No collections in this store",
+    "sortOptionsTitle": {
+      "latestDesc": "Latest arrivals",
+      "trendingDesc": "Best selling",
+      "titleAsc": "Alphabetically, A-Z",
+      "titleDesc": "Alphabetically, Z-A",
+      "priceAsc": "Price, Low to high",
+      "priceDesc": "Price, High to low",
+      "dateAsc": "Date, old to new",
+      "dateDesc": "Date, new to old"
+    }
+  },
+  "contact": {
+    "title": "Leave us a message",
+    "subtitle": "We'd love to hear from you, lets get in touch!"
+  },
+  "customerBenefits": {
+    "fastDelivery": {
+      "title": "Fast Delivery",
+      "subtitle": "Get your items in no time!"
+    },
+    "bigSavings": {
+      "title": "Big Savings",
+      "subtitle": "Save more with every purchase"
+    },
+    "customerSupport": {
+      "title": "Customer Support",
+      "subtitle": "Your satisfaction, our priority"
+    },
+    "giftVoucher": {
+      "title": "Gift Voucher",
+      "subtitle": "Your loyalty rewarded with special discounts"
+    }
+  },
+  "errorDetails": {
+    "404": {
+      "status": 404,
+      "title": "Page Not Found",
+      "subtitle": "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable."
+    },
+    "500": {
+      "status": 500,
+      "title": "Server Error",
+      "subtitle": "There's a problem with the server. Please try again later."
+    },
+    "clientError": {
+      "status": "Bad Request",
+      "title": "Client Error",
+      "subtitle": "There was an error with your request. Please try again later."
+    }
+  },
+  "footer": {
+    "newsletter": "Newsletter",
+    "location": "Location",
+    "contactUs": "Contact us",
+    "email": "Email",
+    "privacy": "Privacy",
+    "shipping": "Shipping",
+    "service": "Service",
+    "refund": "Refund",
+    "copyright": "© {{year}}, All right reserved"
+  },
+  "forms": {
+    "labels": {
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "ConfirmPassword",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "fullName": "Full name",
+      "newsletter": "Sign me up for exclusive deals, and product updates via email",
+      "reviewTitle": "Review title",
+      "rateThisProduct": "Rate this product",
+      "reviewMessage": "Review message",
+      "message": "Message"
+    },
+    "placeholders": {
+      "email": "Type your email address",
+      "passwordAuthenticate": "Enter your password",
+      "passwordCreate": "Create a secure password",
+      "confirmPassword": "Confirm your password",
+      "firstName": "What's your first name?",
+      "lastName": "And your last name?",
+      "fullName": "May I know your full name?",
+      "reviewTitle": "Summarize your review in a catchy title",
+      "rateThisProduct": "How would you rate this product?",
+      "reviewMessage": "Share your thoughts about this product",
+      "message": "Compose your message here"
+    }
+  },
+  "homePage": {
+    "sections": {
+      "latestProducts": {
+        "title": "The Latest",
+        "subtitle": "Products"
+      },
+      "trendingProduct": {
+        "title": "Featured",
+        "subtitle": "Trending Now"
+      },
+      "recommendedProduct": {
+        "title": "Recommended Products",
+        "subtitle": "You May Also Like"
+      },
+      "customerBenefits": {
+        "title": "Our Commitments",
+        "subtitle": "Superior Shopping"
+      }
+    }
+  },
+  "menu": {
+    "home": "Home",
+    "collections": "Collections",
+    "orders": "Orders",
+    "aboutUs": "About us",
+    "contactUs": "Contact us"
+  },
+  "orders": {
+    "dataGrideHeaders": {
+      "order": "Order",
+      "date": "Date",
+      "paymentStatus": "Payment status",
+      "fulfillmentStatus": "Fulfillment status",
+      "total": "Total"
+    },
+    "lineItems": {
+      "subtotal": "Subtotal",
+      "tax": "Tax",
+      "shipping": "Shipping",
+      "total": "Total"
+    },
+    "orderDetailSections": {
+      "products": "Products",
+      "contactInformation": "Contact information",
+      "shippingAddress": "Shipping address",
+      "billingSummary": "Billing summary"
+    },
+    "noOrdersAlert": "No orders found",
+    "OrderCancelledAlert": "Order {{name}} cancelled on {{date}}"
+  },
+  "productDetails": {
+    "quantity": "Quantity",
+    "inStock": "In Stock",
+    "outOfStock": "Out of Stock",
+    "stockAlert": "Only {{quantity}} units of this variant is left in stock",
+    "outOfStockAlert": "This variant is not available at the moment",
+    "zoomHint": "Roll over image to zoom out",
+    "productDetailsHeaders": {
+      "reviews": "Reviews",
+      "description": "Description"
+    },
+    "reviewTab": {
+      "title": "Review this product",
+      "subtitle": "Share your thoughts with other customers",
+      "reviewRatingLabels": {
+        "useless": "Useless",
+        "poor": "Poor",
+        "ok": "Ok",
+        "good": "Good",
+        "excellent": "Excellent"
+      }
+    }
+  }
+}

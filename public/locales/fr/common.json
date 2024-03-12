@@ -1,0 +1,244 @@
+{
+  "authentication": {
+    "login": {
+      "title": "Se connecter"
+    },
+    "logout": {
+      "title": "Se déconnecter"
+    },
+    "signup": {
+      "title": "S'inscrire"
+    },
+    "checkEmail": {
+      "emailConfirmation": "Confirmation de l'email",
+      "passwordReset": "Réinitialisation du mot de passe"
+    },
+    "activateAccount": {
+      "title": "Activer le compte",
+      "subtitle": "Créez votre mot de passe pour activer votre compte."
+    },
+    "forgotPassword": {
+      "title": "Mot de passe oublié?",
+      "subtitle": "Entrez votre adresse e-mail ci-dessous et nous vous enverrons des instructions sur comment créer en toute sécurité un nouveau mot de passe."
+    },
+    "createPassword": {
+      "title": "Créez votre nouveau mot de passe",
+      "subtitle": "Veuillez entrer votre nouveau mot de passe ci-dessous pour retrouver l'accès à votre compte."
+    },
+    "supplementalLinks": {
+      "login": "Se connecter",
+      "forgotPassword": "Mot de passe oublié?",
+      "noAccount": "Vous n'avez pas de compte? S'inscrire",
+      "accountExist": "Vous avez déjà un compte? Se connecter",
+      "passwordRembered": "Vous vous souvenez de votre mot de passe? Se connecter",
+      "noEmail": "Vous n'avez pas reçu d'email?"
+    }
+  },
+  "buttons": {
+    "shopNow": "Acheter maintenant",
+    "viewMore": "Voir plus",
+    "addToCart": "Ajouter au panier",
+    "buyItNow": "Achetez-le maintenant",
+    "expandCart": "Développer le panier",
+    "checkout": "Vérifier",
+    "shopMore": "Achetez plus",
+    "clearAll": "Tout effacer",
+    "goToHomepage": "Aller à la page d’accueil",
+    "login": "S'identifier",
+    "signup": "S'inscrire",
+    "activateAccount": "Activer le compte",
+    "requestResetLink": "Demander un lien de réinitialisation",
+    "resetPassword": "Réinitialiser le mot de passe",
+    "resendEmail": "Renvoyer l'email",
+    "subscribe": "S'abonner",
+    "writeReview": "Écrire un avis",
+    "submitReview": "Soumettre un avis",
+    "sendMessage": "Envoyer le message"
+  },
+  "cart": {
+    "dataGridHeaders": {
+      "product": "Produit",
+      "price": "Prix",
+      "quantity": "Quantité",
+      "discount": "Remise",
+      "total": "Total"
+    },
+    "lineItems": {
+      "totalPerItemDiscount": "Remise totale par article",
+      "subtotal": "Sous-total",
+      "totalCartDiscount": "Remise totale du panier",
+      "tax": "Taxe",
+      "shipping": "Expédition",
+      "total": "Total",
+      "calculatedAtCheckout": "Calculé à la caisse"
+    }
+  },
+  "collections": {
+    "shopByCollections": "Acheter par collections",
+    "filterBy": "Filtrer par",
+    "sortBy": "Trier par",
+    "priceRange": "Gamme de prix",
+    "noCollection": "Pas de collections dans ce magasin",
+    "sortOptionsTitle": {
+      "latestDesc": "Dernières arrivées",
+      "trendingDesc": "Meilleure vente",
+      "titleAsc": "Alphabétiquement, A-Z",
+      "titleDesc": "Alphabétiquement, Z-A",
+      "priceAsc": "Prix, du plus bas au plus élevé",
+      "priceDesc": "Prix, du plus élevé au plus bas",
+      "dateAsc": "Date, du plus ancien au plus récent",
+      "dateDesc": "Date, du plus récent au plus ancien"
+    }
+  },
+  "contact": {
+    "title": "Laissez-nous un message",
+    "subtitle": "Nous aimerions avoir de vos nouvelles, mettons-nous en contact!"
+  },
+  "customerBenefits": {
+    "fastDelivery": {
+      "title": "Livraison rapide",
+      "subtitle": "Recevez vos articles en un rien de temps!"
+    },
+    "bigSavings": {
+      "title": "Grandes économies",
+      "subtitle": "Économisez plus à chaque achat"
+    },
+    "customerSupport": {
+      "title": "Service client",
+      "subtitle": "Votre satisfaction, notre priorité"
+    },
+    "giftVoucher": {
+      "title": "Bon cadeau",
+      "subtitle": "Votre fidélité récompensée par des réductions spéciales"
+    }
+  },
+  "errorDetails": {
+    "404": {
+      "status": 404,
+      "title": "Page Non Trouvée",
+      "subtitle": "La page que vous recherchez a peut-être été supprimée, son nom a changé ou est temporairement indisponible."
+    },
+    "500": {
+      "status": 500,
+      "title": "Erreur du Serveur",
+      "subtitle": "Il y a un problème avec le serveur. Veuillez réessayer plus tard."
+    },
+    "clientError": {
+      "status": "Mauvaise Demande",
+      "title": "Erreur Client",
+      "subtitle": "Il y a eu une erreur avec votre demande. Veuillez vérifier votre saisie et réessayer."
+    }
+  },
+  "footer": {
+    "newsletter": "Bulletin",
+    "location": "Emplacement",
+    "contactUs": "Contactez-nous",
+    "email": "Email",
+    "privacy": "Intimité",
+    "shipping": "Expédition",
+    "service": "Service",
+    "refund": "Remboursement",
+    "copyright": "© {{year}}, Tous les droits sont réservés"
+  },
+  "forms": {
+    "labels": {
+      "email": "Email",
+      "password": "Mot de passe",
+      "confirmPassword": "Confirmer le mot de passe",
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "fullName": "Nom complet",
+      "newsletter": "Inscrivez-moi pour des offres exclusives et des mises à jour de produits par email",
+      "reviewTitle": "Titre de l'avis",
+      "rateThisProduct": "Évaluez ce produit",
+      "reviewMessage": "Message de l'avis",
+      "message": "Message"
+    },
+    "placeholders": {
+      "email": "Tapez votre adresse e-mail",
+      "passwordAuthenticate": "Entrez votre mot de passe",
+      "passwordCreate": "Créez un mot de passe sécurisé",
+      "confirmPassword": "Confirmez votre mot de passe",
+      "firstName": "Quel est votre prénom?",
+      "lastName": "Et votre nom de famille?",
+      "fullName": "Puis-je connaître votre nom complet?",
+      "reviewTitle": "Résumez votre avis dans un titre accrocheur",
+      "rateThisProduct": "Comment évalueriez-vous ce produit?",
+      "reviewMessage": "Partagez vos pensées sur ce produit",
+      "message": "Composez votre message ici"
+    }
+  },
+  "homePage": {
+    "sections": {
+      "latestProducts": {
+        "title": "Les derniers",
+        "subtitle": "Produits"
+      },
+      "trendingProduct": {
+        "title": "En vedette",
+        "subtitle": "Tendance maintenant"
+      },
+      "recommendedProduct": {
+        "title": "Produits recommandés",
+        "subtitle": "Vous pourriez aussi aimer"
+      },
+      "customerBenefits": {
+        "title": "Nos engagements",
+        "subtitle": "Shopping supérieur"
+      }
+    }
+  },
+  "menu": {
+    "home": "Accueil",
+    "collections": "Collections",
+    "orders": "Commandes",
+    "aboutUs": "À propos de nous",
+    "contactUs": "Contactez-nous"
+  },
+  "orders": {
+    "dataGrideHeaders": {
+      "order": "Ordre",
+      "date": "Date",
+      "paymentStatus": "Statut de paiement",
+      "fulfillmentStatus": "Statut d'exécution",
+      "total": "Total"
+    },
+    "lineItems": {
+      "subtotal": "Sous-total",
+      "tax": "Taxe",
+      "shipping": "Expédition",
+      "total": "Total"
+    },
+    "orderDetailSections": {
+      "products": "Produits",
+      "contactInformation": "Informations de contact",
+      "shippingAddress": "Adresse de livraison",
+      "billingSummary": "Résumé de facturation"
+    },
+    "noOrdersAlert": "Aucune commande trouvée",
+    "OrderCancelledAlert": "Commande {{name}} annulée le {{date}}"
+  },
+  "productDetails": {
+    "quantity": "Quantité",
+    "inStock": "En stock",
+    "outOfStock": "Rupture de stock",
+    "stockAlert": "Il ne reste que {{quantity}} unités de cette variante en stock",
+    "outOfStockAlert": "Cette variante n'est pas disponible pour le moment",
+    "zoomHint": "Passez sur l'image pour zoomer",
+    "productDetailsHeaders": {
+      "reviews": "Avis",
+      "description": "La description"
+    },
+    "reviewTab": {
+      "title": "Évaluez ce produit",
+      "subtitle": "Partagez vos pensées avec d'autres clients",
+      "reviewRatingLabels": {
+        "useless": "Inutile",
+        "poor": "Pauvre",
+        "ok": "Ok",
+        "good": "Bon",
+        "excellent": "Excellent"
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { HYDRATE } from 'next-redux-wrapper';
+
+import { fetchData } from '../../../api/apiHandler';
+
+export const getShopInfo = createAsyncThunk('shop/info', async (_, { rejectWithValue }) => {
+  try {
+    const data = await fetchData('/api/v1/shop/info');
+    return data;
+  } catch (error) {
+    return rejectWithValue(error?.message);
+  }
+});
+
+export const getAvailableLanguages = createAsyncThunk('shop/available-languages', async (_, { rejectWithValue }) => {
+  try {
+    const data = await fetchData('/api/v1/shop/available-languages');
+    return data;
+  } catch (error) {
+    return rejectWithValue(error?.message);
+  }
+});
+
+const initialState = {
+  availableLanguages: [],
+  error: false,
+  loading: false,
+  selectedLanguage: {
+    isoCode: 'EN',
+  },
+  shop: {
+    billingAddress: {
+      address1: '',
+      address2: '',
+      city: '',
+      company: '',
+      id: '',
+      phone: '',
+    },
+    contactEmail: '',
+    currencyCode: '',
+  },
+};
+
+export const shopInfoSlice = createSlice({
+  extraReducers: (builder) => {
+    builder
+      .addCase(HYDRATE, (state, action) => {
+        if (action.payload.shopInfo && action.payload.shopInfo.selectedLanguage) {
+          state.selectedLanguage.isoCode = action.payload.shopInfo.selectedLanguage.isoCode;
+        } else {
+          state.selectedLanguage.isoCode = 'EN';
+        }
+      })
+      .addCase(getShopInfo.pending, (state) => {
+        state.loading = true;
+        state.error = false;
+      })
+      .addCase(getShopInfo.fulfilled, (state, action) => {
+        state.loading = false;
+        state.shop = action.payload;
+        state.error = false;
+      })
+      .addCase(getShopInfo.rejected, (state) => {
+        state.loading = false;
+        state.error = true;
+      })
+      .addCase(getAvailableLanguages.fulfilled, (state, action) => {
+        state.availableLanguages = action.payload.availableLanguages;
+      });
+  },
+  initialState,
+  name: 'shopInfo',
+  reducers: {
+    selectLanguage: (state, action) => {
+      state.selectedLanguage.isoCode = action.payload;
+    },
+  },
+});

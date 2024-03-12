@@ -1,0 +1,11 @@
+export const selectCart = (state) => state.cart.cart;
+export const selectAddCartLoading = (state) => state.cart.addStatus.loading;
+export const selectAddCartError = (state) => state.cart.addStatus.error;
+export const selecBuyNowLoading = (state) => state.cart.buyNowStatus.loading;
+export const selecBuyNowError = (state) => state.cart.buyNowStatus.error;
+export const selectRetrieveCartLoading = (state) => state.cart.retrieveCartStatus.loading;
+export const selectRetrieveCartError = (state) => state.cart.retrieveCartStatus.error;
+export const selectUpdateCartLoading = (state) => state.cart.updateStatus.loading;
+export const selectUpdateCartError = (state) => state.cart.updateStatus.error;
+export const selectRemoveCartLoading = (state) => state.cart.removeStatus.loading;
+export const selectRemoveCartError = (state) => state.cart.removeStatus.error;
