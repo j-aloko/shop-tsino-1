@@ -15,7 +15,7 @@ function About({ content, selectedLanguage, title }) {
       canonical: PATH.about,
       description: content,
       locale: selectedLanguage,
-      title,
+      title: `${title} | ${process.env.NEXT_PUBLIC_NAME_STORE_NAME}`,
     }),
     [content, selectedLanguage, title]
   );

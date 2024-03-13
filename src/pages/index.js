@@ -30,7 +30,7 @@ function Home({ featuredProducts, selectedLanguage, shopDescription }) {
       description: shopDescription,
       isHomePage: true,
       locale: selectedLanguage,
-      title: 'Home',
+      title: `Home | ${process.env.NEXT_PUBLIC_NAME_STORE_NAME}`,
     }),
     [shopDescription, selectedLanguage]
   );

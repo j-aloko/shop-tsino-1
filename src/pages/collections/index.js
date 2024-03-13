@@ -20,7 +20,7 @@ function Collections(props) {
       description:
         'Explore our diverse collections of top-quality products at our online store. From fashion to electronics, find everything you need in one place. Shop now and enjoy seamless shopping experience.',
       locale: selectedLanguage,
-      title: 'Collections',
+      title: `Collections | ${process.env.NEXT_PUBLIC_NAME_STORE_NAME}`,
     }),
     [selectedLanguage]
   );

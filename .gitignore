@@ -6,9 +6,6 @@
 .pnp.js
 .yarn/install-state.gz
 
-#sitemaps
-/public/sitemap-0.xml
-
 # testing
 /coverage
 

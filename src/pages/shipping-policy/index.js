@@ -15,7 +15,7 @@ function ShippingPolicy({ content, selectedLanguage, title }) {
       canonical: PATH.shippingPolicy,
       description: content,
       locale: selectedLanguage,
-      title,
+      title: `${title} | ${process.env.NEXT_PUBLIC_NAME_STORE_NAME}`,
     }),
     [content, selectedLanguage, title]
   );
@@ -35,8 +35,7 @@ export const getServerSideProps = wrapper.getServerSideProps((store) => async ()
   const res = await getShopPolicies({ handle: urlPath, language: selectedLanguage });
 
   if (!res) {
-    const { notFound } = await import('next/navigation');
-    return notFound();
+    return { notFound: true };
   }
 
   return {
