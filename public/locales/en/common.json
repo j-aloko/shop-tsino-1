@@ -195,6 +195,12 @@
     "aboutUs": "About us",
     "contactUs": "Contact us"
   },
+  "modals": {
+    "shopifyPreviewAuthModal": {
+      "title": "To proceed with the checkout test demo, please enter '1' as your password.",
+      "subtitle": "We apologize for this inconvenience!"
+    }
+  },
   "orders": {
     "dataGrideHeaders": {
       "order": "Order",

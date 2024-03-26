@@ -195,6 +195,12 @@
     "aboutUs": "Sobre nosotros",
     "contactUs": "Contáctenos"
   },
+  "modals": {
+    "shopifyPreviewAuthModal": {
+      "title": "Para continuar con la demostración de prueba de pago, por favor ingrese '1' como su contraseña.",
+      "subtitle": "¡Pedimos disculpas por este inconveniente!"
+    }
+  },
   "orders": {
     "dataGrideHeaders": {
       "order": "Orden",

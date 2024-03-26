@@ -4,6 +4,7 @@ import React, { useCallback } from 'react';
 
 import { useTranslation } from 'next-i18next';
 
+import ActionButton from '../../components/action-button/ActionButton';
 import DrawerCartItem from '../../components/drawer-cart-item/DrawerCartItem';
 import Drawer from '../../components/drawer/Drawer';
 import { Box, Grid, Stack } from '../../components/mui-components/MuiComponents';
@@ -12,11 +13,13 @@ import RouterButton from '../../components/router-button/RouterButton';
 import ScrollableBox from '../../components/scrollable-box/ScrollableBox';
 import Typography from '../../components/typography/Typography';
 import { DRAWER_TYPE } from '../../constant/drawer';
+import { MODAL_TYPE } from '../../constant/modal';
 import PATH from '../../constant/paths';
 import { RemoveCartItem, UpdateCartItemQuantity } from '../../services/redux/slices/cart-slice/cartSlice';
 import { selectCart, selectRemoveCartLoading, selectUpdateCartLoading } from '../../services/redux/slices/cart-slice/selectors';
 import { drawerSlice } from '../../services/redux/slices/drawer-slice/drawerSlice';
 import { selectAnchor, selectCartDrawer } from '../../services/redux/slices/drawer-slice/selectors';
+import { modalSlice } from '../../services/redux/slices/modal-slice/modalSlice';
 import { selectShopInfo } from '../../services/redux/slices/shop-info-slice/selectors';
 import { useDispatch, useSelector } from '../../services/redux/store/store';
 
@@ -84,6 +87,10 @@ function DrawerCartItemsContainer() {
     },
     [dispatch]
   );
+
+  const handleToggleShopifyPreviewAuthModal = useCallback(() => {
+    dispatch(modalSlice.actions.toggleModal({ type: MODAL_TYPE.shopifyPreviewAuth }));
+  }, [dispatch]);
 
   return (
     <Drawer anchor={anchor} open={cartDrawer} onToggleDrawer={handleToggleCartDrawer} isModifyingItem={isCartBeingModified}>
@@ -177,13 +184,13 @@ function DrawerCartItemsContainer() {
                 />
               </Grid>
               <Grid item xs={12}>
-                <RouterButton
-                  path={cart?.checkoutUrl}
+                <ActionButton
                   name={ready ? translate('buttons.checkout') : 'Checkout'}
                   color="primary"
                   size="medium"
                   fullwidth
                   disabled={isCartBeingModified || !cartItems?.length}
+                  onButtonClick={handleToggleShopifyPreviewAuthModal}
                 />
               </Grid>
             </Grid>

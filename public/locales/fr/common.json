@@ -195,6 +195,12 @@
     "aboutUs": "À propos de nous",
     "contactUs": "Contactez-nous"
   },
+  "modals": {
+    "shopifyPreviewAuthModal": {
+      "title": "Pour continuer avec la démo de test de paiement, veuillez entrer '1' comme votre mot de passe.",
+      "subtitle": "Nous nous excusons pour ce désagrément!"
+    }
+  },
   "orders": {
     "dataGrideHeaders": {
       "order": "Ordre",

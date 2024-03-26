@@ -4,6 +4,7 @@ import React, { useCallback } from 'react';
 
 import { useTranslation } from 'next-i18next';
 
+import ActionButton from '../../components/action-button/ActionButton';
 import Counter from '../../components/counter/Counter';
 import FullPageCartItem from '../../components/full-page-cart-item/FullPageCartItem';
 import { CircularProgress, IconButton, Stack } from '../../components/mui-components/MuiComponents';
@@ -12,9 +13,11 @@ import { Container, Row, Col, Table, Card } from '../../components/react-boostra
 import RouterButton from '../../components/router-button/RouterButton';
 import Tooltip from '../../components/tooltip/Tooltip';
 import Typography from '../../components/typography/Typography';
+import { MODAL_TYPE } from '../../constant/modal';
 import PATH from '../../constant/paths';
 import { UpdateCartItemQuantity, RemoveCartItem } from '../../services/redux/slices/cart-slice/cartSlice';
 import { selectCart, selectRemoveCartLoading, selectUpdateCartLoading } from '../../services/redux/slices/cart-slice/selectors';
+import { modalSlice } from '../../services/redux/slices/modal-slice/modalSlice';
 import { selectShopInfo } from '../../services/redux/slices/shop-info-slice/selectors';
 import { useDispatch, useSelector } from '../../services/redux/store/store';
 
@@ -64,6 +67,10 @@ function FullPageCartItemsContainer() {
     },
     [dispatch]
   );
+
+  const handleToggleShopifyPreviewAuthModal = useCallback(() => {
+    dispatch(modalSlice.actions.toggleModal({ type: MODAL_TYPE.shopifyPreviewAuth }));
+  }, [dispatch]);
 
   return (
     <section className="h-100 h-custom">
@@ -207,12 +214,13 @@ function FullPageCartItemsContainer() {
                           size="medium"
                           disabled={isCartBeingModified}
                         />
-                        <RouterButton
-                          path={cart?.checkoutUrl}
+                        <ActionButton
                           name={ready ? translate('buttons.checkout') : 'Checkout'}
                           color="primary"
                           size="medium"
+                          fullwidth
                           disabled={isCartBeingModified || !cartItems?.length}
+                          onButtonClick={handleToggleShopifyPreviewAuthModal}
                         />
                       </div>
                     </Col>

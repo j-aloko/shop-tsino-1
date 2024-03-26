@@ -1,7 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
+import { MODAL_TYPE } from '../../../../constant/modal';
 import { fetchData } from '../../../api/apiHandler';
 import { drawerSlice } from '../drawer-slice/drawerSlice';
+import { modalSlice } from '../modal-slice/modalSlice';
 
 const apiUrl = '/api/v1/products/product/cart';
 
@@ -35,7 +37,7 @@ export const addToCart = createAsyncThunk('cart/add', async ({ action, payload, 
   }
 });
 
-export const buyNow = createAsyncThunk('cart/buyNow', async ({ action, payload, router, toast }, { getState, dispatch, rejectWithValue }) => {
+export const buyNow = createAsyncThunk('cart/buyNow', async ({ action, payload, /* router */ toast }, { getState, dispatch, rejectWithValue }) => {
   try {
     const selectedLanguage = getState().shopInfo.selectedLanguage.isoCode;
     const data = await fetchData(`${apiUrl}?language=${selectedLanguage}`, { action, payload });
@@ -44,7 +46,10 @@ export const buyNow = createAsyncThunk('cart/buyNow', async ({ action, payload, 
       dispatch(buyNow.rejected());
       return null;
     }
-    router.push(data.checkoutUrl);
+    // router.push(data.checkoutUrl);
+
+    // TODO: Refactor the code to remove the current implementation of the Shopify preview authentication modal display. Subsequently, reimplement the navigation to the checkout page using router.push(data.checkoutUrl).
+    dispatch(modalSlice.actions.toggleModal({ type: MODAL_TYPE.shopifyPreviewAuth }));
     return null;
   } catch (error) {
     toast.error(error?.message);

@@ -26,6 +26,7 @@ const ToastContainer = dynamic(() => import('react-toastify').then((mod) => mod.
 const DataRetriever = dynamic(() => import('../components/utility-components/DataRetriever'), { ssr: false });
 const RouteLoadingBar = dynamic(() => import('../components/route-loading-bar/RouteLoadingBar'), { ssr: false });
 const ErrorBoundaryContainer = dynamic(() => import('../containers/error-boundary-container/ErrorBoundaryContainer'), { ssr: false });
+const ShopifyPreviewAuthModalContainer = dynamic(() => import('../containers/shopify-preview-auth-modal-container/ShopifyPreviewAuthModalContainer'), { ssr: false });
 
 const _theme = responsiveFontSizes(theme);
 
@@ -49,6 +50,7 @@ function MyApp({ Component, ...rest }) {
         <ErrorBoundaryContainer>
           <Layout>
             <Component {...props.pageProps} />
+            <ShopifyPreviewAuthModalContainer />
           </Layout>
         </ErrorBoundaryContainer>
       </Provider>
