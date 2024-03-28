@@ -13,7 +13,6 @@ function Modal({ children, open, onCloseModal, closeOnClickAway = false, backdro
       aria-labelledby="transition-modal-title"
       aria-describedby="transition-modal-description"
       closeAfterTransition
-      disableScrollLock
       slotProps={{
         backdrop: {
           sx: {

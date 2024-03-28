@@ -118,7 +118,7 @@ function ProductDetailContainer({ product }) {
         const optionSearchParams = new URLSearchParams(searchParams.toString());
         optionSearchParams.set('variant', extractId(newVariant.id));
         const optionUrl = createUrl(pathname, optionSearchParams);
-        router.push(optionUrl, undefined, { shallow: true });
+        router.replace(optionUrl, { scroll: false, shallow: true });
       } else {
         localDispatch({ payload: img, type: 'SET_IMAGE' });
       }
@@ -144,7 +144,7 @@ function ProductDetailContainer({ product }) {
         const optionSearchParams = new URLSearchParams(searchParams.toString());
         optionSearchParams.set('variant', extractId(newVariant.id));
         const optionUrl = createUrl(pathname, optionSearchParams);
-        router.push(optionUrl, undefined, { shallow: true });
+        router.replace(optionUrl, { scroll: false, shallow: true });
       } else {
         // If the selected combination doesn't exist, find the first variant that matches the selected option
         const fallbackVariant = product.variants?.find((variant) => variant.selectedOptions.some((opt) => opt.name === optionName && opt.value === value));
@@ -156,7 +156,7 @@ function ProductDetailContainer({ product }) {
           const optionSearchParams = new URLSearchParams(searchParams.toString());
           optionSearchParams.set('variant', extractId(fallbackVariant.id));
           const optionUrl = createUrl(pathname, optionSearchParams);
-          router.push(optionUrl, undefined, { shallow: true });
+          router.replace(optionUrl, { scroll: false, shallow: true });
         }
       }
     },

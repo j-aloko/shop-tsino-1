@@ -21,20 +21,20 @@ export const globalStyles = (theme) => css`
   }
 
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 10px !important;
   }
 
   ::-webkit-scrollbar-track {
-    background: ${theme.palette.secondary.light};
+    background: ${theme.palette.secondary.light} !important;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: ${theme.palette.secondary.main};
-    border-radius: 100vw;
+    background: ${theme.palette.secondary.main} !important;
+    border-radius: 100vw !important;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: ${theme.palette.secondary.dark};
+    background: ${theme.palette.secondary.dark} !important;
   }
 `;
 

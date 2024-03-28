@@ -6,8 +6,8 @@ import { CloseIcon } from '../mui-icons/muiIcons';
 
 function Drawer({ children, anchor, open, isModifyingItem = false, onToggleDrawer }) {
   return (
-    <MuiDrawer anchor={anchor} open={open} closeAfterTransition disableScrollLock>
-      <Stack spacing={1} width={{ xs: 375 }} role="presentation">
+    <MuiDrawer anchor={anchor} open={open} closeAfterTransition>
+      <Stack spacing={1} p={1} width={{ xs: 375 }} role="presentation">
         <Box display="flex" justifyContent="flex-end">
           <IconButton aria-label="close" disabled={isModifyingItem} onClick={onToggleDrawer}>
             <CloseIcon />

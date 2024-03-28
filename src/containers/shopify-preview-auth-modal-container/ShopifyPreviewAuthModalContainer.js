@@ -15,11 +15,11 @@ const modalStyle = {
   boxShadow: 24,
   left: '50%',
   maxWidth: '100%',
-  p: 4,
+  p: 2,
   position: 'absolute',
   top: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 'sm',
+  width: { sm: 400, xs: '100%' },
 };
 
 function ShopifyPreviewAuthModalContainer() {

@@ -102,20 +102,22 @@ function DrawerCartItemsContainer() {
         </Stack>
       ) : (
         <Stack>
-          <ScrollableBox display="flex" flexDirection="column" height="75vh" rowGap={1} p={1}>
-            {React.Children.toArray(
-              cartItems?.map((cartItem) => (
-                <Box boxShadow={1} borderRadius={2}>
-                  <DrawerCartItem
-                    onProductQuantityChange={handleProductQuantityChange}
-                    onRemoveCartItem={handleRemoveCartItem}
-                    cartItem={cartItem}
-                    updateCartItemloading={updateCartItemloading}
-                    removeCartItemloading={removeCartItemloading}
-                  />
-                </Box>
-              ))
-            )}
+          <ScrollableBox height="42vh">
+            <Stack spacing={1} p={1}>
+              {React.Children.toArray(
+                cartItems?.map((cartItem) => (
+                  <Box boxShadow={1} borderRadius={2} p={1}>
+                    <DrawerCartItem
+                      onProductQuantityChange={handleProductQuantityChange}
+                      onRemoveCartItem={handleRemoveCartItem}
+                      cartItem={cartItem}
+                      updateCartItemloading={updateCartItemloading}
+                      removeCartItemloading={removeCartItemloading}
+                    />
+                  </Box>
+                ))
+              )}
+            </Stack>
           </ScrollableBox>
           <Stack spacing={1} position="absolute" left={0} bottom={0} width="100%" bgcolor="background.paper" boxShadow={1} borderRadius={2} p={2}>
             <Box flexGrow={1} display="flex" alignItems="center" justifyContent="space-between">

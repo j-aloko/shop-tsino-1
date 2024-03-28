@@ -11,17 +11,16 @@ const CaptionBox = ({ handle, title, description, slogan, translate, ready }) =>
     <Box
       sx={{
         display: 'flex',
-        justifyContent: { sm: 'flex-start', xs: 'center' },
         p: 1,
       }}>
       <Stack spacing={2} alignItems={{ sm: 'start', xs: 'center' }}>
-        <Typography text={slogan} variant="h1" color="secondary" textAlign="center" />
-        <Typography text={title} variant="h2" color="primary" textAlign="center" fontWeight={600} />
+        <Typography text={slogan} variant="h1" color="secondary" />
+        <Typography text={title} variant="h2" color="primary" fontWeight={600} />
         <Typography
           text={description.length > 225 ? `${description.substring(0, 222)}...` : description}
           variant="body1"
           color="secondary"
-          style={{ display: { sm: 'block', xs: 'none' }, textAlign: { sm: 'start', xs: 'center' } }}
+          style={{ display: { sm: 'block', xs: 'none' } }}
         />
         <Box zIndex={2}>
           <RouterButton path={`${PATH.products}/${handle}`} name={ready ? translate('buttons.shopNow') : 'Shop now'} color="secondary" size="medium" />
