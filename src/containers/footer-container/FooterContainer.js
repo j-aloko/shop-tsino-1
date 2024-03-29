@@ -128,7 +128,7 @@ function FooterContainer() {
   return (
     <Box>
       <Stack>
-        <Grid container spacing={2} p={{ sm: 5, xs: 2 }} sx={(theme) => ({ backgroundColor: alpha(theme.palette.grey[500], 0.15) })}>
+        <Grid container spacing={2} p={{ sm: 5, xs: 2 }} sx={(theme) => ({ backgroundColor: alpha(theme.palette.secondary.light, 0.15) })}>
           <Grid item sm={4} xs={12} p={2}>
             <Stack spacing={2}>
               <Logo />

@@ -15,6 +15,7 @@ import Typography from '../../components/typography/Typography';
 import { DRAWER_TYPE } from '../../constant/drawer';
 import { MODAL_TYPE } from '../../constant/modal';
 import PATH from '../../constant/paths';
+import { alpha } from '../../mui-styles/muiStyles';
 import { RemoveCartItem, UpdateCartItemQuantity } from '../../services/redux/slices/cart-slice/cartSlice';
 import { selectCart, selectRemoveCartLoading, selectUpdateCartLoading } from '../../services/redux/slices/cart-slice/selectors';
 import { drawerSlice } from '../../services/redux/slices/drawer-slice/drawerSlice';
@@ -103,7 +104,7 @@ function DrawerCartItemsContainer() {
       ) : (
         <Stack>
           <ScrollableBox height="42vh">
-            <Stack spacing={1} p={1}>
+            <Stack spacing={1} p={2}>
               {React.Children.toArray(
                 cartItems?.map((cartItem) => (
                   <Box boxShadow={1} borderRadius={2} p={1}>
@@ -119,7 +120,16 @@ function DrawerCartItemsContainer() {
               )}
             </Stack>
           </ScrollableBox>
-          <Stack spacing={1} position="absolute" left={0} bottom={0} width="100%" bgcolor="background.paper" boxShadow={1} borderRadius={2} p={2}>
+          <Stack
+            spacing={1}
+            position="absolute"
+            left={0}
+            bottom={0}
+            width="100%"
+            boxShadow={1}
+            borderRadius={2}
+            p={3}
+            sx={(theme) => ({ backgroundColor: alpha(theme.palette.secondary.light, 0.15) })}>
             <Box flexGrow={1} display="flex" alignItems="center" justifyContent="space-between">
               <Typography
                 text={ready ? translate('cart.lineItems.totalPerItemDiscount') : 'Total per-item discount'}

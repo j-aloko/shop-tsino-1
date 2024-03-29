@@ -30,7 +30,7 @@ function ToggleButtonGroup({ optionName, values, selectedValue, onValueChange, p
                 fullWidth
                 sx={(theme) => ({
                   '&.Mui-selected': {
-                    backgroundColor: `${alpha(theme.palette.grey[700], 0.15)} !important`,
+                    backgroundColor: `${alpha(theme.palette.secondary.dark, 0.15)} !important`,
                   },
                   textTransform: 'capitalize',
                 })}>

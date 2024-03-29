@@ -28,7 +28,7 @@ function FeaturedProductsContainer({ featuredProducts }) {
       {React.Children.toArray(
         featuredProducts.map((product, i) => (
           <Carousel.Item interval={4000}>
-            <Box sx={{ backgroundColor: alpha(theme.palette.grey[400], 0.15), flexGrow: 1, height: 'auto', maxWidth: '100%', p: 2 }}>
+            <Box sx={{ background: alpha(theme.palette.secondary.light, 0.15), flexGrow: 1, height: 'auto', maxWidth: '100%', p: 2 }}>
               <FeaturedProduct {...product} isTabletOrSmaller={isTabletOrSmaller} theme={theme} index={i} translate={translate} ready={ready} />
             </Box>
           </Carousel.Item>

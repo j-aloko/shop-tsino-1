@@ -20,7 +20,7 @@ function CollectionsDisplayPanel({ handlePaginate, handleSortOrder, page, produc
     <Stack spacing={8}>
       <Stack spacing={1}>
         <DiscountBannerContainer imagePrority />
-        <Box p={2} sx={(theme) => ({ backgroundColor: alpha(theme.palette.grey[500], 0.15), display: 'flex', justifyContent: 'flex-end' })}>
+        <Box p={2} sx={(theme) => ({ backgroundColor: alpha(theme.palette.secondary.light, 0.15), display: 'flex', justifyContent: 'flex-end' })}>
           <ProductSortDropdown {...productSortDropdownProps} />
         </Box>
         <Grid container>

@@ -8,9 +8,9 @@ import { SearchIcon } from '../mui-icons/muiIcons';
 
 const Search = styled('div')(({ theme }) => ({
   '&:hover': {
-    backgroundColor: alpha(theme.palette.grey[800], 0.25),
+    backgroundColor: alpha(theme.palette.secondary.light, 0.25),
   },
-  backgroundColor: alpha(theme.palette.grey[800], 0.15),
+  backgroundColor: alpha(theme.palette.secondary.light, 0.15),
   borderRadius: theme.shape.borderRadius,
   marginLeft: 0,
   marginRight: theme.spacing(2),

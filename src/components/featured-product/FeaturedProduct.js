@@ -7,13 +7,13 @@ import RouterButton from '../router-button/RouterButton';
 import Typography from '../typography/Typography';
 
 const CaptionBox = ({ handle, title, description, slogan, translate, ready }) => (
-  <Grid item sm={6.5} xs={12} py={{ sm: 10, xs: 2 }}>
+  <Grid item sm={6.5} xs={12}>
     <Box
       sx={{
         display: 'flex',
         p: 1,
       }}>
-      <Stack spacing={2} alignItems={{ sm: 'start', xs: 'center' }}>
+      <Stack spacing={2} alignItems={{ sm: 'start', xs: 'center' }} p={2} width="100%">
         <Typography text={slogan} variant="h1" color="secondary" />
         <Typography text={title} variant="h2" color="primary" fontWeight={600} />
         <Typography
@@ -31,7 +31,7 @@ const CaptionBox = ({ handle, title, description, slogan, translate, ready }) =>
 );
 
 const ImageBox = ({ featuredImage: { url }, title, isTabletOrSmaller }) => (
-  <Grid item sm={5.5} xs={12} p={5}>
+  <Grid item sm={5.5} xs={12}>
     <Image
       height={isTabletOrSmaller ? '40vh' : '60vh'}
       src={url}
@@ -63,7 +63,7 @@ function FeaturedProduct({ handle, title, featuredImage, metafields, isTabletOrS
   const isEvenIndex = index % 2 === 0;
 
   return (
-    <Grid container mb={4} px={{ md: 7, sm: 3, xs: 0 }}>
+    <Grid container mb={4} px={{ md: 7, sm: 3, xs: 0 }} justifyContent="space-between" alignItems="center">
       <ContentBox
         isEvenIndex={isEvenIndex}
         isTabletOrSmaller={isTabletOrSmaller}

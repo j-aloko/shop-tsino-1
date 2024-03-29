@@ -30,7 +30,7 @@ function DiscountBannerContainer({ maxWidth = '100%', justifyContent = 'flex-sta
 
   if (automaticDiscountBasic?.discount?.status === DISCOUNT_STATUS.active && product) {
     return (
-      <Box sx={(theme) => ({ backgroundColor: isBackgroundColor ? alpha(theme.palette.grey[500], 0.15) : null, display: 'flex', justifyContent })}>
+      <Box sx={(theme) => ({ backgroundColor: isBackgroundColor ? alpha(theme.palette.secondary.light, 0.15) : null, display: 'flex', justifyContent })}>
         <Grid container maxWidth={maxWidth} spacing={2} p={4}>
           <Grid item sm={5} xs={12}>
             <Image

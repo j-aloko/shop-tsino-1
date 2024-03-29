@@ -41,7 +41,7 @@ function Home({ featuredProducts, selectedLanguage, shopDescription }) {
       <Stack spacing={{ sm: 10, xs: 6 }}>
         <FeaturedProductsContainer featuredProducts={featuredProducts} />
         <CommitmentsContainer />
-        <DiscountBannerContainer maxWidth="md" justifyContent="center" isBackgroundColor={false} />
+        <DiscountBannerContainer maxWidth="md" justifyContent="center" isBackgroundColor />
         <LatestProductsContainer />
         <TrendingProductDetailContainer />
       </Stack>
