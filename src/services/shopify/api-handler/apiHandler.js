@@ -7,7 +7,7 @@ const storefrontEndpoint = `${shopifyStore}/api/${apiVersion}/graphql.json`;
 const adminToken = process.env.SHOPIFY_ADMIN_ACCESS_TOKEN;
 const adminEndPoint = `${shopifyStore}/admin/api/${apiVersion}/graphql.json`;
 
-const apiTimeoutDuration = 500000; // 5 minutes
+const apiTimeoutDuration = 200000; // 2minutes
 
 const findError = (error) => {
   if (Object.prototype.toString.call(error) === '[object Error]') {

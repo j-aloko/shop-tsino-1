@@ -27,6 +27,7 @@ const DataRetriever = dynamic(() => import('../components/utility-components/Dat
 const RouteLoadingBar = dynamic(() => import('../components/route-loading-bar/RouteLoadingBar'), { ssr: false });
 const ErrorBoundaryContainer = dynamic(() => import('../containers/error-boundary-container/ErrorBoundaryContainer'), { ssr: false });
 const ShopifyPreviewAuthModalContainer = dynamic(() => import('../containers/shopify-preview-auth-modal-container/ShopifyPreviewAuthModalContainer'), { ssr: false });
+const NewsletterModalContainer = dynamic(() => import('../containers/newsletter-modal-container/NewsletterModalContainer'), { ssr: false });
 
 const _theme = responsiveFontSizes(theme);
 
@@ -43,14 +44,15 @@ function MyApp({ Component, ...rest }) {
       <Provider store={store}>
         <ToastContainer position="top-right" autoClose={20000} style={{ maxWidth: 450, width: '100%' }} />
         {loading && <RouteLoadingBar />}
-        <DataRetriever />
         <Head>
           <meta name="viewport" content="initial-scale=1, width=device-width" />
         </Head>
         <ErrorBoundaryContainer>
+          <DataRetriever />
+          <NewsletterModalContainer />
+          <ShopifyPreviewAuthModalContainer />
           <Layout>
             <Component {...props.pageProps} />
-            <ShopifyPreviewAuthModalContainer />
           </Layout>
         </ErrorBoundaryContainer>
       </Provider>

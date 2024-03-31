@@ -149,6 +149,7 @@
       "lastName": "Apellido",
       "fullName": "Nombre completo",
       "newsletter": "Regístreme para recibir ofertas exclusivas y actualizaciones de productos por correo electrónico",
+      "neverShowNewsletterModal": "No volver a mostrar la ventana emergente",
       "reviewTitle": "Título de la reseña",
       "rateThisProduct": "Califica este producto",
       "reviewMessage": "Mensaje de revisión",
@@ -196,6 +197,10 @@
     "contactUs": "Contáctenos"
   },
   "modals": {
+    "newsletter": {
+      "title": "Regístrate en nuestro boletín y ahorra {{newsletterSignupDiscount}} en la próxima compra",
+      "subtitle": "No te pierdas las nuevas llegadas, las últimas actualizaciones y nuestras promociones"
+    },
     "shopifyPreviewAuthModal": {
       "title": "Para continuar con la demostración de prueba de pago, por favor ingrese '1' como su contraseña.",
       "subtitle": "¡Pedimos disculpas por este inconveniente!"

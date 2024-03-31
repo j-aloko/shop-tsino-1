@@ -7,8 +7,8 @@ import Typography from '../typography/Typography';
 function ShopifyPreviewAuthModal({ buttonName, checkoutUrl, onToggleShopifyPreviewAuthModal, subtitle, title }) {
   return (
     <Stack spacing={2} alignItems="center">
-      <Typography text={title} variant="h5" color="primary" textAlign="center" />
-      <Typography text={subtitle} variant="subtitle1" color="text.secondary" textAlign="center" />
+      <Typography text={title} variant="h6" color="primary" textAlign="center" />
+      <Typography text={subtitle} variant="subtitle2" color="text.secondary" textAlign="center" />
       <RouterButton path={checkoutUrl} name={buttonName} color="secondary" size="medium" onButtonClick={onToggleShopifyPreviewAuthModal} />
     </Stack>
   );

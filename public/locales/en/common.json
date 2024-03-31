@@ -149,6 +149,7 @@
       "lastName": "Last name",
       "fullName": "Full name",
       "newsletter": "Sign me up for exclusive deals, and product updates via email",
+      "neverShowNewsletterModal": "Do not show popup again",
       "reviewTitle": "Review title",
       "rateThisProduct": "Rate this product",
       "reviewMessage": "Review message",
@@ -196,6 +197,10 @@
     "contactUs": "Contact us"
   },
   "modals": {
+    "newsletter": {
+      "title": "Sign up to our newsletter and save {{newsletterSignupDiscount}} off the next purchase",
+      "subtitle": "Don't miss new arrivals, the latest updates and our promotions"
+    },
     "shopifyPreviewAuthModal": {
       "title": "To proceed with the checkout test demo, please enter '1' as your password.",
       "subtitle": "We apologize for this inconvenience!"

@@ -104,7 +104,7 @@ function DrawerCartItemsContainer() {
       ) : (
         <Stack>
           <ScrollableBox height="42vh">
-            <Stack spacing={1} p={2}>
+            <Stack spacing={1} p={{ sm: 0, xs: 2 }}>
               {React.Children.toArray(
                 cartItems?.map((cartItem) => (
                   <Box boxShadow={1} borderRadius={2} p={1}>
@@ -140,7 +140,7 @@ function DrawerCartItemsContainer() {
               />
               <Typography
                 text={`${totalLineItemsDiscountCurrency}${totalLineItemsDiscount.toFixed(2)}`}
-                variant="subtitle2"
+                variant="body2"
                 color="primary"
                 fontWeight={600}
                 style={{ lineHeight: 1.57 }}
@@ -148,7 +148,7 @@ function DrawerCartItemsContainer() {
             </Box>
             <Box flexGrow={1} display="flex" alignItems="center" justifyContent="space-between">
               <Typography text={ready ? translate('cart.lineItems.subtotal') : 'Subtotal'} variant="subtitle2" color="primary" fontWeight={600} style={{ lineHeight: 1.57 }} />
-              <Typography text={`${cartSubtotalCurrency}${cartSubtotal.toFixed(2)}`} variant="subtitle2" color="primary" fontWeight={600} style={{ lineHeight: 1.57 }} />
+              <Typography text={`${cartSubtotalCurrency}${cartSubtotal.toFixed(2)}`} variant="body2" color="primary" fontWeight={600} style={{ lineHeight: 1.57 }} />
             </Box>
             <Box flexGrow={1} display="flex" alignItems="center" justifyContent="space-between">
               <Typography
@@ -158,30 +158,19 @@ function DrawerCartItemsContainer() {
                 fontWeight={600}
                 style={{ lineHeight: 1.57 }}
               />
-              <Typography text={`${totalCartDiscountCurrency}${totalCartDiscount.toFixed(2)}`} variant="subtitle2" color="primary" fontWeight={600} style={{ lineHeight: 1.57 }} />
+              <Typography text={`${totalCartDiscountCurrency}${totalCartDiscount.toFixed(2)}`} variant="body2" color="primary" fontWeight={600} style={{ lineHeight: 1.57 }} />
             </Box>
             <Box flexGrow={1} display="flex" alignItems="center" justifyContent="space-between">
               <Typography text={ready ? translate('cart.lineItems.tax') : 'Tax'} variant="subtitle2" color="primary" fontWeight={600} style={{ lineHeight: 1.57 }} />
-              <Typography
-                text={`${cartTotalTaxAmountCurrency}${cartTotalTaxAmount.toFixed(2)}`}
-                variant="subtitle2"
-                color="primary"
-                fontWeight={600}
-                style={{ lineHeight: 1.57 }}
-              />
+              <Typography text={`${cartTotalTaxAmountCurrency}${cartTotalTaxAmount.toFixed(2)}`} variant="subtitle2" color="body2" fontWeight={600} style={{ lineHeight: 1.57 }} />
             </Box>
             <Box flexGrow={1} display="flex" alignItems="center" justifyContent="space-between">
               <Typography text={ready ? translate('cart.lineItems.shipping') : 'Shipping'} variant="subtitle2" color="primary" fontWeight={600} style={{ lineHeight: 1.57 }} />
-              <Typography
-                text={ready ? translate('cart.lineItems.calculatedAtCheckout') : 'Calculated at checkout'}
-                variant="subtitle2"
-                color="text.secondary"
-                style={{ lineHeight: 1.57 }}
-              />
+              <Typography text={ready ? translate('cart.lineItems.calculatedAtCheckout') : 'Calculated at checkout'} variant="body2" color="primary" style={{ lineHeight: 1.57 }} />
             </Box>
             <Box flexGrow={1} display="flex" alignItems="center" justifyContent="space-between">
               <Typography text={ready ? translate('cart.lineItems.total') : 'Total'} variant="subtitle2" color="primary" fontWeight={600} style={{ lineHeight: 1.57 }} />
-              <Typography text={`${cartTotalAmountCurrency}${cartTotalAmount.toFixed(2)}`} variant="subtitle2" color="primary" fontWeight={600} style={{ lineHeight: 1.57 }} />
+              <Typography text={`${cartTotalAmountCurrency}${cartTotalAmount.toFixed(2)}`} variant="body2" color="primary" fontWeight={600} style={{ lineHeight: 1.57 }} />
             </Box>
             <Grid container spacing={1} display="flex" alignItems="flex-end">
               <Grid item xs={12}>

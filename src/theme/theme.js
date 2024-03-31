@@ -39,7 +39,7 @@ const theme = createTheme({
     primary: { contrastText: '#fff', dark: 'rgba(0, 0, 0, 1)', light: 'rgba(54, 54, 54, 1)', main: 'rgba(34, 34, 34, 1)' },
     secondary: { contrastText: '#fff', dark: 'rgb(160, 47, 6)', light: 'rgb(253, 161, 125)', main: 'rgb(238, 92, 34)' },
     socialMedia: { facebook: '#0165E1', instagram: '#FD1D1D', pinterest: '#E60023', twitter: '#1D9BF0' },
-    text: { disabled: 'rgba(0, 0, 0, 0.38)', hint: 'rgba(136, 136, 136, 1)', primary: 'rgba(0, 0, 0, 1)', secondary: '#232323' },
+    text: { disabled: 'rgba(253, 161, 125, 0.15)', hint: 'rgba(136, 136, 136, 1)', primary: 'rgba(0, 0, 0, 1)', secondary: '#232323' },
   },
   shadows: [
     'none',
@@ -75,21 +75,21 @@ const theme = createTheme({
     body2: {
       fontWeight: 450,
     },
-    fontFamily: "'Open Sans', sans-serif",
+    button: {
+      fontFamily: "'Open Sans', sans-serif",
+    },
+    fontFamily: "'Oswald', sans-serif",
     h1: {
-      fontFamily: "'Oswald', sans-serif",
       fontSize: '1.25rem',
       fontWeight: 600,
     },
     h2: {
-      fontFamily: "'Oswald', sans-serif",
       fontSize: '2.5rem',
       fontWeight: 800,
       letterSpacing: '-0.01562em',
       lineHeight: 1.167,
     },
     logo: {
-      fontFamily: "'Oswald', sans-serif",
       fontSize: '2rem',
       fontWeight: 800,
       letterSpacing: '-0.01562em',

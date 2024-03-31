@@ -19,11 +19,11 @@ import {
   PinterestIcon,
   TwitterIcon,
 } from '../../components/mui-icons/muiIcons';
+import NewsLetter from '../../components/newsletter/NewsLetter';
 import PaymentMethodLogo from '../../components/payment-method-logo/PaymentMethodLogo';
 import SocialIcon from '../../components/social-icon/SocialIcon';
 import TextField from '../../components/textfield/TextField';
 import Typography from '../../components/typography/Typography';
-import UserFeedbackForm from '../../components/user-feedback-form/UserFeedbackForm';
 import PATH from '../../constant/paths';
 import { alpha } from '../../mui-styles/muiStyles';
 import { selectAboutSummary } from '../../services/redux/slices/about-summary-slice/selectors';
@@ -144,7 +144,7 @@ function FooterContainer() {
                 <AlternateEmailIcon color="secondary" fontSize="large" />
                 <Typography text={ready ? translate('footer.newsletter') : 'NewsLetter'} variant="h5" color="primary" fontWeight={600} />
               </Stack>
-              <UserFeedbackForm {...newsLetterFormProps} />
+              <NewsLetter {...newsLetterFormProps} />
             </Stack>
           </Grid>
           <Grid item sm={4} xs={12} p={2}>

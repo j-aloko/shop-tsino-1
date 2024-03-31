@@ -9,6 +9,7 @@ import { getAboutSummary } from '../../services/redux/slices/about-summary-slice
 import { getCustomerInfo } from '../../services/redux/slices/auth-slice/authSlice';
 import { retrieveCartItems } from '../../services/redux/slices/cart-slice/cartSlice';
 import { getAutomaticDiscountBasic } from '../../services/redux/slices/discounts-slice/discountsSlice';
+import { checkNewsletterModal } from '../../services/redux/slices/modal-slice/modalSlice';
 import { selectSelectedLanguage } from '../../services/redux/slices/shop-info-slice/selectors';
 import { getAvailableLanguages, getShopInfo } from '../../services/redux/slices/shop-info-slice/shopInfoSlice';
 import { useDispatch, useSelector } from '../../services/redux/store/store';
@@ -29,6 +30,7 @@ export default function DataRetriever() {
 
   useEffect(() => {
     i18n.changeLanguage(selectedLanguage.toLowerCase());
+    dispatchRef.current(checkNewsletterModal());
     dispatchRef.current(getCustomerInfo({ router: routerRef.current }));
     dispatchRef.current(getAvailableLanguages());
     dispatchRef.current(getAutomaticDiscountBasic());

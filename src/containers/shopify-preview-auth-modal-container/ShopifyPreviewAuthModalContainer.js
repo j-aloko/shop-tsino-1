@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useCallback } from 'react';
 
 import { useTranslation } from 'next-i18next';
@@ -14,12 +16,13 @@ const modalStyle = {
   bgcolor: 'background.paper',
   boxShadow: 24,
   left: '50%',
-  maxWidth: '100%',
+  maxWidth: { sm: 'sm', xs: '100%' },
+  overflowY: 'hidden',
   p: 2,
   position: 'absolute',
   top: '50%',
   transform: 'translate(-50%, -50%)',
-  width: { sm: 400, xs: '100%' },
+  width: '100%',
 };
 
 function ShopifyPreviewAuthModalContainer() {
@@ -56,4 +59,4 @@ function ShopifyPreviewAuthModalContainer() {
   );
 }
 
-export default ShopifyPreviewAuthModalContainer;
+export default React.memo(ShopifyPreviewAuthModalContainer);

@@ -136,7 +136,7 @@ function FullPageCartItemsContainer() {
                             <td className="align-middle">
                               <Typography
                                 text={`${cartItem.cost.amountPerQuantity.currencyCode || shopInfo.currencyCode}${cartItem.cost.amountPerQuantity.amount}`}
-                                variant="subtitle1"
+                                variant="body2"
                                 color="primary"
                                 fontWeight={600}
                                 style={{ lineHeight: 1.57, opacity: 0.8 }}
@@ -156,7 +156,7 @@ function FullPageCartItemsContainer() {
                                 text={`${
                                   cartItem.discountAllocations.length > 0 ? cartItem.discountAllocations[0].discountedAmount.currencyCode : shopInfo.currencyCode
                                 }${totalDiscount.toFixed(2)}`}
-                                variant="subtitle1"
+                                variant="body2"
                                 color="primary"
                                 fontWeight={600}
                                 style={{ lineHeight: 1.57 }}
@@ -165,7 +165,7 @@ function FullPageCartItemsContainer() {
                             <td className="align-middle">
                               <Typography
                                 text={`${cartItem.cost.totalAmount.currencyCode || shopInfo.currencyCode}${cartItem.cost.totalAmount.amount}`}
-                                variant="subtitle1"
+                                variant="body2"
                                 color="primary"
                                 fontWeight={600}
                                 style={{ lineHeight: 1.57 }}
@@ -185,25 +185,25 @@ function FullPageCartItemsContainer() {
                     <Col lg={6} xl={3}>
                       <div className="d-flex justify-content-between">
                         <Typography text={ready ? translate('cart.lineItems.subtotal') : 'Subtotal'} variant="subtitle1" color="primary" fontWeight={600} />
-                        <Typography text={`${cartSubtotalCurrency}${cartSubtotal.toFixed(2)}`} variant="subtitle1" color="primary" fontWeight={600} />
+                        <Typography text={`${cartSubtotalCurrency}${cartSubtotal.toFixed(2)}`} variant="body2" color="primary" fontWeight={600} />
                       </div>
                       <div className="d-flex justify-content-between">
                         <Typography text={ready ? translate('cart.lineItems.totalCartDiscount') : 'Total cart discount'} variant="subtitle1" color="primary" fontWeight={600} />
-                        <Typography text={`${cartDiscountCurrency}${totalCartDiscount.toFixed(2)}`} variant="subtitle1" color="primary" fontWeight={600} />
+                        <Typography text={`${cartDiscountCurrency}${totalCartDiscount.toFixed(2)}`} variant="body2" color="primary" fontWeight={600} />
                       </div>
                       <div className="d-flex justify-content-between">
                         <Typography text={ready ? translate('cart.lineItems.tax') : 'Tax'} variant="subtitle1" color="primary" fontWeight={600} />
-                        <Typography text={`${cartTotalTaxAmountCurrency}${cartTotalTaxAmount.toFixed(2)}`} variant="subtitle1" color="primary" fontWeight={600} />
+                        <Typography text={`${cartTotalTaxAmountCurrency}${cartTotalTaxAmount.toFixed(2)}`} variant="body2" color="primary" fontWeight={600} />
                       </div>
                       <div className="d-flex justify-content-between">
                         <Typography text={ready ? translate('cart.lineItems.total') : 'Total'} variant="subtitle1" color="primary" fontWeight={600} />
-                        <Typography text={`${cartTotalAmountCurrency}${cartTotalAmount.toFixed(2)}`} variant="subtitle1" color="primary" fontWeight={600} />
+                        <Typography text={`${cartTotalAmountCurrency}${cartTotalAmount.toFixed(2)}`} variant="body2" color="primary" fontWeight={600} />
                       </div>
                       <hr className="my-4" />
                       <Typography
                         text={`${ready ? translate('cart.lineItems.shipping') : 'Shipping'} ${ready ? translate('cart.lineItems.calculatedAtCheckout') : 'Calculated at checkout'}`}
-                        variant="subtitle2"
-                        color="text.secondary"
+                        variant="body2"
+                        color="primary"
                       />
                       <hr className="my-4" />
                       <div className="d-flex justify-content-between">
