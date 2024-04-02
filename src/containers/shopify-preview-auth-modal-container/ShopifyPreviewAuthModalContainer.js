@@ -39,6 +39,7 @@ function ShopifyPreviewAuthModalContainer() {
   }, [dispatch]);
 
   const modalProps = {
+    closeOnClickAway: true,
     modalStyle,
     onCloseModal: handleToggleShopifyPreviewAuthModal,
     open: shopifyPreviewAuthModal,

@@ -48,6 +48,7 @@ function NewsletterModalContainer() {
   const newsLetterFormFields = useMemo(
     () => [
       {
+        autoFocus: true,
         component: TextField,
         id: 'email',
         label: `${ready ? translate('forms.labels.email') : 'Email'}`,
@@ -85,6 +86,7 @@ function NewsletterModalContainer() {
   );
 
   const modalProps = {
+    closeOnClickAway: true,
     modalStyle,
     onCloseModal: handleToggleNewsletterModal,
     open: newsletterModal,

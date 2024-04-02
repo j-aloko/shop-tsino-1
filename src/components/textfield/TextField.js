@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { MuiTextField, InputAdornment, IconButton } from '../mui-components/MuiComponents';
 import { Visibility, VisibilityOff } from '../mui-icons/muiIcons';
 
-function TextField({ input, id, label, meta, size, placeholder, disabled, ...rest }) {
+function TextField({ input, id, label, meta, size, placeholder, disabled, autoFocus = false, ...rest }) {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -21,6 +21,7 @@ function TextField({ input, id, label, meta, size, placeholder, disabled, ...res
     <MuiTextField
       InputProps={{
         autoComplete: 'new-password',
+        autoFocus,
         endAdornment:
           id === 'password' || id === 'confirmPassword' ? (
             <InputAdornment position="end">
