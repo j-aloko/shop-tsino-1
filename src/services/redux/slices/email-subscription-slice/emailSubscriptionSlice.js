@@ -11,7 +11,7 @@ export const subscribe = createAsyncThunk('email/subscription', async ({ form, t
     // Check if the subscription was successful
     if (data.customer && data.userErrors.length === 0) {
       toast.success('Email subscribed successfully');
-      dispatch(changeNewsletterModalDisplayOption());
+      dispatch(changeNewsletterModalDisplayOption({ value: 'true' }));
       if (isModal) {
         dispatch(modalSlice.actions.toggleModal({ type: MODAL_TYPE.newsletter }));
       }

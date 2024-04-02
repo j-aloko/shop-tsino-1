@@ -5,9 +5,13 @@ import { MODAL_TYPE } from '../../../../constant/modal';
 const newsletterModalOpens = process.env.NEXT_PUBLIC_NEWSLETTER_MODAL_OPEN_TIME; // in milliseconds
 
 export const checkNewsletterModal = createAsyncThunk('modal/checkNewsletterModal', async (_, { dispatch }) => {
-  const neverShowNewsletterModal = localStorage.getItem('neverShowNewsletterModal');
+  let neverShowNewsletterModalStatus = localStorage.getItem('neverShowNewsletterModal');
 
-  if (!neverShowNewsletterModal) {
+  if (neverShowNewsletterModalStatus !== null) {
+    neverShowNewsletterModalStatus = JSON.parse(neverShowNewsletterModalStatus);
+  }
+
+  if (!neverShowNewsletterModalStatus) {
     await new Promise((resolve) => {
       setTimeout(resolve, +newsletterModalOpens);
     });
@@ -15,12 +19,12 @@ export const checkNewsletterModal = createAsyncThunk('modal/checkNewsletterModal
   }
 });
 
-export const changeNewsletterModalDisplayOption = createAsyncThunk('modal/handleNewsletterModalOption', async () => {
-  localStorage.setItem('neverShowNewsletterModal', 'true');
+export const changeNewsletterModalDisplayOption = createAsyncThunk('modal/handleNewsletterModalOption', async ({ value }) => {
+  localStorage.setItem('neverShowNewsletterModal', value);
 });
 
 const initialState = {
-  newsletterModal: false,
+  newsletterModal: true,
   reviewModal: false,
   searchQueryModal: false,
   shopifyPreviewAuthModal: false,

@@ -23,7 +23,7 @@ function Modal({ children, open, onCloseModal, closeOnClickAway = false, backdro
         },
       }}>
       <Fade in={open}>
-        <ScrollableBox sx={modalStyle}>
+        <ScrollableBox sx={{ outline: 0, ...modalStyle }}>
           <Stack spacing={1}>
             <Box display="flex" justifyContent="flex-end">
               <IconButton aria-label="close" onClick={onCloseModal}>

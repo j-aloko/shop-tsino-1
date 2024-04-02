@@ -48,7 +48,6 @@ function NewsletterModalContainer() {
   const newsLetterFormFields = useMemo(
     () => [
       {
-        autoFocus: true,
         component: TextField,
         id: 'email',
         label: `${ready ? translate('forms.labels.email') : 'Email'}`,
@@ -60,9 +59,7 @@ function NewsletterModalContainer() {
         label: `${ready ? translate('forms.labels.neverShowNewsletterModal') : 'Do not show popup again.'}`,
         labelStyle: { fontSize: '0.875rem', fontWeight: 600, letterSpacing: '-0.01562em', lineHeight: 1.167 },
         onHideNewsletter: (checked) => {
-          if (checked) {
-            dispatch(changeNewsletterModalDisplayOption());
-          }
+          dispatch(changeNewsletterModalDisplayOption({ value: checked.toString() }));
         },
       },
     ],
@@ -108,7 +105,7 @@ function NewsletterModalContainer() {
           text={`${
             ready ? translate('modals.newsletter.title', { newsletterSignupDiscount }) : `Sign up to our newsletter and save ${newsletterSignupDiscount} off the next purchase`
           }`}
-          variant="h2"
+          variant="h4"
           color="primary"
           textAlign="center"
           style={{ fontWeight: 800, letterSpacing: '-0.01562em', lineHeight: 1.167 }}
@@ -118,7 +115,7 @@ function NewsletterModalContainer() {
           variant="h6"
           color="text.secondary"
           textAlign="center"
-          style={{ fontWeight: 800, letterSpacing: '-0.01562em', lineHeight: 1.167 }}
+          style={{ fontWeight: 600, letterSpacing: '-0.01562em', lineHeight: 1.167 }}
         />
         <Box maxWidth="sm" width="100%" p={2}>
           <NewsLetter {...newsLetterFormProps} />

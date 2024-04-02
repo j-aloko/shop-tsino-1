@@ -50,7 +50,7 @@ export const buyNow = createAsyncThunk('cart/buyNow', async ({ action, payload, 
 
     // TODO: Refactor the code to remove the current implementation of the Shopify preview authentication modal display. Subsequently, reimplement the navigation to the checkout page using router.push(data.checkoutUrl).
     dispatch(modalSlice.actions.toggleModal({ type: MODAL_TYPE.shopifyPreviewAuth }));
-    return null;
+    return data;
   } catch (error) {
     toast.error(error?.message);
     return rejectWithValue(error?.message);
@@ -177,8 +177,9 @@ export const cartSlice = createSlice({
         state.buyNowStatus.loading = true;
         state.buyNowStatus.error = false;
       })
-      .addCase(buyNow.fulfilled, (state) => {
+      .addCase(buyNow.fulfilled, (state, action) => {
         state.buyNowStatus.loading = false;
+        updateCartState(state, action);
         state.buyNowStatus.error = false;
       })
       .addCase(buyNow.rejected, (state) => {
