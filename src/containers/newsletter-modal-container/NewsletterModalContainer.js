@@ -110,13 +110,6 @@ function NewsletterModalContainer() {
           textAlign="center"
           style={{ fontWeight: 800, letterSpacing: '-0.01562em', lineHeight: 1.167 }}
         />
-        <Typography
-          text={`${ready ? translate('modals.newsletter.subtitle') : "Don't miss new arrivals, the latest updates and our promotions"}`}
-          variant="h6"
-          color="text.secondary"
-          textAlign="center"
-          style={{ fontWeight: 600, letterSpacing: '-0.01562em', lineHeight: 1.167 }}
-        />
         <Box maxWidth="sm" width="100%" p={2}>
           <NewsLetter {...newsLetterFormProps} />
         </Box>
