@@ -24,7 +24,7 @@ export const changeNewsletterModalDisplayOption = createAsyncThunk('modal/handle
 });
 
 const initialState = {
-  newsletterModal: true,
+  newsletterModal: false,
   reviewModal: false,
   searchQueryModal: false,
   shopifyPreviewAuthModal: false,
