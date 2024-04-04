@@ -5,7 +5,7 @@ import { fetchData } from '../../../api/apiHandler';
 import { drawerSlice } from '../drawer-slice/drawerSlice';
 import { modalSlice } from '../modal-slice/modalSlice';
 
-const apiUrl = '/api/v1/products/product/cart';
+const apiUrl = '/api/v1/products/cart';
 
 export const retrieveCartItems = createAsyncThunk('cart/get', async ({ action }, { getState, rejectWithValue }) => {
   try {

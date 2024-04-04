@@ -1,8 +1,8 @@
 import Cors from 'cors';
 
-import corsMiddleware from '../../../../../../lib/middleware/corsMiddleware';
-import { shopifyAdminApi } from '../../../../../../services/shopify/api-handler/apiHandler';
-import { createMetafieldDefinitionMutation, createMetafieldVisibilityMutation } from '../../../../../../services/shopify/queries-and-mutations/metafields';
+import corsMiddleware from '../../../../lib/middleware/corsMiddleware';
+import { shopifyAdminApi } from '../../../../services/shopify/api-handler/apiHandler';
+import { createMetafieldDefinitionMutation, createMetafieldVisibilityMutation } from '../../../../services/shopify/queries-and-mutations/metafields';
 
 const cors = Cors({
   methods: ['POST'],

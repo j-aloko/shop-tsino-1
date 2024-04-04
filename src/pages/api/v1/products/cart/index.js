@@ -1,7 +1,7 @@
 import Cors from 'cors';
 
-import corsMiddleware from '../../../../../../lib/middleware/corsMiddleware';
-import { addCartItem, getCartItems, removeItem, updateItemQuantity } from '../../../../../../services/shopify/actions/cart';
+import corsMiddleware from '../../../../../lib/middleware/corsMiddleware';
+import { addCartItem, getCartItems, removeItem, updateItemQuantity } from '../../../../../services/shopify/actions/cart';
 
 const cors = Cors({
   methods: ['POST'],
