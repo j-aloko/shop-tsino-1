@@ -17,12 +17,6 @@ async function getBuyerIdentity(cookies) {
     if (!isTokenExpired(expiresAt)) {
       const customer = await retrieveCustomerInfoByToken({ customerAccessToken: accessToken });
       buyerIdentity = {
-        customer: {
-          displayName: customer.displayName,
-          email: customer.email,
-          firstName: customer.firstName,
-          lastName: customer.lastName,
-        },
         customerAccessToken: accessToken,
         email: customer.email,
       };

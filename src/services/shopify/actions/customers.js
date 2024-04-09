@@ -126,12 +126,6 @@ export const handleLogin = async (req, res) => {
     }
 
     const buyerIdentity = {
-      customer: {
-        displayName: customerResponse.displayName,
-        email: customerResponse.email,
-        firstName: customerResponse.firstName,
-        lastName: customerResponse.lastName,
-      },
       customerAccessToken: loginResponse.customerAccessToken.accessToken,
       email: customerResponse.email,
     };
