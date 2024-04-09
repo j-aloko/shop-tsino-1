@@ -16,18 +16,19 @@ import { selectSearchQueryModal } from '../../services/redux/slices/modal-slice/
 import { selectSelectedLanguage } from '../../services/redux/slices/shop-info-slice/selectors';
 import { useDispatch, useSelector } from '../../services/redux/store/store';
 
-const searchModalStyle = (theme) => ({
-  bgcolor: theme.palette.background.default,
+const searchModalStyle = {
+  bgcolor: 'background.paper',
   borderRadius: { md: 1, xs: 0 },
   boxShadow: 24,
   height: 'auto',
   left: { lg: 370, md: '33%', sm: '45%', xs: '50%' },
   maxWidth: { sm: 'sm', xs: 'xs' },
+  overflowY: 'hidden',
   position: 'absolute',
-  top: { md: 65, xs: 70 },
+  top: { sm: 75, xs: 115 },
   transform: { md: 'translateX(-50%)', xs: 'translateX(-50%)' },
   width: '100%',
-});
+};
 
 function SearchModalContainer() {
   const dispatch = useDispatch();
