@@ -19,7 +19,7 @@ function Layout({ children }) {
           <NavbarContainer />
         </nav>
       </Stack>
-      <Box flexGrow={1} sx={{ mb: '5rem', mt: '12rem' }}>
+      <Box flexGrow={1} sx={{ mb: '5rem', mt: { sm: '12rem', xs: '15rem' } }}>
         <main>{children}</main>
       </Box>
       <Box sx={{ mt: 'auto' }}>

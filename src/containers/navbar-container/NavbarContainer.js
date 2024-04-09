@@ -124,7 +124,7 @@ function NavbarContainer() {
   );
 
   return (
-    <Box border="1px solid transparent">
+    <Box>
       <AppBar color="transparent">
         <IconButton size="large" edge="start" color="primary" aria-label="menu" sx={{ mr: 2 }} onClick={handleToggleMenuDrawer}>
           <MenuIcon />
