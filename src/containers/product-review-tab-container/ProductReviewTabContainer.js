@@ -17,8 +17,8 @@ import { selectReviewModal } from '../../services/redux/slices/modal-slice/selec
 import { useSelector, useDispatch } from '../../services/redux/store/store';
 import { formValidation, Yup } from '../../utils/formValidation';
 
-const reviewModalStyle = (theme) => ({
-  bgcolor: theme.palette.background.default,
+const reviewModalStyle = {
+  bgcolor: 'background.paper',
   borderRadius: { md: 1, xs: 0 },
   boxShadow: 24,
   height: { xs: '100vh' },
@@ -28,7 +28,7 @@ const reviewModalStyle = (theme) => ({
   top: { md: '50%', xs: '0%' },
   transform: { md: 'translate(-50%, -50%)', xs: 'translate(-50%, -0%)' },
   width: '100%',
-});
+};
 
 const reviewValidationSchema = Yup.object({
   email: Yup.string().email().required('Required Field'),
