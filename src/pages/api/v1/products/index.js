@@ -25,9 +25,9 @@ export default async function handler(req, res) {
       return res.status(404).json({ error: `Required field(s): ${requiredFields.join(', ')}` });
     }
 
-    const { filter = defaultFilter, reverse = null, sortKey = null, first, after = null, language } = req.body;
+    const { filter = defaultFilter, reverse = null, sortKey = null, first, after = null, language, country } = req.body;
 
-    const response = await getProducts({ after, filter, first, language, reverse, sortKey });
+    const response = await getProducts({ after, country, filter, first, language, reverse, sortKey });
     return res.status(200).json(response);
   }
   res.setHeader('Allow', 'POST');

@@ -13,6 +13,10 @@ const cartFragment = `
       }
     }
     cost {
+      checkoutChargeAmount {
+        amount
+        currencyCode
+      }
       subtotalAmount {
         amount
         currencyCode

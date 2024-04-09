@@ -51,7 +51,9 @@ function Home({ featuredProducts, selectedLanguage, shopDescription }) {
 
 export const getServerSideProps = wrapper.getServerSideProps((store) => async () => {
   const selectedLanguage = store.getState().shopInfo.selectedLanguage.isoCode;
-  const featuredProducts = await getProducts({ first: 5, language: selectedLanguage, sortKey: 'BEST_SELLING' });
+  const selectedCountry = store.getState().shopInfo.selectedCountry.isoCode;
+
+  const featuredProducts = await getProducts({ country: selectedCountry, first: 5, language: selectedLanguage, sortKey: 'BEST_SELLING' });
   const shop = await getShopDescription({ language: selectedLanguage });
 
   return {

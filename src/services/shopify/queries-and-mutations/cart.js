@@ -2,7 +2,7 @@ import cartFragment from '../fragments/cart';
 
 // Storefront mutation
 export const getCartQuery = `
-  query getCart($cartId: ID!, $language: LanguageCode!) @inContext(language: $language) {
+  query getCart($cartId: ID!, $language: LanguageCode!, $country: CountryCode!) @inContext(language: $language, country: $country) {
     cart(id: $cartId) {
       ...cart
     }
@@ -12,7 +12,7 @@ export const getCartQuery = `
 
 // Storefront mutation
 export const addToCartMutation = `
-  mutation addToCart($cartId: ID!, $lines: [CartLineInput!]!, $language: LanguageCode!) @inContext(language: $language) {
+  mutation addToCart($cartId: ID!, $lines: [CartLineInput!]!, $language: LanguageCode!, $country: CountryCode!) @inContext(language: $language, country: $country) {
     cartLinesAdd(cartId: $cartId, lines: $lines) {
       cart {
         ...cart
@@ -28,7 +28,7 @@ export const addToCartMutation = `
 
 // Storefront mutation
 export const createCartMutation = `
-  mutation createCart($buyerIdentity: CartBuyerIdentityInput, $lineItems: [CartLineInput!], $language: LanguageCode!) @inContext(language: $language) {
+  mutation createCart($buyerIdentity: CartBuyerIdentityInput, $lineItems: [CartLineInput!], $language: LanguageCode!, $country: CountryCode!) @inContext(language: $language, country: $country) {
     cartCreate(input: {buyerIdentity: $buyerIdentity, lines: $lineItems }) {
       cart {
         ...cart
@@ -44,7 +44,7 @@ export const createCartMutation = `
 
 // Storefront mutation
 export const updateCartItemsMutation = `
-  mutation editCartItems($cartId: ID!, $lines: [CartLineUpdateInput!]!, $language: LanguageCode!) @inContext(language: $language) {
+  mutation editCartItems($cartId: ID!, $lines: [CartLineUpdateInput!]!, $language: LanguageCode!, $country: CountryCode!) @inContext(language: $language, country: $country) {
     cartLinesUpdate(cartId: $cartId, lines: $lines) {
       cart {
         ...cart
@@ -60,7 +60,7 @@ export const updateCartItemsMutation = `
 
 // Storefront mutation
 export const updateCartBuyerIdentityMutation = `
-    mutation cartBuyerIdentityUpdate($buyerIdentity: CartBuyerIdentityInput!, $cartId: ID!, $language: LanguageCode!) @inContext(language: $language) {
+    mutation cartBuyerIdentityUpdate($buyerIdentity: CartBuyerIdentityInput!, $cartId: ID!, $language: LanguageCode!, $country: CountryCode!) @inContext(language: $language, country: $country) {
       cartBuyerIdentityUpdate(buyerIdentity: $buyerIdentity, cartId: $cartId) {
         cart {
           ...cart
@@ -76,7 +76,7 @@ export const updateCartBuyerIdentityMutation = `
 
 // Storefront mutation
 export const removeFromCartMutation = `
-  mutation removeFromCart($cartId: ID!, $lineIds: [ID!]!, $language: LanguageCode!) @inContext(language: $language) {
+  mutation removeFromCart($cartId: ID!, $lineIds: [ID!]!, $language: LanguageCode!, $country: CountryCode!) @inContext(language: $language, country: $country) {
     cartLinesRemove(cartId: $cartId, lineIds: $lineIds) {
       cart {
         ...cart

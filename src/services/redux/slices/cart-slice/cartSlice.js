@@ -10,7 +10,8 @@ const apiUrl = '/api/v1/products/cart';
 export const retrieveCartItems = createAsyncThunk('cart/get', async ({ action }, { getState, rejectWithValue }) => {
   try {
     const selectedLanguage = getState().shopInfo.selectedLanguage.isoCode;
-    const data = await fetchData(`${apiUrl}?language=${selectedLanguage}`, { action });
+    const selectedCountry = getState().shopInfo.selectedCountry.isoCode;
+    const data = await fetchData(`${apiUrl}?language=${selectedLanguage}&country=${selectedCountry}`, { action });
     if (data?.userErrors?.length > 0) {
       return null;
     }
@@ -23,7 +24,8 @@ export const retrieveCartItems = createAsyncThunk('cart/get', async ({ action },
 export const addToCart = createAsyncThunk('cart/add', async ({ action, payload, toast }, { getState, dispatch, rejectWithValue }) => {
   try {
     const selectedLanguage = getState().shopInfo.selectedLanguage.isoCode;
-    const data = await fetchData(`${apiUrl}?language=${selectedLanguage}`, { action, payload });
+    const selectedCountry = getState().shopInfo.selectedCountry.isoCode;
+    const data = await fetchData(`${apiUrl}?language=${selectedLanguage}&country=${selectedCountry}`, { action, payload });
     if (data?.userErrors?.length > 0) {
       toast.error(data.userErrors[0].message);
       dispatch(addToCart.rejected());
@@ -40,7 +42,8 @@ export const addToCart = createAsyncThunk('cart/add', async ({ action, payload, 
 export const buyNow = createAsyncThunk('cart/buyNow', async ({ action, payload, /* router */ toast }, { getState, dispatch, rejectWithValue }) => {
   try {
     const selectedLanguage = getState().shopInfo.selectedLanguage.isoCode;
-    const data = await fetchData(`${apiUrl}?language=${selectedLanguage}`, { action, payload });
+    const selectedCountry = getState().shopInfo.selectedCountry.isoCode;
+    const data = await fetchData(`${apiUrl}?language=${selectedLanguage}&country=${selectedCountry}`, { action, payload });
     if (data?.userErrors?.length > 0) {
       toast.error(data.userErrors[0].message);
       dispatch(buyNow.rejected());
@@ -61,11 +64,12 @@ export const UpdateCartItemQuantity = createAsyncThunk('cartItem/update/quantity
   try {
     const state = getState();
     const selectedLanguage = state.shopInfo.selectedLanguage.isoCode;
+    const selectedCountry = getState().shopInfo.selectedCountry.isoCode;
     const existingItem = state.cart.cart.lineItems.find((item) => item.id === id);
     if (existingItem) {
       let newQuantity = operation === 'add' ? existingItem.quantity + 1 : existingItem.quantity - 1;
       newQuantity = Math.max(newQuantity, 1);
-      const data = await fetchData(`${apiUrl}?language=${selectedLanguage}`, {
+      const data = await fetchData(`${apiUrl}?language=${selectedLanguage}&country=${selectedCountry}`, {
         action: 'update',
         payload: { lineId: id, quantity: newQuantity, variantId: existingItem.merchandise.id },
       });
@@ -86,7 +90,8 @@ export const UpdateCartItemQuantity = createAsyncThunk('cartItem/update/quantity
 export const RemoveCartItem = createAsyncThunk('cartItem/remove', async ({ action, payload, toast }, { getState, dispatch, rejectWithValue }) => {
   try {
     const selectedLanguage = getState().shopInfo.selectedLanguage.isoCode;
-    const data = await fetchData(`${apiUrl}?language=${selectedLanguage}`, { action, payload });
+    const selectedCountry = getState().shopInfo.selectedCountry.isoCode;
+    const data = await fetchData(`${apiUrl}?language=${selectedLanguage}&country=${selectedCountry}`, { action, payload });
     if (data?.userErrors?.length > 0) {
       toast.error(data.userErrors[0].message);
       dispatch(RemoveCartItem.rejected());
@@ -107,7 +112,7 @@ const updateCartState = (state, action) => {
       buyerIdentity,
       lines,
       discountAllocations,
-      cost: { subtotalAmount, totalAmount, totalTaxAmount },
+      cost: { checkoutChargeAmount, subtotalAmount, totalAmount, totalTaxAmount },
       totalQuantity,
     } = action.payload;
 
@@ -116,6 +121,7 @@ const updateCartState = (state, action) => {
     state.cart.buyerIdentity = buyerIdentity;
     state.cart.lineItems = lines;
     state.cart.discountAllocations = discountAllocations;
+    state.cart.checkoutChargeAmount = checkoutChargeAmount;
     state.cart.subtotalAmount = subtotalAmount;
     state.cart.totalAmount = totalAmount;
     state.cart.totalTaxAmount = totalTaxAmount;
@@ -134,6 +140,7 @@ const initialState = {
   },
   cart: {
     buyerIdentity: { countryCode: null, customer: null },
+    checkoutChargeAmount: { amount: '', currencyCode: '' },
     checkoutUrl: '',
     discountAllocations: [],
     id: '',

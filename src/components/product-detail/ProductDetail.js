@@ -87,11 +87,13 @@ function ProductDetailsSection({
       <Typography text={product.title} variant="h5" color="primary" />
       <DisplayRating value={getAverageRating(product.metafields)} precision={0.5} size="medium" />
       <Box display={{ md: 'none', sm: 'flex', xs: 'flex' }} alignItems="center" columnGap={1}>
-        <PreviousPrice
-          previousPrice={`${selectedVariant.compareAtPrice.currencyCode || shopInfo.currencyCode}${selectedVariant.compareAtPrice.amount}`}
-          variant="h6"
-          color="text.secondary"
-        />
+        {selectedVariant.compareAtPrice && (
+          <PreviousPrice
+            previousPrice={`${selectedVariant.compareAtPrice.currencyCode || shopInfo.currencyCode}${selectedVariant.compareAtPrice.amount}`}
+            variant="h6"
+            color="text.secondary"
+          />
+        )}
         <ActualPrice actualPrice={`${selectedVariant.price.currencyCode || shopInfo.currencyCode}${selectedVariant.price.amount}`} variant="h5" color="primary" />
       </Box>
       <Divider orientation="horizontal" variant="fullWidth" />
@@ -190,11 +192,13 @@ function ResponsiveSection({
   return (
     <Stack spacing={2} boxShadow={0} borderRadius={2} p={2} maxWidth={{ sm: 320, xs: '100%' }}>
       <Box display="flex" alignItems="center" columnGap={1}>
-        <PreviousPrice
-          previousPrice={`${selectedVariant.compareAtPrice.currencyCode || shopInfo.currencyCode}${selectedVariant.compareAtPrice.amount}`}
-          variant="h6"
-          color="text.secondary"
-        />
+        {selectedVariant.compareAtPrice && (
+          <PreviousPrice
+            previousPrice={`${selectedVariant.compareAtPrice.currencyCode || shopInfo.currencyCode}${selectedVariant.compareAtPrice.amount}`}
+            variant="h6"
+            color="text.secondary"
+          />
+        )}
         <ActualPrice actualPrice={`${selectedVariant.price.currencyCode || shopInfo.currencyCode}${selectedVariant.price.amount}`} variant="h5" color="primary" />
       </Box>
       {selectedVariant.availableForSale ? (

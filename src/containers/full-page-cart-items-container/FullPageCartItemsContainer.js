@@ -36,17 +36,26 @@ function FullPageCartItemsContainer() {
   const cartSubtotalCurrency = cart?.subtotalAmount?.currencyCode || shopInfo.currencyCode;
 
   const cartTotalTaxAmount = +(cart?.totalTaxAmount?.amount ?? 0.0);
-  const cartTotalTaxAmountCurrency = cart?.totalTaxAmount?.currencyCode || shopInfo.currencyCode;
+  const cartTotalTaxAmountCurrency = cart?.totalTaxAmount?.currencyCode || cart?.subtotalAmount?.currencyCode || shopInfo.currencyCode;
 
   const cartTotalAmount = +(cart?.totalAmount?.amount ?? 0.0);
   const cartTotalAmountCurrency = cart?.totalAmount?.currencyCode || shopInfo.currencyCode;
 
   let totalCartDiscount = 0.0;
-  let cartDiscountCurrency = shopInfo.currencyCode;
+  let totalCartDiscountCurrency = cart?.subtotalAmount?.currencyCode || shopInfo.currencyCode;
   if (cart.discountAllocations.length > 0) {
     totalCartDiscount = cart.discountAllocations.reduce((total, item) => total + parseFloat(item.discountedAmount.amount), 0);
-    cartDiscountCurrency = cart.discountAllocations[0].discountedAmount.currencyCode;
+    totalCartDiscountCurrency = cart.discountAllocations[0].discountedAmount.currencyCode;
   }
+
+  let totalProductDiscounts = 0.0;
+  let totalProductDiscountsCurrency = cart?.subtotalAmount?.currencyCode || shopInfo.currencyCode;
+  cart.lineItems.forEach((lineItem) => {
+    if (lineItem.discountAllocations.length > 0) {
+      totalProductDiscounts += lineItem.discountAllocations.reduce((total, item) => total + parseFloat(item.discountedAmount.amount), 0);
+      totalProductDiscountsCurrency = cart.lineItems[0].discountAllocations[0].discountedAmount.currencyCode;
+    }
+  });
 
   const isCartBeingModified =
     (Object.keys(updateCartItemloading).length > 0 && Object.values(updateCartItemloading).includes(true)) ||
@@ -103,7 +112,7 @@ function FullPageCartItemsContainer() {
                         <Typography text={ready ? translate('cart.dataGridHeaders.discount') : 'Discount'} variant="subtitle1" color="primary" fontWeight={600} />
                       </th>
                       <th>
-                        <Typography text={ready ? translate('cart.dataGridHeaders.total') : 'Total'} variant="subtitle1" color="primary" fontWeight={600} />
+                        <Typography text={ready ? translate('cart.dataGridHeaders.subtotal') : 'Subtotal'} variant="subtitle1" color="primary" fontWeight={600} />
                       </th>
                     </tr>
                   </thead>
@@ -153,9 +162,7 @@ function FullPageCartItemsContainer() {
                             </td>
                             <td className="align-middle">
                               <Typography
-                                text={`${
-                                  cartItem.discountAllocations.length > 0 ? cartItem.discountAllocations[0].discountedAmount.currencyCode : shopInfo.currencyCode
-                                }${totalDiscount.toFixed(2)}`}
+                                text={`${totalProductDiscountsCurrency}${totalDiscount.toFixed(2)}`}
                                 variant="body2"
                                 color="primary"
                                 fontWeight={600}
@@ -184,19 +191,23 @@ function FullPageCartItemsContainer() {
                   <Row className="justify-content-end m-md-0 m-lg-2 m-xl-3">
                     <Col lg={6} xl={3}>
                       <div className="d-flex justify-content-between">
-                        <Typography text={ready ? translate('cart.lineItems.subtotal') : 'Subtotal'} variant="subtitle1" color="primary" fontWeight={600} />
+                        <Typography text={ready ? translate('cart.lineItems.totalProductsDiscount') : 'Total Product Discounts'} variant="body2" color="primary" fontWeight={600} />
+                        <Typography text={`${totalProductDiscountsCurrency}${totalProductDiscounts.toFixed(2)}`} variant="body2" color="primary" fontWeight={600} />
+                      </div>
+                      <div className="d-flex justify-content-between">
+                        <Typography text={ready ? translate('cart.lineItems.subtotal') : 'Subtotal'} variant="body2" color="primary" fontWeight={600} />
                         <Typography text={`${cartSubtotalCurrency}${cartSubtotal.toFixed(2)}`} variant="body2" color="primary" fontWeight={600} />
                       </div>
                       <div className="d-flex justify-content-between">
-                        <Typography text={ready ? translate('cart.lineItems.totalCartDiscount') : 'Total cart discount'} variant="subtitle1" color="primary" fontWeight={600} />
-                        <Typography text={`${cartDiscountCurrency}${totalCartDiscount.toFixed(2)}`} variant="body2" color="primary" fontWeight={600} />
+                        <Typography text={ready ? translate('cart.lineItems.totalCartDiscount') : 'Total cart discount'} variant="body2" color="primary" fontWeight={600} />
+                        <Typography text={`${totalCartDiscountCurrency}${totalCartDiscount.toFixed(2)}`} variant="body2" color="primary" fontWeight={600} />
                       </div>
                       <div className="d-flex justify-content-between">
-                        <Typography text={ready ? translate('cart.lineItems.tax') : 'Tax'} variant="subtitle1" color="primary" fontWeight={600} />
+                        <Typography text={ready ? translate('cart.lineItems.tax') : 'Tax'} variant="body2" color="primary" fontWeight={600} />
                         <Typography text={`${cartTotalTaxAmountCurrency}${cartTotalTaxAmount.toFixed(2)}`} variant="body2" color="primary" fontWeight={600} />
                       </div>
                       <div className="d-flex justify-content-between">
-                        <Typography text={ready ? translate('cart.lineItems.total') : 'Total'} variant="subtitle1" color="primary" fontWeight={600} />
+                        <Typography text={ready ? translate('cart.lineItems.total') : 'Total'} variant="body2" color="primary" fontWeight={600} />
                         <Typography text={`${cartTotalAmountCurrency}${cartTotalAmount.toFixed(2)}`} variant="body2" color="primary" fontWeight={600} />
                       </div>
                       <hr className="my-4" />
@@ -204,6 +215,7 @@ function FullPageCartItemsContainer() {
                         text={`${ready ? translate('cart.lineItems.shipping') : 'Shipping'} ${ready ? translate('cart.lineItems.calculatedAtCheckout') : 'Calculated at checkout'}`}
                         variant="body2"
                         color="primary"
+                        fontWeight={600}
                       />
                       <hr className="my-4" />
                       <div className="d-flex justify-content-between">

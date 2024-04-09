@@ -10,8 +10,8 @@ import { getCustomerInfo } from '../../services/redux/slices/auth-slice/authSlic
 import { retrieveCartItems } from '../../services/redux/slices/cart-slice/cartSlice';
 import { getAutomaticDiscountBasic } from '../../services/redux/slices/discounts-slice/discountsSlice';
 import { checkNewsletterModal } from '../../services/redux/slices/modal-slice/modalSlice';
-import { selectSelectedLanguage } from '../../services/redux/slices/shop-info-slice/selectors';
-import { getAvailableLanguages, getShopInfo } from '../../services/redux/slices/shop-info-slice/shopInfoSlice';
+import { selectSelectedLanguage, selectSelectedCountry } from '../../services/redux/slices/shop-info-slice/selectors';
+import { getAvailableLanguages, getAvailableCountries, getShopInfo } from '../../services/redux/slices/shop-info-slice/shopInfoSlice';
 import { useDispatch, useSelector } from '../../services/redux/store/store';
 
 export default function DataRetriever() {
@@ -20,6 +20,7 @@ export default function DataRetriever() {
   const { i18n } = useTranslation();
 
   const selectedLanguage = useSelector(selectSelectedLanguage);
+  const selectedCountry = useSelector(selectSelectedCountry);
 
   // Using useRef hook to create mutable variables that don’t trigger re-renders
   const dispatchRef = useRef();
@@ -33,11 +34,12 @@ export default function DataRetriever() {
     dispatchRef.current(checkNewsletterModal());
     dispatchRef.current(getCustomerInfo({ router: routerRef.current }));
     dispatchRef.current(getAvailableLanguages());
-    dispatchRef.current(getAutomaticDiscountBasic());
+    dispatchRef.current(getAvailableCountries());
     dispatchRef.current(retrieveCartItems({ action: 'get' }));
     dispatchRef.current(getShopInfo());
+    dispatchRef.current(getAutomaticDiscountBasic());
     dispatchRef.current(getAboutSummary());
-  }, [i18n, selectedLanguage]);
+  }, [i18n, selectedLanguage, selectedCountry]);
 
   return null;
 }

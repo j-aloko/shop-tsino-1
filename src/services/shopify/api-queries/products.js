@@ -14,13 +14,15 @@ import {
 import { buildFilterQuery, removeEdgesAndNodes, reshapeProduct, reshapeProducts } from '../utils/utils';
 
 const defaultLanguage = shopInfoSlice.getInitialState().selectedLanguage.isoCode;
+const defaultCountry = shopInfoSlice.getInitialState().selectedCountry.isoCode;
 
-export async function getProducts({ filter = defaultFilter, reverse = null, sortKey = null, first, after = null, language = defaultLanguage }) {
+export async function getProducts({ filter = defaultFilter, reverse = null, sortKey = null, first, after = null, language = defaultLanguage, country = defaultCountry }) {
   const res = await shopifyStorefrontApi({
     query: allProductsQuery,
     tags: [TAGS.products],
     variables: {
       after,
+      country,
       first,
       language,
       query: buildFilterQuery(filter),
@@ -108,11 +110,12 @@ export async function getMinMaxPrices({ filter = defaultFilter, first = 50, afte
   return { maxPrice, minPrice };
 }
 
-export async function getProductByHandle({ handle, language = defaultLanguage }) {
+export async function getProductByHandle({ handle, language = defaultLanguage, country = defaultCountry }) {
   const res = await shopifyStorefrontApi({
     query: productByHandleQuery,
     tags: [TAGS.products],
     variables: {
+      country,
       handle,
       language,
     },
@@ -125,11 +128,12 @@ export async function getProductByHandle({ handle, language = defaultLanguage })
   return reshapeProduct(res.body.data.product, false);
 }
 
-export async function getBestSellingProduct({ query = null, reverse = null, sortKey = null, first, language = defaultLanguage }) {
+export async function getBestSellingProduct({ query = null, reverse = null, sortKey = null, first, language = defaultLanguage, country = defaultCountry }) {
   const res = await shopifyStorefrontApi({
     query: bestSellingProductQuery,
     tags: [TAGS.products],
     variables: {
+      country,
       first,
       language,
       query,
@@ -145,11 +149,12 @@ export async function getBestSellingProduct({ query = null, reverse = null, sort
   return reshapeProducts(removeEdgesAndNodes(res.body.data.products));
 }
 
-export async function getProductRecommendations({ productId, language = defaultLanguage }) {
+export async function getProductRecommendations({ productId, language = defaultLanguage, country = defaultCountry }) {
   const res = await shopifyStorefrontApi({
     query: productRecommendationsQuery,
     tags: [TAGS.products],
     variables: {
+      country,
       language,
       productId,
     },

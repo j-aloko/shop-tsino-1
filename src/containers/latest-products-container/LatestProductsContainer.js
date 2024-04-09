@@ -5,19 +5,24 @@ import React from 'react';
 import { useTranslation } from 'next-i18next';
 import useSWR from 'swr';
 
-import { selectSelectedLanguage } from '../../services/redux/slices/shop-info-slice/selectors';
+import { selectSelectedLanguage, selectSelectedCountry } from '../../services/redux/slices/shop-info-slice/selectors';
 import { useSelector } from '../../services/redux/store/store';
 import { fetcher } from '../../utils/swrFetcher';
 import ProductsContainer from '../products-container/ProductsContainer';
 
 function LatestProductsContainer() {
   const selectedLanguage = useSelector(selectSelectedLanguage);
+  const selectedCountry = useSelector(selectSelectedCountry);
   const { t: translate, ready } = useTranslation('common');
 
-  const { data: latestProducts } = useSWR(['/api/v1/products', { first: 12, language: selectedLanguage, reverse: true, sortKey: 'CREATED_AT' }], fetcher, {
-    dedupingInterval: 60000,
-    revalidateOnFocus: false,
-  });
+  const { data: latestProducts } = useSWR(
+    ['/api/v1/products', { country: selectedCountry, first: 12, language: selectedLanguage, reverse: true, sortKey: 'CREATED_AT' }],
+    fetcher,
+    {
+      dedupingInterval: 60000,
+      revalidateOnFocus: false,
+    }
+  );
 
   return (
     <div>

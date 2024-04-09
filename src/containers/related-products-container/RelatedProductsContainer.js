@@ -6,17 +6,18 @@ import { useTranslation } from 'next-i18next';
 import useSWR from 'swr';
 
 import { Box } from '../../components/mui-components/MuiComponents';
-import { selectSelectedLanguage } from '../../services/redux/slices/shop-info-slice/selectors';
+import { selectSelectedLanguage, selectSelectedCountry } from '../../services/redux/slices/shop-info-slice/selectors';
 import { useSelector } from '../../services/redux/store/store';
 import { fetcher } from '../../utils/swrFetcher';
 import ProductsContainer from '../products-container/ProductsContainer';
 
 function RelatedProductsContainer({ productId }) {
   const selectedLanguage = useSelector(selectSelectedLanguage);
+  const selectedCountry = useSelector(selectSelectedCountry);
 
   const { t: translate, ready } = useTranslation('common');
 
-  const { data: recommendedProducts } = useSWR(['/api/v1/products/recommended', { language: selectedLanguage, productId }], fetcher, {
+  const { data: recommendedProducts } = useSWR(['/api/v1/products/recommended', { country: selectedCountry, language: selectedLanguage, productId }], fetcher, {
     dedupingInterval: 60000,
     revalidateOnFocus: false,
   });

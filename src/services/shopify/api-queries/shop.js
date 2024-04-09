@@ -1,6 +1,6 @@
 import { shopInfoSlice } from '../../redux/slices/shop-info-slice/shopInfoSlice';
 import { shopifyStorefrontApi, shopifyAdminApi } from '../api-handler/apiHandler';
-import { getAvailableCountriesQuery, shopDescriptionQuery, shopInfoQuery, shopPoliciesQuery } from '../queries-and-mutations/shop';
+import { getAvailableCountriesQuery, getAvailableLanguagesQuery, shopDescriptionQuery, shopInfoQuery, shopPoliciesQuery } from '../queries-and-mutations/shop';
 
 const defaultLanguage = shopInfoSlice.getInitialState().selectedLanguage.isoCode;
 
@@ -49,6 +49,19 @@ export async function getShopDescription({ language = defaultLanguage }) {
   const data = res.body.data.shop;
 
   return data;
+}
+
+// Storefront query handler
+export async function getAvailableLanguages() {
+  const res = await shopifyStorefrontApi({
+    query: getAvailableLanguagesQuery,
+  });
+
+  if (!res.body.data.localization) {
+    return undefined;
+  }
+
+  return res.body.data.localization;
 }
 
 // Storefront query handler

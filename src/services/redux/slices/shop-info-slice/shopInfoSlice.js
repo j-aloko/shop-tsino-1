@@ -21,10 +21,23 @@ export const getAvailableLanguages = createAsyncThunk('shop/available-languages'
   }
 });
 
+export const getAvailableCountries = createAsyncThunk('shop/available-countries', async (_, { rejectWithValue }) => {
+  try {
+    const data = await fetchData('/api/v1/shop/available-countries');
+    return data;
+  } catch (error) {
+    return rejectWithValue(error?.message);
+  }
+});
+
 const initialState = {
+  availableCountries: [],
   availableLanguages: [],
   error: false,
   loading: false,
+  selectedCountry: {
+    isoCode: 'US',
+  },
   selectedLanguage: {
     isoCode: 'EN',
   },
@@ -46,10 +59,14 @@ export const shopInfoSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(HYDRATE, (state, action) => {
-        if (action.payload.shopInfo && action.payload.shopInfo.selectedLanguage) {
-          state.selectedLanguage.isoCode = action.payload.shopInfo.selectedLanguage.isoCode;
+        const { shopInfo } = action.payload;
+        if (shopInfo) {
+          const { selectedLanguage, selectedCountry } = shopInfo;
+          state.selectedLanguage.isoCode = selectedLanguage?.isoCode || 'EN';
+          state.selectedCountry.isoCode = selectedCountry?.isoCode || 'US';
         } else {
           state.selectedLanguage.isoCode = 'EN';
+          state.selectedCountry.isoCode = 'US';
         }
       })
       .addCase(getShopInfo.pending, (state) => {
@@ -67,11 +84,30 @@ export const shopInfoSlice = createSlice({
       })
       .addCase(getAvailableLanguages.fulfilled, (state, action) => {
         state.availableLanguages = action.payload.availableLanguages;
+      })
+      .addCase(getAvailableCountries.fulfilled, (state, action) => {
+        const seenCurrencies = new Set();
+        state.availableCountries = action.payload.availableCountries
+          ?.filter(({ currency: { isoCode: currencyIsoCode } }) => {
+            if (seenCurrencies.has(currencyIsoCode)) {
+              return false;
+            }
+            seenCurrencies.add(currencyIsoCode);
+            return true;
+          })
+          .map(({ isoCode: countryIsoCode, currency: { isoCode: currencyIsoCode, symbol } }) => ({
+            countryIsoCode,
+            currencyIsoCode,
+            symbol,
+          }));
       });
   },
   initialState,
   name: 'shopInfo',
   reducers: {
+    selectCountry: (state, action) => {
+      state.selectedCountry.isoCode = action.payload;
+    },
     selectLanguage: (state, action) => {
       state.selectedLanguage.isoCode = action.payload;
     },

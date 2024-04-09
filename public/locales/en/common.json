@@ -61,10 +61,10 @@
       "price": "Price",
       "quantity": "Quantity",
       "discount": "Discount",
-      "total": "Total"
+      "subtotal": "Subtotal"
     },
     "lineItems": {
-      "totalPerItemDiscount": "Total per-item discount",
+      "totalProductsDiscount": "Total Product Discounts",
       "subtotal": "Subtotal",
       "totalCartDiscount": "Total cart discount",
       "tax": "Tax",
@@ -198,7 +198,7 @@
   },
   "modals": {
     "newsletter": {
-      "title": "Sign up to our newsletter and save {{newsletterSignupDiscount}} off the next purchase",
+      "title": "Sign up to our newsletter and save {{newsletterSignupDiscount}} off the next purchase!!",
       "subtitle": "Don't miss new arrivals, the latest updates and our promotions"
     },
     "shopifyPreviewAuthModal": {

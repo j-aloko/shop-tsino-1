@@ -17,6 +17,11 @@ const makeStore = wrapMakeStore(() =>
               serializationFunction: String,
               subtree: `${shopInfoSlice.name}.selectedLanguage.isoCode`,
             },
+            {
+              deserializationFunction: String,
+              serializationFunction: String,
+              subtree: `${shopInfoSlice.name}.selectedCountry.isoCode`,
+            },
           ],
         })
       ),

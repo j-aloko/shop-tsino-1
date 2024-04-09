@@ -39,13 +39,14 @@ function ProductDetailPage({ uniqueKey, product, productId, selectedLanguage }) 
 
 export const getServerSideProps = wrapper.getServerSideProps((store) => async ({ params: { productHandle } }) => {
   const selectedLanguage = store.getState().shopInfo.selectedLanguage.isoCode;
-  const uniqueKey = Date.now();
-
-  const product = await getProductByHandle({ handle: productHandle, language: selectedLanguage });
+  const selectedCountry = store.getState().shopInfo.selectedCountry.isoCode;
+  const product = await getProductByHandle({ country: selectedCountry, handle: productHandle, language: selectedLanguage });
 
   if (!product) {
     return { notFound: true };
   }
+
+  const uniqueKey = Date.now();
 
   return {
     props: { product, productId: product.id, selectedLanguage, uniqueKey },

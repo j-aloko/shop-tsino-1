@@ -61,10 +61,10 @@
       "price": "Prix",
       "quantity": "Quantité",
       "discount": "Remise",
-      "total": "Total"
+      "subtotal": "Sous-total"
     },
     "lineItems": {
-      "totalPerItemDiscount": "Remise totale par article",
+      "totalProductsDiscount": "Remises totales sur les produits",
       "subtotal": "Sous-total",
       "totalCartDiscount": "Remise totale du panier",
       "tax": "Taxe",

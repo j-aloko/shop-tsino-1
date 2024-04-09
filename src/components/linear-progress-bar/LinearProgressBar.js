@@ -7,13 +7,13 @@ import { Box, MuiLinearProgress } from '../mui-components/MuiComponents';
 const BorderLinearProgress = styled(MuiLinearProgress)(({ theme, value }) => {
   let barColor;
 
-  if (value <= 20) {
+  if (value <= 5) {
     barColor = theme.palette.error.dark;
-  } else if (value <= 40) {
+  } else if (value <= 10) {
     barColor = theme.palette.error.main;
-  } else if (value <= 60) {
+  } else if (value <= 15) {
     barColor = theme.palette.warning.main;
-  } else if (value <= 80) {
+  } else if (value <= 20) {
     barColor = theme.palette.success.light;
   } else {
     barColor = theme.palette.success.main;

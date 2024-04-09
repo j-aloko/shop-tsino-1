@@ -61,10 +61,10 @@
       "price": "Precio",
       "quantity": "Cantidad",
       "discount": "Descuento",
-      "total": "Total"
+      "subtotal": "Total parcial"
     },
     "lineItems": {
-      "totalPerItemDiscount": "Descuento total por artículo",
+      "totalProductsDiscount": "Descuentos totales en productos",
       "subtotal": "Total parcial",
       "totalCartDiscount": "Descuento total del carrito",
       "tax": "Impuesto",

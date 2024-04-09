@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://shop-tsino-1.myshopify.com/
+Host: https://shop-tsino.myshopify.com
 
 # Sitemaps
-Sitemap: https://shop-tsino-1.myshopify.com/sitemap.xml
+Sitemap: https://shop-tsino.myshopify.com/sitemap.xml

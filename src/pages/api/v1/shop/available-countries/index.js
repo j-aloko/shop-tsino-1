@@ -1,7 +1,7 @@
 import Cors from 'cors';
 
 import corsMiddleware from '../../../../../lib/middleware/corsMiddleware';
-import { getAvailableLanguages } from '../../../../../services/shopify/api-queries/shop';
+import { getAvailableCountries } from '../../../../../services/shopify/api-queries/shop';
 
 const cors = Cors({
   methods: ['POST'],
@@ -12,7 +12,7 @@ export default async function handler(req, res) {
   await corsMiddleware(req, res, cors);
 
   if (req.method === 'POST') {
-    const response = await getAvailableLanguages();
+    const response = await getAvailableCountries();
     return res.status(200).json(response);
   }
   res.setHeader('Allow', 'POST');

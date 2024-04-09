@@ -1,7 +1,7 @@
 import { imageFragment, productFragment, productMetafieldFragment, productPriceFragment } from '../fragments/products';
 
 export const productByHandleQuery = `
-    query getProductByHandle($handle: String!, $language: LanguageCode!) @inContext(language: $language) {
+    query getProductByHandle($handle: String!, $language: LanguageCode!, $country: CountryCode!) @inContext(language: $language, country: $country) {
       product(handle: $handle) {
         ...productFields
       }
@@ -10,7 +10,7 @@ export const productByHandleQuery = `
     `;
 
 export const bestSellingProductQuery = `
-    query getProducts($first: Int, $reverse: Boolean, $sortKey: ProductSortKeys, $query: String, $language: LanguageCode!) @inContext(language: $language) {
+    query getProducts($first: Int, $reverse: Boolean, $sortKey: ProductSortKeys, $query: String, $language: LanguageCode!, $country: CountryCode!) @inContext(language: $language, country: $country) {
       products(first: $first, reverse: $reverse, sortKey: $sortKey, query: $query) {
         edges {
           node {
@@ -23,7 +23,7 @@ export const bestSellingProductQuery = `
       `;
 
 export const productRecommendationsQuery = `
-  query getProductRecommendations($productId: ID!, $language: LanguageCode!) @inContext(language: $language) {
+  query getProductRecommendations($productId: ID!, $language: LanguageCode!, $country: CountryCode!) @inContext(language: $language, country: $country) {
     productRecommendations(productId: $productId) {
       id
       handle
@@ -53,7 +53,7 @@ export const productRecommendationsQuery = `
 `;
 
 export const allProductsQuery = `
-    query getProducts($first: Int, $after: String, $reverse: Boolean, $sortKey: ProductSortKeys, $query: String, $language: LanguageCode!) @inContext(language: $language) {
+    query getProducts($first: Int, $after: String, $reverse: Boolean, $sortKey: ProductSortKeys, $query: String, $language: LanguageCode!, $country: CountryCode!) @inContext(language: $language, country: $country) {
       products(first: $first, after: $after, reverse: $reverse, sortKey: $sortKey, query: $query) {
         pageInfo {
           hasNextPage

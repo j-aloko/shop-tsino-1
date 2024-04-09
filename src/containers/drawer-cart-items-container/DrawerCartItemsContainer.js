@@ -41,27 +41,26 @@ function DrawerCartItemsContainer() {
   const cartSubtotalCurrency = cart?.subtotalAmount?.currencyCode || shopInfo.currencyCode;
 
   const cartTotalTaxAmount = +(cart?.totalTaxAmount?.amount ?? 0.0);
-  const cartTotalTaxAmountCurrency = cart?.totalTaxAmount?.currencyCode || shopInfo.currencyCode;
+  const cartTotalTaxAmountCurrency = cart?.totalTaxAmount?.currencyCode || cart?.subtotalAmount?.currencyCode || shopInfo.currencyCode;
 
   const cartTotalAmount = +(cart?.totalAmount?.amount ?? 0.0);
   const cartTotalAmountCurrency = cart?.totalAmount?.currencyCode || shopInfo.currencyCode;
 
   let totalCartDiscount = 0.0;
-  let totalCartDiscountCurrency = shopInfo.currencyCode;
+  let totalCartDiscountCurrency = cart?.subtotalAmount?.currencyCode || shopInfo.currencyCode;
   if (cart.discountAllocations.length > 0) {
     totalCartDiscount = cart.discountAllocations.reduce((total, item) => total + parseFloat(item.discountedAmount.amount), 0);
     totalCartDiscountCurrency = cart.discountAllocations[0].discountedAmount.currencyCode;
   }
 
-  let totalLineItemsDiscount = 0.0;
+  let totalProductDiscounts = 0.0;
+  let totalProductDiscountsCurrency = cart?.subtotalAmount?.currencyCode || shopInfo.currencyCode;
   cart.lineItems.forEach((lineItem) => {
     if (lineItem.discountAllocations.length > 0) {
-      totalLineItemsDiscount += lineItem.discountAllocations.reduce((total, item) => total + parseFloat(item.discountedAmount.amount), 0);
+      totalProductDiscounts += lineItem.discountAllocations.reduce((total, item) => total + parseFloat(item.discountedAmount.amount), 0);
+      totalProductDiscountsCurrency = cart.lineItems[0].discountAllocations[0].discountedAmount.currencyCode;
     }
   });
-
-  const totalLineItemsDiscountCurrency =
-    cart.lineItems[0]?.discountAllocations?.length > 0 ? cart.lineItems[0].discountAllocations[0].discountedAmount.currencyCode : shopInfo.currencyCode;
 
   const isCartBeingModified =
     (Object.keys(updateCartItemloading).length > 0 && Object.values(updateCartItemloading).includes(true)) ||
@@ -132,14 +131,14 @@ function DrawerCartItemsContainer() {
             sx={(theme) => ({ backgroundColor: alpha(theme.palette.secondary.light, 0.15) })}>
             <Box flexGrow={1} display="flex" alignItems="center" justifyContent="space-between">
               <Typography
-                text={ready ? translate('cart.lineItems.totalPerItemDiscount') : 'Total per-item discount'}
+                text={ready ? translate('cart.lineItems.totalProductsDiscount') : 'Total Product Discounts'}
                 variant="subtitle2"
                 color="primary"
                 fontWeight={600}
                 style={{ lineHeight: 1.57 }}
               />
               <Typography
-                text={`${totalLineItemsDiscountCurrency}${totalLineItemsDiscount.toFixed(2)}`}
+                text={`${totalProductDiscountsCurrency}${totalProductDiscounts.toFixed(2)}`}
                 variant="body2"
                 color="primary"
                 fontWeight={600}
@@ -166,7 +165,13 @@ function DrawerCartItemsContainer() {
             </Box>
             <Box flexGrow={1} display="flex" alignItems="center" justifyContent="space-between">
               <Typography text={ready ? translate('cart.lineItems.shipping') : 'Shipping'} variant="subtitle2" color="primary" fontWeight={600} style={{ lineHeight: 1.57 }} />
-              <Typography text={ready ? translate('cart.lineItems.calculatedAtCheckout') : 'Calculated at checkout'} variant="body2" color="primary" style={{ lineHeight: 1.57 }} />
+              <Typography
+                text={ready ? translate('cart.lineItems.calculatedAtCheckout') : 'Calculated at checkout'}
+                variant="body2"
+                color="primary"
+                fontWeight={600}
+                style={{ lineHeight: 1.57 }}
+              />
             </Box>
             <Box flexGrow={1} display="flex" alignItems="center" justifyContent="space-between">
               <Typography text={ready ? translate('cart.lineItems.total') : 'Total'} variant="subtitle2" color="primary" fontWeight={600} style={{ lineHeight: 1.57 }} />

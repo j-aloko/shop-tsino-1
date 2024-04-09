@@ -58,8 +58,8 @@ export const shopDescriptionQuery = `
     `;
 
 // Storefront mutation
-export const getAvailableCountriesQuery = `
-    query Localization @inContext(country: US, language: ES) {
+export const getAvailableLanguagesQuery = `
+    query Localization @inContext(country: US, language: EN) {
       localization {
         # for the current country
         availableLanguages {
@@ -75,6 +75,33 @@ export const getAvailableCountriesQuery = `
             isoCode
             endonymName
           }
+        }
+      }
+    }
+    `;
+
+export const getAvailableCountriesQuery = `
+    query @inContext(country: US) {
+      localization {
+        availableCountries {
+          currency {
+            isoCode
+            name
+            symbol
+          }
+          isoCode
+          name
+          unitSystem
+        }
+        country {
+          currency {
+            isoCode
+            name
+            symbol
+          }
+          isoCode
+          name
+          unitSystem
         }
       }
     }
