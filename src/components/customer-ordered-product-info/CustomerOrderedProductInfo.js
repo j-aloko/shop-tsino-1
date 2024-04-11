@@ -4,19 +4,19 @@ import Image from '../image/Image';
 import { Box, Grid, Stack } from '../mui-components/MuiComponents';
 import Typography from '../typography/Typography';
 
-function CustomerOrderProductInfo({ img, title, variantTitle, quantity, amountPerQuantity, amountPerQuantityCurrency, totalPrice, totalPriceCurrency }) {
+function CustomerOrderedProductInfo({ img, title, variantTitle, quantity, amountPerQuantity, amountPerQuantityCurrency, totalPrice, totalPriceCurrency }) {
   return (
     <Grid container alignItems="center" justifyContent={{ sm: 'space-between', xs: 'flex-start' }} rowSpacing={2}>
       <Grid item xs={4.5}>
-        <Box display="flex" alignItems="center" flexWrap="wrap" columnGap={2} rowGap={2}>
+        <Box display="flex" flexWrap={{ lg: 'nowrap', xs: 'wrap' }} columnGap={2} rowGap={2}>
           <Image
             src={img}
             alt="order item"
             objectFit="contain"
             width={70}
             height={70}
-            sizes="(max-width: 600px) 23px,
-                   (max-width: 900px) 47px,
+            sizes="(max-width: 600px) 70px,
+                   (max-width: 900px) 70px,
                    70px"
           />
           <Stack spacing={0.5}>
@@ -35,4 +35,4 @@ function CustomerOrderProductInfo({ img, title, variantTitle, quantity, amountPe
   );
 }
 
-export default CustomerOrderProductInfo;
+export default CustomerOrderedProductInfo;

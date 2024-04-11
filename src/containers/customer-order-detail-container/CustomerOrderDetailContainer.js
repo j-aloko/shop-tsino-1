@@ -5,8 +5,8 @@ import React from 'react';
 import { useTranslation } from 'next-i18next';
 
 import CustomerOrderLocationInfo from '../../components/customer-order-location-info/CustomerOrderLocationInfo';
-import CustomerOrderProductCostSummary from '../../components/customer-order-product-cost-summary/CustomerOrderProductCostSummary';
-import CustomerOrderProductInfo from '../../components/customer-order-product-info/CustomerOrderProductInfo';
+import CustomerOrderedProductCostSummary from '../../components/customer-ordered-product-cost-summary/CustomerOrderedProductCostSummary';
+import CustomerOrderedProductInfo from '../../components/customer-ordered-product-info/CustomerOrderedProductInfo';
 import Divider from '../../components/divider/Divider';
 import { Box, Grid, Stack } from '../../components/mui-components/MuiComponents';
 import Typography from '../../components/typography/Typography';
@@ -15,7 +15,7 @@ import { alpha } from '../../mui-styles/muiStyles';
 import { selectUser } from '../../services/redux/slices/auth-slice/selectors';
 import { useSelector } from '../../services/redux/store/store';
 
-function OrderProduct({ lineItem }) {
+function OrderedProduct({ lineItem }) {
   const {
     title,
     variant: {
@@ -28,7 +28,7 @@ function OrderProduct({ lineItem }) {
   } = lineItem;
 
   return (
-    <CustomerOrderProductInfo
+    <CustomerOrderedProductInfo
       title={title}
       img={img}
       variantTitle={variantTitle}
@@ -116,7 +116,7 @@ function CustomerOrderDetailContainer({ orderId }) {
               {React.Children.toArray(
                 lineItems?.map((lineItem) => (
                   <Box sx={(theme) => ({ border: 1, borderColor: alpha(theme.palette.grey[800], 0.15), borderRadius: 2, p: 1 })}>
-                    <OrderProduct key={lineItem.id} lineItem={lineItem} />
+                    <OrderedProduct key={lineItem.id} lineItem={lineItem} />
                   </Box>
                 ))
               )}
@@ -144,10 +144,10 @@ function CustomerOrderDetailContainer({ orderId }) {
                   <Divider orientation="horizontal" variant="fullWidth" />
                 </Stack>
                 <Stack spacing={1}>
-                  <CustomerOrderProductCostSummary title={ready ? translate('orders.lineItems.subtotal') : 'Subtotal'} currency={subtotalCurrencyCode} amount={subtotalAmount} />
-                  <CustomerOrderProductCostSummary title={ready ? translate('orders.lineItems.shipping') : 'Shipping'} currency={shippingCurrencyCode} amount={shippingAmount} />
-                  <CustomerOrderProductCostSummary title={ready ? translate('orders.lineItems.tax') : 'Tax'} currency={taxCurrencyCode} amount={taxAmount} />
-                  <CustomerOrderProductCostSummary
+                  <CustomerOrderedProductCostSummary title={ready ? translate('orders.lineItems.subtotal') : 'Subtotal'} currency={subtotalCurrencyCode} amount={subtotalAmount} />
+                  <CustomerOrderedProductCostSummary title={ready ? translate('orders.lineItems.shipping') : 'Shipping'} currency={shippingCurrencyCode} amount={shippingAmount} />
+                  <CustomerOrderedProductCostSummary title={ready ? translate('orders.lineItems.tax') : 'Tax'} currency={taxCurrencyCode} amount={taxAmount} />
+                  <CustomerOrderedProductCostSummary
                     title={ready ? translate('orders.lineItems.total') : 'Total'}
                     currency={totalCurrencyCode}
                     amount={totalAmount}
@@ -155,7 +155,7 @@ function CustomerOrderDetailContainer({ orderId }) {
                     isAmountBold
                   />
                   <Divider orientation="horizontal" variant="fullWidth" />
-                  <CustomerOrderProductCostSummary
+                  <CustomerOrderedProductCostSummary
                     title={`${orderFinancialStatusDisplayMap[financialStatus]} ${user?.displayName}`}
                     currency={totalCurrencyCode}
                     amount={totalAmount}

@@ -3,7 +3,7 @@ import React from 'react';
 import { Grid } from '../mui-components/MuiComponents';
 import Typography from '../typography/Typography';
 
-function CustomerOrderProductCostSummary({ title, currency, amount, isTitleBold = false, isAmountBold = false }) {
+function CustomerOrderedProductCostSummary({ title, currency, amount, isTitleBold = false, isAmountBold = false }) {
   return (
     <Grid container>
       <Grid item xs={8}>
@@ -16,4 +16,4 @@ function CustomerOrderProductCostSummary({ title, currency, amount, isTitleBold 
   );
 }
 
-export default CustomerOrderProductCostSummary;
+export default CustomerOrderedProductCostSummary;
