@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic';
 import PATH from '../../constant/paths';
 import { isLoggedIn } from '../../utils/auth';
 
-const CustomerOrderDetailContainer = dynamic(() => import('../../containers/customer-order-detail-container/CustomerOrderDetailContainer'), { ssr: false });
+const CustomerOrderDetailContainer = dynamic(() => import('../../containers/customer-order-detail-container/CustomerOrderDetailContainer'), { ssr: true });
 
 function OrderDetails({ orderId }) {
   return <CustomerOrderDetailContainer orderId={+orderId} />;

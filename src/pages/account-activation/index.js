@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic';
 import PATH from '../../constant/paths';
 import { isLoggedIn } from '../../utils/auth';
 
-const AccountActivationContainer = dynamic(() => import('../../containers/account-activation-container/AccountActivationContainer'), { ssr: false });
+const AccountActivationContainer = dynamic(() => import('../../containers/account-activation-container/AccountActivationContainer'), { ssr: true });
 
 function AccountActivation() {
   return <AccountActivationContainer />;

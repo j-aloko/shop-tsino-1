@@ -2,12 +2,12 @@ import React, { useMemo } from 'react';
 
 import dynamic from 'next/dynamic';
 
+import PolicyContentDisplay from '../../components/policy-content-display/PolicyContentDisplay';
 import PATH from '../../constant/paths';
 import { wrapper } from '../../services/redux/store/store';
 import { getShopPolicies } from '../../services/shopify/api-queries/shop';
 
 const MetaTags = dynamic(() => import('../../components/meta-tags/MetaTags'), { ssr: true });
-const PolicyContentDisplay = dynamic(() => import('../../components/policy-content-display/PolicyContentDisplay'), { ssr: true });
 
 function TermsOfService({ content, selectedLanguage, title }) {
   const metaProps = useMemo(

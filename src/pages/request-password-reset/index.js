@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic';
 import PATH from '../../constant/paths';
 import { isLoggedIn } from '../../utils/auth';
 
-const RequestPasswordResetContainer = dynamic(() => import('../../containers/request-password-reset-container/RequestPasswordResetContainer'), { ssr: false });
+const RequestPasswordResetContainer = dynamic(() => import('../../containers/request-password-reset-container/RequestPasswordResetContainer'), { ssr: true });
 
 function RequestPasswordReset() {
   return <RequestPasswordResetContainer />;

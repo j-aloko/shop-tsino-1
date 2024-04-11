@@ -3,9 +3,9 @@
 import React, { useCallback, useMemo } from 'react';
 
 import { useTranslation } from 'next-i18next';
+import dynamic from 'next/dynamic';
 
 import { Box, Grid, Stack } from '../../components/mui-components/MuiComponents';
-import QuillTextEditor from '../../components/quill-editor/QuillEditor';
 import TextField from '../../components/textfield/TextField';
 import Typography from '../../components/typography/Typography';
 import UserFeedbackForm from '../../components/user-feedback-form/UserFeedbackForm';
@@ -14,6 +14,8 @@ import { submitContactForm } from '../../services/redux/slices/contact-form-slic
 import { selectContactFormSubmitLoading } from '../../services/redux/slices/contact-form-slice/selectors';
 import { useDispatch, useSelector } from '../../services/redux/store/store';
 import { formValidation, Yup } from '../../utils/formValidation';
+
+const QuillTextEditor = dynamic(() => import('../../components/quill-editor/QuillEditor'), { ssr: false });
 
 const contactValidationSchema = Yup.object({
   email: Yup.string().email().required('Required Field'),
