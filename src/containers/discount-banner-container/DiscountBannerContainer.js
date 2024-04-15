@@ -9,13 +9,12 @@ import RouterButton from '../../components/router-button/RouterButton';
 import Typography from '../../components/typography/Typography';
 import PATH from '../../constant/paths';
 import { DISCOUNT_STATUS } from '../../constant/shopify';
-import { alpha } from '../../mui-styles/muiStyles';
 import { selectAutomaticDiscountBasic } from '../../services/redux/slices/discounts-slice/selectors';
 import { selectSelectedLanguage } from '../../services/redux/slices/shop-info-slice/selectors';
 import { useSelector } from '../../services/redux/store/store';
 import { fetcher } from '../../utils/swrFetcher';
 
-function DiscountBannerContainer({ maxWidth = '100%', justifyContent = 'flex-start', isBackgroundColor = true, imagePrority = false }) {
+function DiscountBannerContainer({ maxWidth = '100%', justifyContent = 'flex-start', imagePrority = false }) {
   const automaticDiscountBasic = useSelector(selectAutomaticDiscountBasic);
   const selectedLanguage = useSelector(selectSelectedLanguage);
 
@@ -30,7 +29,7 @@ function DiscountBannerContainer({ maxWidth = '100%', justifyContent = 'flex-sta
 
   if (automaticDiscountBasic?.discount?.status === DISCOUNT_STATUS.active && product) {
     return (
-      <Box sx={(theme) => ({ backgroundColor: isBackgroundColor ? alpha(theme.palette.secondary.light, 0.15) : null, display: 'flex', justifyContent })}>
+      <Box sx={{ backgroundColor: 'background.paper', display: 'flex', justifyContent }}>
         <Grid container maxWidth={maxWidth} spacing={2} p={4}>
           <Grid item sm={5} xs={12}>
             <Image

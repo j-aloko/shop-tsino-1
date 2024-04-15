@@ -42,7 +42,7 @@ function Home({ bestSellingProduct, featuredProducts, selectedLanguage, shopDesc
       <Stack spacing={{ sm: 10, xs: 6 }}>
         <FeaturedProductsContainer featuredProducts={featuredProducts} />
         <CommitmentsContainer />
-        <DiscountBannerContainer maxWidth="md" justifyContent="center" isBackgroundColor />
+        <DiscountBannerContainer maxWidth="md" justifyContent="center" />
         <LatestProductsContainer />
         <TrendingProductDetailContainer key={uniqueKey} bestSellingProduct={bestSellingProduct} />
       </Stack>
