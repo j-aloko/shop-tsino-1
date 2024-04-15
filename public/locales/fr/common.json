@@ -183,6 +183,10 @@
         "title": "Produits recommandés",
         "subtitle": "Vous pourriez aussi aimer"
       },
+      "complementaryProduct": {
+        "title": "Finalisez votre achat",
+        "subtitle": "Produits qui se marient bien avec votre sélection"
+      },
       "customerBenefits": {
         "title": "Nos engagements",
         "subtitle": "Shopping supérieur"

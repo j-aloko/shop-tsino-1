@@ -5,6 +5,7 @@ import React from 'react';
 import { useTranslation } from 'next-i18next';
 import useSWR from 'swr';
 
+import { Box } from '../../components/mui-components/MuiComponents';
 import { selectSelectedLanguage, selectSelectedCountry } from '../../services/redux/slices/shop-info-slice/selectors';
 import { useSelector } from '../../services/redux/store/store';
 import { fetcher } from '../../utils/swrFetcher';
@@ -25,7 +26,7 @@ function LatestProductsContainer() {
   );
 
   return (
-    <div>
+    <Box spacing={4}>
       {latestProducts?.length > 0 ? (
         <ProductsContainer
           title={ready ? translate('homePage.sections.latestProducts.title') : 'The Latest'}
@@ -34,7 +35,7 @@ function LatestProductsContainer() {
           isCarouselProduct
         />
       ) : null}
-    </div>
+    </Box>
   );
 }
 

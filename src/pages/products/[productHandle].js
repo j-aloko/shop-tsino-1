@@ -9,7 +9,7 @@ import { getProductByHandle } from '../../services/shopify/api-queries/products'
 
 const MetaTags = dynamic(() => import('../../components/meta-tags/MetaTags'), { ssr: true });
 const ProductDetailContainer = dynamic(() => import('../../containers/product-detail-container/ProductDetailContainer'), { ssr: true });
-const RelatedProductsContainer = dynamic(() => import('../../containers/related-products-container/RelatedProductsContainer'), {
+const RecommendedProductsContainer = dynamic(() => import('../../containers/recommended-products-container/RecommendedProductsContainer'), {
   ssr: false,
 });
 
@@ -29,9 +29,9 @@ function ProductDetailPage({ uniqueKey, product, productId, selectedLanguage }) 
   return (
     <>
       <MetaTags {...metaProps} />
-      <Stack spacing={3}>
+      <Stack spacing={4}>
         <ProductDetailContainer key={uniqueKey} product={product} />
-        <RelatedProductsContainer productId={productId} />
+        <RecommendedProductsContainer productId={productId} />
       </Stack>
     </>
   );

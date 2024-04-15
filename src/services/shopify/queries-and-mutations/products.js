@@ -23,8 +23,8 @@ export const bestSellingProductQuery = `
       `;
 
 export const productRecommendationsQuery = `
-  query getProductRecommendations($productId: ID!, $language: LanguageCode!, $country: CountryCode!) @inContext(language: $language, country: $country) {
-    productRecommendations(productId: $productId) {
+  query getProductRecommendations($productId: ID!, $intent: ProductRecommendationIntent, $language: LanguageCode!, $country: CountryCode!) @inContext(language: $language, country: $country) {
+    productRecommendations(productId: $productId, intent: $intent) {
       id
       handle
       title

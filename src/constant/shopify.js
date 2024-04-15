@@ -44,3 +44,8 @@ export const DISCOUNT_STATUS = {
   expired: 'EXPIRED',
   scheduled: 'SCHEDULED',
 };
+
+export const PRODUCT_RECOMMENDATION_INTENT = {
+  complementary: 'COMPLEMENTARY',
+  related: 'RELATED',
+};

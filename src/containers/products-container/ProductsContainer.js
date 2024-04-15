@@ -15,7 +15,7 @@ import PATH from '../../constant/paths';
 import { useTheme, useMediaQuery } from '../../mui-styles/muiStyles';
 import { chunkArray } from '../../utils/chunkArray';
 
-function ProductsContainer({ title, subtitle, products = [], isCarouselProduct = false }) {
+function ProductsContainer({ title, subtitle, products = [], isCarouselProduct = false, isViewMoreButton = true }) {
   const [index, setIndex] = useState(0);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.between('xs', 'sm'));
@@ -79,9 +79,11 @@ function ProductsContainer({ title, subtitle, products = [], isCarouselProduct =
       ) : (
         renderProductGrid(products, 3)
       )}
-      <Box display="flex" justifyContent="center" alignItems="center">
-        <RouterButton path={PATH.collections} name={ready ? translate('buttons.viewMore') : 'View More'} color="secondary" size="medium" fullWidth={false} />
-      </Box>
+      {isViewMoreButton && (
+        <Box display="flex" justifyContent="center" alignItems="center">
+          <RouterButton path={PATH.collections} name={ready ? translate('buttons.viewMore') : 'View More'} color="secondary" size="medium" fullWidth={false} />
+        </Box>
+      )}
     </Stack>
   );
 }

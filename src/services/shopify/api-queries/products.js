@@ -149,12 +149,13 @@ export async function getBestSellingProduct({ query = null, reverse = null, sort
   return reshapeProducts(removeEdgesAndNodes(res.body.data.products));
 }
 
-export async function getProductRecommendations({ productId, language = defaultLanguage, country = defaultCountry }) {
+export async function getProductRecommendations({ productId, intent, language = defaultLanguage, country = defaultCountry }) {
   const res = await shopifyStorefrontApi({
     query: productRecommendationsQuery,
     tags: [TAGS.products],
     variables: {
       country,
+      intent,
       language,
       productId,
     },
