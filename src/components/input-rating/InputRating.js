@@ -41,7 +41,7 @@ export default function InputRating({ input, id, label, translate, ready, meta }
         }}>
         <Stack spacing={0.5}>
           <InputLabel htmlFor={id} error={meta.error && meta.touched}>
-            <Typography text={label} variant="caption" color={meta.error && meta.touched ? 'error' : 'primary'} style={{ pl: 1.5 }} />
+            <Typography text={label} variant="caption" color={meta.error && meta.touched ? 'error' : 'text.secondary'} style={{ pl: 1.5 }} />
           </InputLabel>
           <MuiRating
             name="hover-feedback"

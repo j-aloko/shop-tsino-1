@@ -8,6 +8,14 @@ export const collectionsQuery = `
             id
             handle
             title
+            description
+            image {
+              altText
+              url
+            }
+            metafield (namespace: "slogan", key: "slogan") {
+              value
+            }
           }
         }
       }

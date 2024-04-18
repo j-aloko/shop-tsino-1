@@ -29,7 +29,7 @@ function FullPageCartItem({
                100px"
       />
       <Stack spacing={0.5}>
-        <Typography text={title} variant="subtitle1" color="primary" fontWeight={600} style={{ lineHeight: 1.57, whiteSpace: 'normal', wordWrap: 'break-word' }} />
+        <Typography text={title} variant="subtitle1" color="text.secondary" fontWeight={600} style={{ lineHeight: 1.57, whiteSpace: 'normal', wordWrap: 'break-word' }} />
         <Typography text={variantTitle} variant="body2" color="text.secondary" style={{ whiteSpace: 'normal', wordWrap: 'break-word' }} />
       </Stack>
     </Box>

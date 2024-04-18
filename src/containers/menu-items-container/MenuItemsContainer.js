@@ -24,11 +24,11 @@ function MenuItemsContainer() {
 
   const menuItems = useMemo(
     () => [
-      { icon: <HomeIcon />, item: `${ready ? translate('menu.home') : 'Home'}`, path: PATH.home },
-      { icon: <AppsIcon />, item: `${ready ? translate('menu.collections') : 'Collections'}`, path: PATH.collections },
-      { icon: <LocalGroceryStoreIcon />, item: `${ready ? translate('menu.orders') : 'Orders'}`, path: PATH.orders },
-      { icon: <BusinessIcon />, item: `${ready ? translate('menu.aboutUs') : 'About us'}`, path: PATH.about },
-      { icon: <SendIcon />, item: `${ready ? translate('menu.contactUs') : 'Contact us'}`, path: PATH.contact },
+      { icon: <HomeIcon color="secondary" />, item: `${ready ? translate('menu.home') : 'Home'}`, path: PATH.home },
+      { icon: <AppsIcon color="secondary" />, item: `${ready ? translate('menu.collections') : 'Collections'}`, path: PATH.collections },
+      { icon: <LocalGroceryStoreIcon color="secondary" />, item: `${ready ? translate('menu.orders') : 'Orders'}`, path: PATH.orders },
+      { icon: <BusinessIcon color="secondary" />, item: `${ready ? translate('menu.aboutUs') : 'About us'}`, path: PATH.about },
+      { icon: <SendIcon color="secondary" />, item: `${ready ? translate('menu.contactUs') : 'Contact us'}`, path: PATH.contact },
     ],
     [ready, translate]
   );

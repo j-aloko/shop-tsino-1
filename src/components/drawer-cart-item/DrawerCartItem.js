@@ -42,7 +42,7 @@ function DrawerCartItem({
       </Grid>
       <Grid item xs={7}>
         <Stack spacing={0.5}>
-          <Typography text={title} variant="subtitle1" color="primary" fontWeight={600} style={{ lineHeight: 1.57 }} />
+          <Typography text={title} variant="subtitle1" color="text.secondary" fontWeight={600} style={{ lineHeight: 1.57 }} />
           <Typography text={variantTitle} variant="body2" color="text.secondary" />
           <Typography text={`${quantity} x ${amountPerQuantity?.amount}`} variant="body2" color="text.secondary" />
           <Counter id={id} pending={updateCartItemloading[id]} quantity={quantity} quantityAvailable={quantityAvailable} onQuantityChange={onProductQuantityChange} />
@@ -54,7 +54,7 @@ function DrawerCartItem({
         ) : (
           <Tooltip title="remove Item" placement="top-start">
             <IconButton aria-label="delete" onClick={() => onRemoveCartItem(id)}>
-              <RemoveShoppingCartIcon />
+              <RemoveShoppingCartIcon color="secondary" />
             </IconButton>
           </Tooltip>
         )}

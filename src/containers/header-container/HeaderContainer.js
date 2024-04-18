@@ -26,6 +26,9 @@ const dropdownSelectorStyle = (theme) => ({
   '& .MuiSelect-root': {
     boxShadow: 'none',
   },
+  '& .MuiSelect-select': {
+    fontWeight: 600,
+  },
   color: 'primary.contrastText',
   ...theme.typography.body2,
 });

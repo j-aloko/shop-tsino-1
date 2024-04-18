@@ -158,6 +158,7 @@ function FooterContainer() {
                 text={`${ready ? translate('footer.copyright', { year: new Date().getFullYear() }) : `© ${new Date().getFullYear()}, All right reserved`}`}
                 variant="body2"
                 color="primary.contrastText"
+                fontWeight={600}
               />
             </Grid>
             <Grid item sm={4} xs={12} p={2}>
@@ -165,7 +166,7 @@ function FooterContainer() {
                 {React.Children.toArray(
                   policies?.map(({ item, path }) => (
                     <Link href={path}>
-                      <Typography text={item} variant="subtitle2" color="primary.contrastText" />
+                      <Typography text={item} variant="body2" color="primary.contrastText" fontWeight={600} />
                     </Link>
                   ))
                 )}

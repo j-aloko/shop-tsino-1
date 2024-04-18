@@ -44,14 +44,14 @@ const StyledInputBase = styled(({ clickable, ...other }) => <InputBase {...other
       width: 'auto',
     },
   },
-  color: 'inherit',
+  color: theme.palette.text.secondary,
 }));
 
 function SearchBar({ onSearchQuery, onSearchBarClick }) {
   return (
     <Search>
       <SearchIconWrapper>
-        <SearchIcon />
+        <SearchIcon color="secondary" />
       </SearchIconWrapper>
       <StyledInputBase
         placeholder="Search…"

@@ -39,7 +39,7 @@ const theme = createTheme({
     primary: { contrastText: '#fff', dark: 'rgba(0, 0, 0, 1)', light: 'rgba(54, 54, 54, 1)', main: 'rgba(34, 34, 34, 1)' },
     secondary: { contrastText: '#fff', dark: 'rgb(160, 47, 6)', light: 'rgb(253, 161, 125)', main: 'rgb(238, 92, 34)' },
     socialMedia: { facebook: '#0165E1', instagram: '#FD1D1D', pinterest: '#E60023', twitter: '#1D9BF0' },
-    text: { disabled: 'rgba(0, 0, 0, 0.38)', hint: 'rgba(136, 136, 136, 1)', primary: 'rgba(0, 0, 0, 1)', secondary: '#232323' },
+    text: { disabled: 'rgba(0, 0, 0, 0.38)', hint: 'rgba(0, 0, 0, 0.38)', primary: 'rgba(0, 0, 0, 0.87)', secondary: 'rgba(0, 0, 0, 0.70)' },
   },
   shadows: [
     'none',

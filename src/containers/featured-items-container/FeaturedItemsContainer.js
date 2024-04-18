@@ -5,12 +5,12 @@ import React, { useCallback, useState } from 'react';
 import { useTranslation } from 'next-i18next';
 
 import BoostrapCarousel from '../../components/boostrap-carousel/BoostrapCarousel';
-import FeaturedProduct from '../../components/featured-product/FeaturedProduct';
+import FeaturedItem from '../../components/featured-item/FeaturedItem';
 import { Box } from '../../components/mui-components/MuiComponents';
 import { Carousel } from '../../components/react-boostrap-components/ReactBoostrapComponents';
 import { useTheme, useMediaQuery } from '../../mui-styles/muiStyles';
 
-function FeaturedProductsContainer({ featuredProducts }) {
+function FeaturedItemsContainer({ featuredItems }) {
   const [index, setIndex] = useState(0);
   const theme = useTheme();
   const isTabletOrSmaller = useMediaQuery(theme.breakpoints.between('xs', 'lg'));
@@ -26,10 +26,10 @@ function FeaturedProductsContainer({ featuredProducts }) {
   return (
     <BoostrapCarousel {...boostrapCarouselProps}>
       {React.Children.toArray(
-        featuredProducts.map((product, i) => (
+        featuredItems.map((item, i) => (
           <Carousel.Item interval={4000}>
             <Box sx={{ background: 'background.paper', flexGrow: 1, height: 'auto', maxWidth: '100%', p: 2 }}>
-              <FeaturedProduct {...product} isTabletOrSmaller={isTabletOrSmaller} theme={theme} index={i} translate={translate} ready={ready} />
+              <FeaturedItem {...item} isTabletOrSmaller={isTabletOrSmaller} theme={theme} index={i} translate={translate} ready={ready} />
             </Box>
           </Carousel.Item>
         ))
@@ -38,4 +38,4 @@ function FeaturedProductsContainer({ featuredProducts }) {
   );
 }
 
-export default FeaturedProductsContainer;
+export default FeaturedItemsContainer;

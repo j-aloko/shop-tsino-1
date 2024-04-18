@@ -126,7 +126,7 @@ function NavbarContainer() {
   return (
     <Box>
       <AppBar color="transparent">
-        <IconButton size="large" edge="start" color="primary" aria-label="menu" sx={{ mr: 2 }} onClick={handleToggleMenuDrawer}>
+        <IconButton size="large" edge="start" color="secondary" aria-label="menu" sx={{ mr: 2 }} onClick={handleToggleMenuDrawer}>
           <MenuIcon />
         </IconButton>
         <SearchBar onSearchBarClick={handleToggleSearchModalQuery} />
@@ -162,7 +162,7 @@ function NavbarContainer() {
         </Box>
         <Box sx={{ display: { md: 'none', xs: 'flex' } }}>
           <IconButton size="large" aria-label="show more" aria-controls={mobileMenuId} aria-haspopup="true" onClick={handleMobileMenuOpen} color="inherit">
-            <Badge badgeContent={cartItems?.length || 0} color="primary">
+            <Badge badgeContent={cartItems?.length || 0} color="secondary">
               <MoreIcon />
             </Badge>
           </IconButton>

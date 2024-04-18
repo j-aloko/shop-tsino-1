@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 
 import { Stack } from '../components/mui-components/MuiComponents';
 import PATH from '../constant/paths';
-import FeaturedProductsContainer from '../containers/featured-products-container/FeaturedProductsContainer';
+import FeaturedItemsContainer from '../containers/featured-items-container/FeaturedItemsContainer';
 import { wrapper } from '../services/redux/store/store';
 import { getBestSellingProduct, getProducts } from '../services/shopify/api-queries/products';
 import { getShopDescription } from '../services/shopify/api-queries/shop';
@@ -24,7 +24,7 @@ const TrendingProductDetailContainer = dynamic(() => import('../containers/trend
   ssr: true,
 });
 
-function Home({ bestSellingProduct, featuredProducts, selectedLanguage, shopDescription, uniqueKey }) {
+function Home({ featured, bestSellingProduct, selectedLanguage, shopDescription, uniqueKey }) {
   const metaProps = useMemo(
     () => ({
       canonical: PATH.home,
@@ -40,11 +40,11 @@ function Home({ bestSellingProduct, featuredProducts, selectedLanguage, shopDesc
     <>
       <MetaTags {...metaProps} />
       <Stack spacing={{ sm: 10, xs: 6 }}>
-        <FeaturedProductsContainer featuredProducts={featuredProducts} />
-        <CommitmentsContainer />
-        <DiscountBannerContainer maxWidth="md" justifyContent="center" />
+        <FeaturedItemsContainer featuredItems={featured} />
         <LatestProductsContainer />
+        <DiscountBannerContainer maxWidth="md" justifyContent="center" />
         <TrendingProductDetailContainer key={uniqueKey} bestSellingProduct={bestSellingProduct} />
+        <CommitmentsContainer />
       </Stack>
     </>
   );
@@ -54,7 +54,7 @@ export const getServerSideProps = wrapper.getServerSideProps((store) => async ()
   const selectedLanguage = store.getState().shopInfo.selectedLanguage.isoCode;
   const selectedCountry = store.getState().shopInfo.selectedCountry.isoCode;
 
-  const featuredProducts = await getProducts({ country: selectedCountry, first: 5, language: selectedLanguage, sortKey: 'BEST_SELLING' });
+  const featured = await getProducts({ country: selectedCountry, first: 5, language: selectedLanguage, sortKey: 'BEST_SELLING' });
   const bestSellingProducts = await getBestSellingProduct({ country: selectedCountry, first: 1, language: selectedLanguage, sortKey: 'BEST_SELLING' });
   const shop = await getShopDescription({ language: selectedLanguage });
 
@@ -63,7 +63,7 @@ export const getServerSideProps = wrapper.getServerSideProps((store) => async ()
   return {
     props: {
       bestSellingProduct: bestSellingProducts[0],
-      featuredProducts,
+      featured,
       selectedLanguage,
       shopDescription: shop?.description || '',
       uniqueKey,

@@ -72,17 +72,17 @@ function CollectionsFilterPanel({
             accordionStyle={() => ({ boxShadow: 'none' })}
             accordionSummaryStyle={(theme) => ({ backgroundColor: alpha(theme.palette.grey[400], 0.15) })}
             accordionTitleComponent={
-              <Typography text={ready ? translate('collections.shopByCollections') : 'Shop By Collections'} variant="subtitle1" color="primary" fontWeight={600} />
+              <Typography text={ready ? translate('collections.shopByCollections') : 'Shop By Collections'} variant="subtitle1" color="text.secondary" fontWeight={600} />
             }
             accordionDetailsComponent={<CollectionsList collections={collections} onCollectionChange={handleCollectionChange} ready={ready} translate={translate} />}
           />
         </Box>
         <Box sx={(theme) => ({ backgroundColor: alpha(theme.palette.grey[400], 0.15), p: 2 })}>
-          <Typography text={ready ? translate('collections.filterBy') : 'Filter by'} variant="subtitle1" color="primary" fontWeight={600} />
+          <Typography text={ready ? translate('collections.filterBy') : 'Filter by'} variant="subtitle1" color="text.secondary" fontWeight={600} />
         </Box>
         <Stack spacing={3}>
           <Stack spacing={6} p={2}>
-            <Typography text={ready ? translate('collections.priceRange') : 'Price range'} variant="body2" color="primary" fontWeight={600} />
+            <Typography text={ready ? translate('collections.priceRange') : 'Price range'} variant="body2" color="text.secondary" fontWeight={600} />
             <PriceRangeFilter {...priceRangeFilterProps} />
           </Stack>
           <Divider orientation="horizontal" variant="fullWidth" />

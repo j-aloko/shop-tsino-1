@@ -9,7 +9,7 @@ function CustomerOrderLocationInfo({ name, email, phone, address1, address2, cit
     <Stack spacing={3}>
       <Stack spacing={2}>
         <Stack spacing={1}>
-          <Typography text={ready ? translate('orders.orderDetailSections.contactInformation') : 'Contact information'} variant="body2" color="text.secondary" fontWeight={600} />
+          <Typography text={ready ? translate('orders.orderDetailSections.contactInformation') : 'Contact information'} variant="body2" color="text.primary" fontWeight={600} />
           <Divider orientation="horizontal" variant="fullWidth" />
         </Stack>
         <Stack spacing={1}>
@@ -20,7 +20,7 @@ function CustomerOrderLocationInfo({ name, email, phone, address1, address2, cit
       </Stack>
       <Stack spacing={2}>
         <Stack spacing={1}>
-          <Typography text={ready ? translate('orders.orderDetailSections.shippingAddress') : 'Shipping address'} variant="body2" color="text.secondary" fontWeight={600} />
+          <Typography text={ready ? translate('orders.orderDetailSections.shippingAddress') : 'Shipping address'} variant="body2" color="text.primary" fontWeight={600} />
           <Divider orientation="horizontal" variant="fullWidth" />
         </Stack>
         <Stack spacing={1}>

@@ -137,7 +137,7 @@ function FullPageCartItemsContainer() {
                               ) : (
                                 <Tooltip title="remove Item" placement="top-start">
                                   <IconButton aria-label="delete" onClick={() => handleRemoveCartItem(cartItem.id)}>
-                                    <RemoveShoppingCartIcon />
+                                    <RemoveShoppingCartIcon color="secondary" />
                                   </IconButton>
                                 </Tooltip>
                               )}
@@ -146,7 +146,7 @@ function FullPageCartItemsContainer() {
                               <Typography
                                 text={`${cartItem.cost.amountPerQuantity.currencyCode || shopInfo.currencyCode}${cartItem.cost.amountPerQuantity.amount}`}
                                 variant="body2"
-                                color="primary"
+                                color="text.secondary"
                                 fontWeight={600}
                                 style={{ lineHeight: 1.57, opacity: 0.8 }}
                               />
@@ -164,7 +164,7 @@ function FullPageCartItemsContainer() {
                               <Typography
                                 text={`${totalProductDiscountsCurrency}${totalDiscount.toFixed(2)}`}
                                 variant="body2"
-                                color="primary"
+                                color="text.secondary"
                                 fontWeight={600}
                                 style={{ lineHeight: 1.57 }}
                               />
@@ -173,7 +173,7 @@ function FullPageCartItemsContainer() {
                               <Typography
                                 text={`${cartItem.cost.totalAmount.currencyCode || shopInfo.currencyCode}${cartItem.cost.totalAmount.amount}`}
                                 variant="body2"
-                                color="primary"
+                                color="text.secondary"
                                 fontWeight={600}
                                 style={{ lineHeight: 1.57 }}
                               />
@@ -191,30 +191,35 @@ function FullPageCartItemsContainer() {
                   <Row className="justify-content-end m-md-0 m-lg-2 m-xl-3">
                     <Col lg={6} xl={3}>
                       <div className="d-flex justify-content-between">
-                        <Typography text={ready ? translate('cart.lineItems.totalProductsDiscount') : 'Total Product Discounts'} variant="body2" color="primary" fontWeight={600} />
-                        <Typography text={`${totalProductDiscountsCurrency}${totalProductDiscounts.toFixed(2)}`} variant="body2" color="primary" fontWeight={600} />
+                        <Typography
+                          text={ready ? translate('cart.lineItems.totalProductsDiscount') : 'Total Product Discounts'}
+                          variant="body2"
+                          color="text.secondary"
+                          fontWeight={600}
+                        />
+                        <Typography text={`${totalProductDiscountsCurrency}${totalProductDiscounts.toFixed(2)}`} variant="body2" color="text.secondary" fontWeight={600} />
                       </div>
                       <div className="d-flex justify-content-between">
-                        <Typography text={ready ? translate('cart.lineItems.subtotal') : 'Subtotal'} variant="body2" color="primary" fontWeight={600} />
-                        <Typography text={`${cartSubtotalCurrency}${cartSubtotal.toFixed(2)}`} variant="body2" color="primary" fontWeight={600} />
+                        <Typography text={ready ? translate('cart.lineItems.subtotal') : 'Subtotal'} variant="body2" color="text.secondary" fontWeight={600} />
+                        <Typography text={`${cartSubtotalCurrency}${cartSubtotal.toFixed(2)}`} variant="body2" color="text.secondary" fontWeight={600} />
                       </div>
                       <div className="d-flex justify-content-between">
-                        <Typography text={ready ? translate('cart.lineItems.totalCartDiscount') : 'Total cart discount'} variant="body2" color="primary" fontWeight={600} />
-                        <Typography text={`${totalCartDiscountCurrency}${totalCartDiscount.toFixed(2)}`} variant="body2" color="primary" fontWeight={600} />
+                        <Typography text={ready ? translate('cart.lineItems.totalCartDiscount') : 'Total cart discount'} variant="body2" color="text.secondary" fontWeight={600} />
+                        <Typography text={`${totalCartDiscountCurrency}${totalCartDiscount.toFixed(2)}`} variant="body2" color="text.secondary" fontWeight={600} />
                       </div>
                       <div className="d-flex justify-content-between">
-                        <Typography text={ready ? translate('cart.lineItems.tax') : 'Tax'} variant="body2" color="primary" fontWeight={600} />
-                        <Typography text={`${cartTotalTaxAmountCurrency}${cartTotalTaxAmount.toFixed(2)}`} variant="body2" color="primary" fontWeight={600} />
+                        <Typography text={ready ? translate('cart.lineItems.tax') : 'Tax'} variant="body2" color="text.secondary" fontWeight={600} />
+                        <Typography text={`${cartTotalTaxAmountCurrency}${cartTotalTaxAmount.toFixed(2)}`} variant="body2" color="text.secondary" fontWeight={600} />
                       </div>
                       <div className="d-flex justify-content-between">
-                        <Typography text={ready ? translate('cart.lineItems.total') : 'Total'} variant="body2" color="primary" fontWeight={600} />
-                        <Typography text={`${cartTotalAmountCurrency}${cartTotalAmount.toFixed(2)}`} variant="body2" color="primary" fontWeight={600} />
+                        <Typography text={ready ? translate('cart.lineItems.total') : 'Total'} variant="body2" color="text.secondary" fontWeight={600} />
+                        <Typography text={`${cartTotalAmountCurrency}${cartTotalAmount.toFixed(2)}`} variant="body2" color="text.secondary" fontWeight={600} />
                       </div>
                       <hr className="my-4" />
                       <Typography
                         text={`${ready ? translate('cart.lineItems.shipping') : 'Shipping'} ${ready ? translate('cart.lineItems.calculatedAtCheckout') : 'Calculated at checkout'}`}
                         variant="body2"
-                        color="primary"
+                        color="text.secondary"
                         fontWeight={600}
                       />
                       <hr className="my-4" />

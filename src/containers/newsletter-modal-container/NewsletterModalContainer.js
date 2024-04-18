@@ -106,14 +106,14 @@ function NewsletterModalContainer() {
             ready ? translate('modals.newsletter.title', { newsletterSignupDiscount }) : `Sign up to our newsletter and save ${newsletterSignupDiscount} off the next purchase!!`
           }`}
           variant="h4"
-          color="primary"
+          color="text.secondary"
           textAlign="center"
           style={{ fontWeight: 800, letterSpacing: '-0.01562em', lineHeight: 1.167 }}
         />
         <Typography
           text={`${ready ? translate('modals.newsletter.subtitle', { newsletterSignupDiscount }) : "Don't miss new arrivals, the latest updates and our promotions"}`}
           variant="h5"
-          color="primary"
+          color="text.secondary"
           textAlign="center"
           style={{ fontWeight: 600, letterSpacing: '-0.01562em', lineHeight: 1.167 }}
         />

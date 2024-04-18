@@ -84,7 +84,7 @@ function ProductDetailsSection({
 }) {
   return (
     <Stack spacing={1.5} p={2}>
-      <Typography text={product.title} variant="h5" color="primary" />
+      <Typography text={product.title} variant="h5" color="text.secondary" />
       <DisplayRating value={getAverageRating(product.metafields)} precision={0.5} size="medium" />
       <Box display={{ md: 'none', sm: 'flex', xs: 'flex' }} alignItems="center" columnGap={1}>
         {selectedVariant.compareAtPrice && (
@@ -94,7 +94,7 @@ function ProductDetailsSection({
             color="text.secondary"
           />
         )}
-        <ActualPrice actualPrice={`${selectedVariant.price.currencyCode || shopInfo.currencyCode}${selectedVariant.price.amount}`} variant="h5" color="primary" />
+        <ActualPrice actualPrice={`${selectedVariant.price.currencyCode || shopInfo.currencyCode}${selectedVariant.price.amount}`} variant="h5" color="text.secondary" />
       </Box>
       <Divider orientation="horizontal" variant="fullWidth" />
       <Stack spacing={1} maxWidth={{ sm: 320, xs: '100%' }}>
@@ -199,7 +199,7 @@ function ResponsiveSection({
             color="text.secondary"
           />
         )}
-        <ActualPrice actualPrice={`${selectedVariant.price.currencyCode || shopInfo.currencyCode}${selectedVariant.price.amount}`} variant="h5" color="primary" />
+        <ActualPrice actualPrice={`${selectedVariant.price.currencyCode || shopInfo.currencyCode}${selectedVariant.price.amount}`} variant="h5" color="text.secondary" />
       </Box>
       {selectedVariant.availableForSale ? (
         <Typography text={ready ? translate('productDetails.inStock') : 'In Stock'} variant="h6" color="success.dark" />

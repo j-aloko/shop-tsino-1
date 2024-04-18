@@ -12,7 +12,6 @@ import Typography from '../../components/typography/Typography';
 
 const servicesIconStyle = {
   height: 50,
-  opacity: 0.8,
   width: 50,
 };
 
@@ -22,22 +21,22 @@ function CommitmentsContainer() {
   const services = useMemo(
     () => [
       {
-        IconComponent: <LocalShippingOutlinedIcon color="primary" sx={servicesIconStyle} />,
+        IconComponent: <LocalShippingOutlinedIcon color="secondary" sx={servicesIconStyle} />,
         subtitle: `${ready ? translate('customerBenefits.fastDelivery.subtitle') : 'Get your items in no time!'}`,
         title: `${ready ? translate('customerBenefits.fastDelivery.title') : 'Fast Delivery'}`,
       },
       {
-        IconComponent: <MonetizationOnOutlinedIcon color="primary" sx={servicesIconStyle} />,
+        IconComponent: <MonetizationOnOutlinedIcon color="secondary" sx={servicesIconStyle} />,
         subtitle: `${ready ? translate('customerBenefits.bigSavings.subtitle') : 'Save more with every purchase'}`,
         title: `${ready ? translate('customerBenefits.bigSavings.title') : 'Big Savings'}`,
       },
       {
-        IconComponent: <Person2OutlinedIcon color="primary" sx={servicesIconStyle} />,
+        IconComponent: <Person2OutlinedIcon color="secondary" sx={servicesIconStyle} />,
         subtitle: `${ready ? translate('customerBenefits.customerSupport.subtitle') : 'Your satisfaction, our priority'}`,
         title: `${ready ? translate('customerBenefits.customerSupport.title') : 'Customer Support'}`,
       },
       {
-        IconComponent: <CardGiftcardIcon color="primary" sx={servicesIconStyle} />,
+        IconComponent: <CardGiftcardIcon color="secondary" sx={servicesIconStyle} />,
         subtitle: `${ready ? translate('customerBenefits.giftVoucher.subtitle') : 'Your loyalty rewarded with special discounts'}`,
         title: `${ready ? translate('customerBenefits.giftVoucher.title') : 'Gift Voucher'}`,
       },
@@ -46,16 +45,17 @@ function CommitmentsContainer() {
   );
 
   return (
-    <Box display="flex" justifyContent="center">
+    <Box>
       <Stack spacing={4}>
         <Stack spacing={2} alignItems="center">
-          <Typography text={ready ? translate('homePage.sections.customerBenefits.title') : 'Our Commitments'} variant="h1" color="secondary" />
-          <Typography text={ready ? translate('homePage.sections.customerBenefits.subtitle') : 'Superior Shopping'} variant="h2" color="primary" fontWeight={600} />
+          <Typography text={ready ? translate('homePage.sections.customerBenefits.title') : 'Our Commitments'} variant="h1" color="text.secondary" />
+          <Typography text={ready ? translate('homePage.sections.customerBenefits.subtitle') : 'Superior Shopping'} variant="h2" color="text.primary" fontWeight={600} />
           <Divider orientation="horizontal" variant="fullWidth" color="secondary.main" height={5} width={80} />
         </Stack>
-        <Grid container maxWidth="lg">
+        <Grid container justifyContent="space-between">
           {React.Children.toArray(services?.map((service) => <CommitmentCard service={service} />))}
         </Grid>
+        1
       </Stack>
     </Box>
   );

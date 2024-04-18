@@ -20,7 +20,7 @@ function CustomerOrderedProductInfo({ img, title, variantTitle, quantity, amount
                    70px"
           />
           <Stack spacing={0.5}>
-            <Typography text={title} variant="body2" color="primary" fontWeight={600} style={{ lineHeight: 1.57 }} />
+            <Typography text={title} variant="body2" color="text.secondary" fontWeight={600} style={{ lineHeight: 1.57 }} />
             <Typography text={variantTitle} variant="body2" color="text.secondary" />
           </Stack>
         </Box>

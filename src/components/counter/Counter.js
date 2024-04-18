@@ -44,7 +44,7 @@ function Counter({ quantity, quantityAvailable = null, id, pending = false, onQu
       <Tooltip title={subtractTooltipTitle} placement="top-start">
         <Button sx={buttonStyle} onClick={() => handleQuantityChange('subtract')}>
           <Box>
-            <RemoveIcon sx={iconStyle} />
+            <RemoveIcon color="secondary" sx={iconStyle} />
           </Box>
         </Button>
       </Tooltip>
@@ -62,7 +62,7 @@ function Counter({ quantity, quantityAvailable = null, id, pending = false, onQu
       <Tooltip title={addTooltipTitle} placement="top-start">
         <Button sx={buttonStyle} onClick={() => handleQuantityChange('add')}>
           <Box>
-            <AddIcon sx={iconStyle} />
+            <AddIcon color="secondary" sx={iconStyle} />
           </Box>
         </Button>
       </Tooltip>

@@ -6,7 +6,7 @@ function ListItemText({ text, textStyle, hasIcon = false, IconComponent, eventHa
   return (
     <List disablePadding>
       <ListItem disablePadding>
-        <ListItemButton sx={{ p: 0 }} onClick={() => (onListItemTextClick ? onListItemTextClick(...eventHandlerArgs) : null)}>
+        <ListItemButton sx={{ p: 0 }} component="button" onClick={() => (onListItemTextClick ? onListItemTextClick(...eventHandlerArgs) : null)}>
           {hasIcon ? <ListItemIcon>{IconComponent}</ListItemIcon> : null}
           <MuiListItemText primary={text} sx={textStyle} />
         </ListItemButton>

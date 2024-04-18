@@ -103,14 +103,14 @@ function CustomerOrderDetailContainer({ orderId }) {
                 : `Order ${name} cancelled on ${new Date(canceledAt).toDateString()}`
             }
             variant="h4"
-            color="primary"
+            color="text.secondary"
           />
         ) : null}
         <Grid container justifyContent={{ sm: 'space-between', xs: 'flex-start' }}>
           <Grid item xs={12} sm={6.5} p={2} boxShadow={1} borderRadius={2}>
             <Stack spacing={2}>
               <Stack spacing={1}>
-                <Typography text={ready ? translate('orders.orderDetailSections.products') : 'Products'} variant="body2" color="text.secondary" fontWeight={600} />
+                <Typography text={ready ? translate('orders.orderDetailSections.products') : 'Products'} variant="body2" color="text.primary" fontWeight={600} />
                 <Divider orientation="horizontal" variant="fullWidth" />
               </Stack>
               {React.Children.toArray(
@@ -140,7 +140,7 @@ function CustomerOrderDetailContainer({ orderId }) {
             <Box sx={(theme) => ({ border: 1, borderColor: alpha(theme.palette.grey[800], 0.15), borderRadius: 2, p: 1 })}>
               <Stack spacing={2}>
                 <Stack spacing={1}>
-                  <Typography text={ready ? translate('orders.orderDetailSections.billingSummary') : 'Billing summary'} variant="body2" color="text.secondary" fontWeight={600} />
+                  <Typography text={ready ? translate('orders.orderDetailSections.billingSummary') : 'Billing summary'} variant="body2" color="text.primary" fontWeight={600} />
                   <Divider orientation="horizontal" variant="fullWidth" />
                 </Stack>
                 <Stack spacing={1}>

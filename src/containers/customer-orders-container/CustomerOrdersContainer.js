@@ -19,7 +19,7 @@ function NoRowsLabel({ translate, ready }) {
       <Typography
         text={ready ? translate('orders.noOrdersAlert') : 'No orders found'}
         variant="h6"
-        color="text.primary"
+        color="text.secondary"
         style={{ fontWeight: 600, opacity: 0.8, textAlign: 'center' }}
       />
       <Box display="flex" justifyContent="center">
@@ -51,9 +51,9 @@ function CustomerOrdersContainer() {
       flex: 0.5,
       minWidth: 120,
       renderCell: ({ row: { name, cancelReason } }) => {
-        return <Typography text={name} variant="body2" color="primary" fontWeight={600} style={cancelReason ? { textDecoration: 'line-through' } : {}} />;
+        return <Typography text={name} variant="body2" color="text.secondary" fontWeight={600} style={cancelReason ? { textDecoration: 'line-through' } : {}} />;
       },
-      renderHeader: () => <Typography text={ready ? translate('orders.dataGrideHeaders.order') : 'Order'} variant="body2" color="text.secondary" style={gridHeaderStyle} />,
+      renderHeader: () => <Typography text={ready ? translate('orders.dataGrideHeaders.order') : 'Order'} variant="body2" color="text.primary" style={gridHeaderStyle} />,
     },
     {
       field: 'date',
@@ -64,12 +64,12 @@ function CustomerOrdersContainer() {
           <Typography
             text={new Date(processedAt).toDateString()}
             variant="body2"
-            color="primary"
+            color="text.secondary"
             style={cancelReason ? { ...gridRowStyle, textDecoration: 'line-through' } : gridRowStyle}
           />
         );
       },
-      renderHeader: () => <Typography text={ready ? translate('orders.dataGrideHeaders.date') : 'Date'} variant="body2" color="text.secondary" style={gridHeaderStyle} />,
+      renderHeader: () => <Typography text={ready ? translate('orders.dataGrideHeaders.date') : 'Date'} variant="body2" color="text.primary" style={gridHeaderStyle} />,
     },
 
     {
@@ -91,7 +91,7 @@ function CustomerOrdersContainer() {
         );
       },
       renderHeader: () => (
-        <Typography text={ready ? translate('orders.dataGrideHeaders.paymentStatus') : 'Payment status'} variant="body2" color="text.secondary" style={gridHeaderStyle} />
+        <Typography text={ready ? translate('orders.dataGrideHeaders.paymentStatus') : 'Payment status'} variant="body2" color="text.primary" style={gridHeaderStyle} />
       ),
     },
     {
@@ -102,7 +102,7 @@ function CustomerOrdersContainer() {
         return <Typography text={fulfillmentStatus.charAt(0) + fulfillmentStatus.slice(1).toLowerCase()} variant="body2" color="text.secondary" style={gridRowStyle} />;
       },
       renderHeader: () => (
-        <Typography text={ready ? translate('orders.dataGrideHeaders.fulfillmentStatus') : 'Fulfillment status'} variant="body2" color="text.secondary" style={gridHeaderStyle} />
+        <Typography text={ready ? translate('orders.dataGrideHeaders.fulfillmentStatus') : 'Fulfillment status'} variant="body2" color="text.primary" style={gridHeaderStyle} />
       ),
     },
     {
@@ -115,9 +115,11 @@ function CustomerOrdersContainer() {
           cancelReason,
         },
       }) => {
-        return <Typography text={`${currencyCode}${amount}`} variant="body2" color="primary" fontWeight={600} style={cancelReason ? { textDecoration: 'line-through' } : {}} />;
+        return (
+          <Typography text={`${currencyCode}${amount}`} variant="body2" color="text.secondary" fontWeight={600} style={cancelReason ? { textDecoration: 'line-through' } : {}} />
+        );
       },
-      renderHeader: () => <Typography text={ready ? translate('orders.dataGrideHeaders.total') : 'Total'} variant="body2" color="text.secondary" style={gridHeaderStyle} />,
+      renderHeader: () => <Typography text={ready ? translate('orders.dataGrideHeaders.total') : 'Total'} variant="body2" color="text.primary" style={gridHeaderStyle} />,
     },
   ];
 
@@ -142,7 +144,7 @@ function CustomerOrdersContainer() {
 
   return (
     <Stack spacing={4} p={2}>
-      <Typography text="Orders" variant="h4" color="primary" />
+      <Typography text="Orders" variant="h4" color="text.primary" />
       <Datagrid {...props} />
     </Stack>
   );

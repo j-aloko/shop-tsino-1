@@ -14,12 +14,12 @@ const CaptionBox = ({ handle, title, description, slogan, translate, ready }) =>
         p: 1,
       }}>
       <Stack spacing={2} alignItems={{ sm: 'start', xs: 'center' }} p={2} width="100%">
-        <Typography text={slogan} variant="h1" color="secondary" />
-        <Typography text={title} variant="h2" color="primary" fontWeight={600} />
+        <Typography text={slogan} variant="h1" color="text.secondary" />
+        <Typography text={title} variant="h2" color="text.primary" fontWeight={600} />
         <Typography
-          text={description.length > 225 ? `${description.substring(0, 222)}...` : description}
+          text={description.length > 225 ? `${description.substring(0, 225)}...` : description}
           variant="body1"
-          color="secondary"
+          color="text.secondary"
           style={{ display: { sm: 'block', xs: 'none' } }}
         />
         <Box zIndex={2}>
@@ -59,7 +59,7 @@ const ContentBox = ({ isEvenIndex, isTabletOrSmaller, featuredImage, title, hand
   return components.reverse();
 };
 
-function FeaturedProduct({ handle, title, featuredImage, metafields, isTabletOrSmaller, index, translate, ready }) {
+function FeaturedItem({ handle, title, featuredImage, metafields, isTabletOrSmaller, index, translate, ready }) {
   const isEvenIndex = index % 2 === 0;
 
   return (
@@ -79,4 +79,4 @@ function FeaturedProduct({ handle, title, featuredImage, metafields, isTabletOrS
   );
 }
 
-export default FeaturedProduct;
+export default FeaturedItem;

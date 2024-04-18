@@ -133,49 +133,73 @@ function DrawerCartItemsContainer() {
               <Typography
                 text={ready ? translate('cart.lineItems.totalProductsDiscount') : 'Total Product Discounts'}
                 variant="subtitle2"
-                color="primary"
+                color="text.secondary"
                 fontWeight={600}
                 style={{ lineHeight: 1.57 }}
               />
               <Typography
                 text={`${totalProductDiscountsCurrency}${totalProductDiscounts.toFixed(2)}`}
                 variant="body2"
-                color="primary"
+                color="text.secondary"
                 fontWeight={600}
                 style={{ lineHeight: 1.57 }}
               />
             </Box>
             <Box flexGrow={1} display="flex" alignItems="center" justifyContent="space-between">
-              <Typography text={ready ? translate('cart.lineItems.subtotal') : 'Subtotal'} variant="subtitle2" color="primary" fontWeight={600} style={{ lineHeight: 1.57 }} />
-              <Typography text={`${cartSubtotalCurrency}${cartSubtotal.toFixed(2)}`} variant="body2" color="primary" fontWeight={600} style={{ lineHeight: 1.57 }} />
+              <Typography
+                text={ready ? translate('cart.lineItems.subtotal') : 'Subtotal'}
+                variant="subtitle2"
+                color="text.secondary"
+                fontWeight={600}
+                style={{ lineHeight: 1.57 }}
+              />
+              <Typography text={`${cartSubtotalCurrency}${cartSubtotal.toFixed(2)}`} variant="body2" color="text.secondary" fontWeight={600} style={{ lineHeight: 1.57 }} />
             </Box>
             <Box flexGrow={1} display="flex" alignItems="center" justifyContent="space-between">
               <Typography
                 text={ready ? translate('cart.lineItems.totalCartDiscount') : 'Total cart discount'}
                 variant="subtitle2"
-                color="primary"
+                color="text.secondary"
                 fontWeight={600}
                 style={{ lineHeight: 1.57 }}
               />
-              <Typography text={`${totalCartDiscountCurrency}${totalCartDiscount.toFixed(2)}`} variant="body2" color="primary" fontWeight={600} style={{ lineHeight: 1.57 }} />
+              <Typography
+                text={`${totalCartDiscountCurrency}${totalCartDiscount.toFixed(2)}`}
+                variant="body2"
+                color="text.secondary"
+                fontWeight={600}
+                style={{ lineHeight: 1.57 }}
+              />
             </Box>
             <Box flexGrow={1} display="flex" alignItems="center" justifyContent="space-between">
-              <Typography text={ready ? translate('cart.lineItems.tax') : 'Tax'} variant="subtitle2" color="primary" fontWeight={600} style={{ lineHeight: 1.57 }} />
-              <Typography text={`${cartTotalTaxAmountCurrency}${cartTotalTaxAmount.toFixed(2)}`} variant="subtitle2" color="body2" fontWeight={600} style={{ lineHeight: 1.57 }} />
+              <Typography text={ready ? translate('cart.lineItems.tax') : 'Tax'} variant="subtitle2" color="text.secondary" fontWeight={600} style={{ lineHeight: 1.57 }} />
+              <Typography
+                text={`${cartTotalTaxAmountCurrency}${cartTotalTaxAmount.toFixed(2)}`}
+                variant="body2"
+                color="text.secondary"
+                fontWeight={600}
+                style={{ lineHeight: 1.57 }}
+              />
             </Box>
             <Box flexGrow={1} display="flex" alignItems="center" justifyContent="space-between">
-              <Typography text={ready ? translate('cart.lineItems.shipping') : 'Shipping'} variant="subtitle2" color="primary" fontWeight={600} style={{ lineHeight: 1.57 }} />
+              <Typography
+                text={ready ? translate('cart.lineItems.shipping') : 'Shipping'}
+                variant="subtitle2"
+                color="text.secondary"
+                fontWeight={600}
+                style={{ lineHeight: 1.57 }}
+              />
               <Typography
                 text={ready ? translate('cart.lineItems.calculatedAtCheckout') : 'Calculated at checkout'}
                 variant="body2"
-                color="primary"
+                color="text.secondary"
                 fontWeight={600}
                 style={{ lineHeight: 1.57 }}
               />
             </Box>
             <Box flexGrow={1} display="flex" alignItems="center" justifyContent="space-between">
-              <Typography text={ready ? translate('cart.lineItems.total') : 'Total'} variant="subtitle2" color="primary" fontWeight={600} style={{ lineHeight: 1.57 }} />
-              <Typography text={`${cartTotalAmountCurrency}${cartTotalAmount.toFixed(2)}`} variant="body2" color="primary" fontWeight={600} style={{ lineHeight: 1.57 }} />
+              <Typography text={ready ? translate('cart.lineItems.total') : 'Total'} variant="subtitle2" color="text.secondary" fontWeight={600} style={{ lineHeight: 1.57 }} />
+              <Typography text={`${cartTotalAmountCurrency}${cartTotalAmount.toFixed(2)}`} variant="body2" color="text.secondary" fontWeight={600} style={{ lineHeight: 1.57 }} />
             </Box>
             <Grid container spacing={1} display="flex" alignItems="flex-end">
               <Grid item xs={12}>

@@ -29,8 +29,8 @@ function DiscountBannerContainer({ maxWidth = '100%', justifyContent = 'flex-sta
 
   if (automaticDiscountBasic?.discount?.status === DISCOUNT_STATUS.active && product) {
     return (
-      <Box sx={{ backgroundColor: 'background.paper', display: 'flex', justifyContent }}>
-        <Grid container maxWidth={maxWidth} spacing={2} p={4}>
+      <Box sx={{ display: 'flex', justifyContent }}>
+        <Grid container sx={{ backgroundColor: 'background.paper' }} alignItems="center" maxWidth={maxWidth} spacing={2} p={4}>
           <Grid item sm={5} xs={12}>
             <Image
               height={250}
@@ -46,13 +46,14 @@ function DiscountBannerContainer({ maxWidth = '100%', justifyContent = 'flex-sta
           <Grid item sm={7} xs={12}>
             <Stack spacing={1} alignItems="center">
               <Typography
-                text={automaticDiscountBasic.discount.shortSummary}
+                text={automaticDiscountBasic.discount.title}
                 textAlign="center"
                 variant="subtitle1"
                 color="text.secondary"
+                fontWeight={600}
                 style={{ textTransform: 'uppercase' }}
               />
-              <Typography text="Fast Ride Skateboards" textAlign="center" variant="h4" color="primary" fontWeight={600} />
+              <Typography text={automaticDiscountBasic.discount.summary} textAlign="center" variant="h5" color="text.primary" fontWeight={600} />
               <RouterButton
                 path={`${PATH.products}/${product?.handle}`}
                 name={ready ? translate('buttons.shopNow') : 'Shop Now'}

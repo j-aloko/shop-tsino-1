@@ -41,11 +41,15 @@ function TextField({ input, id, label, meta, size, placeholder, disabled, autoFo
       type={fieldType}
       focused
       fullWidth
+      color="secondary"
       placeholder={placeholder}
       disabled={disabled}
       sx={(theme) => ({
+        '& .MuiFormLabel-root': {
+          color: theme.palette.text.secondary,
+        },
         '& .MuiInputBase-input': {
-          color: 'text.secondary',
+          color: theme.palette.text.secondary,
           ...theme.typography.body1,
         },
         '& .MuiOutlinedInput-root': {

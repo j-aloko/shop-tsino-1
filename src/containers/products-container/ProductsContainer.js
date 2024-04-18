@@ -62,8 +62,8 @@ function ProductsContainer({ title, subtitle, products = [], isCarouselProduct =
   return (
     <Stack p={2} spacing={4}>
       <Stack spacing={2} alignItems="center">
-        <Typography text={title} variant="h1" color="secondary" />
-        <Typography text={subtitle} variant="h2" color="primary" fontWeight={600} />
+        <Typography text={title} variant="h1" color="text.secondary" />
+        <Typography text={subtitle} variant="h2" color="text.primary" fontWeight={600} />
         <Divider orientation="horizontal" variant="fullWidth" color="secondary.main" height={5} width={80} />
       </Stack>
       {isCarouselProduct ? (
