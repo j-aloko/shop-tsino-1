@@ -13,8 +13,12 @@ const QuillEditor = dynamic(import('react-quill'), {
 });
 
 const StyledTextField = styled(MuiTextField)(({ theme, error }) => ({
-  '& .MuiInputLabel-root': {
+  '& .MuiInputBase-input': {
     color: `${theme.palette.text.secondary} !important`,
+    ...theme.typography.body1,
+  },
+  '& .MuiInputLabel-root': {
+    color: `${error ? `${theme.palette.error.main} !important` : `${theme.palette.text.secondary} !important`}`,
   },
   '& .MuiOutlinedInput-root': {
     '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
@@ -23,7 +27,7 @@ const StyledTextField = styled(MuiTextField)(({ theme, error }) => ({
     '&:hover .MuiOutlinedInput-notchedOutline': {
       borderColor: error ? theme.palette.error.main : theme.palette.grey[300],
     },
-    color: theme.palette.text.secondary,
+    color: `${theme.palette.text.secondary} !important`,
   },
   '& .ql-container': {
     height: 200,
@@ -68,7 +72,7 @@ export default function QuillTextEditor({ input, label, placeholder, meta, ...re
       label={label}
       error={meta.error && meta.touched}
       helperText={meta.touched && meta.error}
-      color="secondary"
+      autoComplete="off"
       {...input}
       {...rest}
       InputProps={{

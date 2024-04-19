@@ -77,7 +77,7 @@ function LoginContainer() {
               <LockOutlinedIcon />
             </Avatar>
           </Box>
-          <Typography text={ready ? translate('authentication.login.title') : 'Sign in'} textAlign="center" variant="h5" color="primary" />
+          <Typography text={ready ? translate('authentication.login.title') : 'Sign in'} textAlign="center" variant="h5" color="text.primary" />
           <UserFeedbackForm {...loginFormProps} />
           <Grid container rowSpacing={1}>
             <Grid item xs>

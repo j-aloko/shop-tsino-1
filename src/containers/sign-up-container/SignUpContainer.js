@@ -96,7 +96,7 @@ function SignUpContainer() {
               <LockOutlinedIcon />
             </Avatar>
           </Box>
-          <Typography text={ready ? translate('authentication.signup.title') : 'Sign up'} textAlign="center" variant="h5" color="primary" />
+          <Typography text={ready ? translate('authentication.signup.title') : 'Sign up'} textAlign="center" variant="h5" color="text.primary" />
           <UserFeedbackForm {...signUpFormProps} />
           <Grid container justifyContent="flex-end">
             <Grid item>

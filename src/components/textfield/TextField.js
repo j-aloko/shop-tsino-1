@@ -20,7 +20,6 @@ function TextField({ input, id, label, meta, size, placeholder, disabled, autoFo
   return (
     <MuiTextField
       InputProps={{
-        autoComplete: 'new-password',
         autoFocus,
         endAdornment:
           id === 'password' || id === 'confirmPassword' ? (
@@ -30,27 +29,23 @@ function TextField({ input, id, label, meta, size, placeholder, disabled, autoFo
               </IconButton>
             </InputAdornment>
           ) : null,
-        form: {
-          autoComplete: 'off',
-        },
-        step: 'any',
       }}
+      autoComplete="off"
       label={label}
       variant="outlined"
       size="small"
       type={fieldType}
       focused
       fullWidth
-      color="secondary"
       placeholder={placeholder}
       disabled={disabled}
       sx={(theme) => ({
         '& .MuiInputBase-input': {
-          color: theme.palette.text.secondary,
+          color: `${theme.palette.text.secondary} !important`,
           ...theme.typography.body1,
         },
         '& .MuiInputLabel-root': {
-          color: `${theme.palette.text.secondary} !important`,
+          color: `${meta.error && meta.touched ? `${theme.palette.error.main} !important` : `${theme.palette.text.secondary} !important`}`,
         },
         '& .MuiOutlinedInput-root': {
           '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
@@ -59,6 +54,7 @@ function TextField({ input, id, label, meta, size, placeholder, disabled, autoFo
           '&:hover .MuiOutlinedInput-notchedOutline': {
             borderColor: meta.error && meta.touched ? theme.palette.error.main : theme.palette.grey[300],
           },
+          color: `${theme.palette.text.secondary} !important`,
         },
       })}
       error={meta.error && meta.touched}

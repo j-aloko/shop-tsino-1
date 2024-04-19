@@ -142,7 +142,7 @@ function FooterContainer() {
             <Stack spacing={1.5}>
               <Stack alignItems="center">
                 <AlternateEmailIcon color="secondary" fontSize="large" />
-                <Typography text={ready ? translate('footer.newsletter') : 'NewsLetter'} variant="h5" color="primary" fontWeight={600} />
+                <Typography text={ready ? translate('footer.newsletter') : 'NewsLetter'} variant="h5" color="text.primary" fontWeight={600} />
               </Stack>
               <NewsLetter {...newsLetterFormProps} />
             </Stack>

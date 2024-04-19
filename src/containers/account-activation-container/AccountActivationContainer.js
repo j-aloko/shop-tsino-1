@@ -83,7 +83,7 @@ function AccountActivationContainer() {
     <Grid container justifyContent="center" p={2}>
       <Grid item md={5} sm={6} xs={12} p={2}>
         <Stack spacing={2}>
-          <Typography text={ready ? translate('authentication.activateAccount.title') : 'Activate account'} textAlign="center" variant="h5" color="primary" />
+          <Typography text={ready ? translate('authentication.activateAccount.title') : 'Activate account'} textAlign="center" variant="h5" color="text.primary" />
           <Typography
             text={ready ? translate('authentication.activateAccount.subtitle') : 'Create your password to activate your account.'}
             textAlign="center"

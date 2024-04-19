@@ -21,7 +21,7 @@ function CheckEmailCard({ title, message, onResendEmail, resendPending, decodedR
                 <EmailRoundedIcon color="secondary" fontSize="large" sx={{ height: 60, width: 60 }} />
               </Box>
               <Stack spacing={1}>
-                <Typography text={title} textAlign="center" variant="h5" color="primary" />
+                <Typography text={title} textAlign="center" variant="h5" color="text.primary" />
                 <Typography text={message} textAlign="center" variant="body1" color="text.secondary" />
               </Stack>
               <Stack spacing={1}>

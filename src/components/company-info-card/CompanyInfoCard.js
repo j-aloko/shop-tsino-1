@@ -8,7 +8,7 @@ function CompanyInfoCard({ IconComponent, title, subtitle }) {
     <Box display="flex" alignItems="center" columnGap={2}>
       <Box>{IconComponent}</Box>
       <Stack>
-        <Typography text={title} variant="h6" color="primary" fontWeight={600} />
+        <Typography text={title} variant="h6" color="text.primary" fontWeight={600} />
         <Typography text={subtitle} variant="body2" color="text.secondary" />
       </Stack>
     </Box>

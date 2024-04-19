@@ -68,7 +68,7 @@ function RequestPasswordResetContainer() {
     <Grid container justifyContent="center" p={2}>
       <Grid item md={5} sm={6} xs={12} p={2}>
         <Stack spacing={2}>
-          <Typography text={ready ? translate('authentication.forgotPassword.title') : 'Forgot Password?'} textAlign="center" variant="h5" color="primary" />
+          <Typography text={ready ? translate('authentication.forgotPassword.title') : 'Forgot Password?'} textAlign="center" variant="h5" color="text.primary" />
           <Typography
             text={
               ready
