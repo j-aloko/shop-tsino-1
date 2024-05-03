@@ -10,8 +10,8 @@ const FooterContainer = dynamic(() => import('../containers/footer-container/Foo
 
 function Layout({ children }) {
   return (
-    <Container maxWidth="xl" disableGutters sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-      <Stack position="fixed" top={0} left={0} width="100%" bgcolor="background.paper" zIndex={999}>
+    <Container maxWidth="xl" disableGutters sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', rowGap: '2rem' }}>
+      <Stack position="sticky" top={0} width="100%" bgcolor="background.paper" zIndex={999}>
         <header>
           <HeaderContainer />
         </header>
@@ -19,10 +19,10 @@ function Layout({ children }) {
           <NavbarContainer />
         </nav>
       </Stack>
-      <Box flexGrow={1} sx={{ mb: '5rem', mt: { sm: '12rem', xs: '15rem' } }}>
+      <Box flexGrow={1}>
         <main>{children}</main>
       </Box>
-      <Box sx={{ mt: 'auto' }}>
+      <Box mt="auto">
         <footer>
           <FooterContainer />
         </footer>

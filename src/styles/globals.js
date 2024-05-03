@@ -5,7 +5,7 @@ export const globalStyles = (theme) => css`
   body {
     padding: 0 !important;
     margin: 0 !important;
-    overflow-x: hidden !important;
+    overflow-x: clip !important;
   }
 
   a {
