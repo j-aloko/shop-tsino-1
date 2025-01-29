@@ -63,8 +63,8 @@ function HeaderContainer() {
 
   const transformedAvailableCountries = useMemo(
     () =>
-      availableCountries?.map(({ countryIsoCode, currencyIsoCode, symbol }) => ({
-        option: `${currencyIsoCode} (${symbol})`,
+      availableCountries?.map(({ countryIsoCode, symbol }) => ({
+        option: `${countryIsoCode} (${symbol})`,
         value: countryIsoCode,
       })),
     [availableCountries]

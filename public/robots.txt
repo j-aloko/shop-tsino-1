@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://shop-tsino.myshopify.com
+Host: https://flip-hub.myshopify.com
 
 # Sitemaps
-Sitemap: https://shop-tsino.myshopify.com/sitemap.xml
+Sitemap: https://flip-hub.myshopify.com/sitemap.xml
