@@ -14,6 +14,7 @@ import Logo from '../../components/logo/Logo';
 import { Box, Badge, IconButton, Menu, MenuItem } from '../../components/mui-components/MuiComponents';
 import { MenuIcon, MoreIcon, AddShoppingCartIcon, PersonIcon } from '../../components/mui-icons/muiIcons';
 import NavButton from '../../components/nav-button/NavButton';
+import SearchBar from '../../components/search-bar/SearchBar';
 import { DRAWER_TYPE } from '../../constant/drawer';
 import { MODAL_TYPE } from '../../constant/modal';
 import PATH from '../../constant/paths';
@@ -24,7 +25,6 @@ import { drawerSlice } from '../../services/redux/slices/drawer-slice/drawerSlic
 import { modalSlice } from '../../services/redux/slices/modal-slice/modalSlice';
 import { useDispatch, useSelector } from '../../services/redux/store/store';
 
-const SearchBar = dynamic(() => import('../../components/search-bar/SearchBar'), { ssr: false });
 const SearchModalContainer = dynamic(() => import('../search-modal-container/SearchModalContainer'), { ssr: false });
 const MenuItemsContainer = dynamic(() => import('../menu-items-container/MenuItemsContainer'), { ssr: false });
 const DrawerCartItemsContainer = dynamic(() => import('../drawer-cart-items-container/DrawerCartItemsContainer'), { ssr: false });
